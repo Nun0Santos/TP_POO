@@ -7,6 +7,7 @@
 #include "geral.h"
 #include <algorithm>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -51,15 +52,34 @@ void comandos(){
 
     bool TF = verificaComandos(v[0]);
     if(TF){
-        if(comando=="cons"){
+        if(v[0] == "exec"){
+            string filename("comandos.txt");
+            vector <string> lines;
+            string line;
+
+            ifstream input_file(filename);
+            if(!input_file.is_open()) {
+                cerr << "Erro ao tentar abrir o ficheiro";
+            }
+            while (getline(input_file,line)){
+                lines.push_back(line);
+            }
+            for (const auto &i : lines)
+                cout << i << endl;
+
+            input_file.close();
+
+        }
+        if(v[0] =="cons"){
             //codigo para o cons
+
+            //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
 
             return;
         }
-        if(comando == "list"){
+        if(v[0] == "list"){
             //codigo para o list
 
-            //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
 
             return;
         }

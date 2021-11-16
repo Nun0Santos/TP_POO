@@ -6,17 +6,28 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< Updated upstream
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/comandos.cpp
+=======
+/home/user/Desktop/GitHub/TP_POO/TP/comandos.cpp
+>>>>>>> Stashed changes
 iostream
 -
 vector
 -
+<<<<<<< Updated upstream
 sstream
 -
 geral.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
+=======
+geral.h
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+>>>>>>> Stashed changes
 iostream
 -
 string
@@ -32,7 +43,19 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 geral.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 
+<<<<<<< Updated upstream
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
+=======
+/home/user/Desktop/GitHub/TP_POO/TP/main.cpp
+geral.h
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+
+/home/user/Desktop/GitHub/TP_POO/TP/mina_ferro.cpp
+geral.h
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+
+/home/user/Desktop/GitHub/TP_POO/TP/mina_ferro.h
+>>>>>>> Stashed changes
 geral.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 

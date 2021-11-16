@@ -14,5 +14,9 @@
 void verificaComandos(string comando);
 void splitString(const string& str, const string& delimiter = " ");
 
+        void verificaComandos();
+
+
+
 
 #endif //TP_POO_GERAL_H

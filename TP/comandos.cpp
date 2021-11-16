@@ -6,7 +6,6 @@
 #include <sstream>
 #include "geral.h"
 
-
 using namespace std;
 
 void verificaComandos(string comando){
@@ -21,7 +20,18 @@ void verificaComandos(string comando){
         cin >> del;
     }
 
+    cout << "Introduza um comando : " << endl;
+    getline(cin,comando);
+
+        if (comando == "cons"){
+            cons();
+        }
+
+}
+void cons (string tipo, int linha, int coluna){
+
     cout << del << endl;
 }
+
 
 

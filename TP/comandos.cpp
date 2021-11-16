@@ -5,33 +5,44 @@
 #include <vector>
 #include <sstream>
 #include "geral.h"
+#include <algorithm>
+#include <string>
 
 using namespace std;
 
-void verificaComandos(string comando){
-    string comandos = ("exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debskill");
-    vector<string> verificacao; //indice 0 = nome do comando
-    string del;
+bool verificaComandos(const string& comando){
+    string com = "cons";
 
-    //tirar espaços   copiar pal ate encontrar um esoaço
-    istringstream ss(comando);
+    vector<string> comandos = {"exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debskill"};
 
-    while(getline(ss, del, ' ')){
-        cin >> del;
+    if(find(comandos.begin(), comandos.end(), com) != comandos.end())
+    {
+        cout << "\nO comando esta no vetor!" << endl;
+        return true;
     }
 
-    cout << "Introduza um comando : " << endl;
-    getline(cin,comando);
+    return false;
 
-        if (comando == "cons"){
-            cons();
+}
+
+void comandos(const string& comando){
+    bool TF = verificaComandos(comando);
+    if(TF){
+        if(comando=="cons"){
+            //codigo para o cons
+
+            return;
+        }
+        if(comando == "list"){
+            //codigo para o list
+
+            return;
         }
 
-}
-void cons (string tipo, int linha, int coluna){
 
-    cout << del << endl;
+        //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código
+        return;
+    }
 }
-
 
 

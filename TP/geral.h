@@ -11,10 +11,8 @@
 #include "mina_ferro.h"
 #include "ilha.h"
 
-void verificaComandos(string comando);
-void splitString(const string& str, const string& delimiter = " ");
+bool verificaComandos(const string& comando);
 
-        void verificaComandos();
 
 
 

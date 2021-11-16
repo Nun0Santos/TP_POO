@@ -1,11 +1,13 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TP_POO.dir/TP/comandos.cpp.o"
-  "CMakeFiles/TP_POO.dir/TP/deserto.cpp.o"
-  "CMakeFiles/TP_POO.dir/TP/ilha.cpp.o"
-  "CMakeFiles/TP_POO.dir/TP/main.cpp.o"
-  "CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.o"
-  "TP_POO"
+  "CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/main.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj"
+  "TP_POO.exe"
+  "TP_POO.exe.manifest"
   "TP_POO.pdb"
+  "libTP_POO.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

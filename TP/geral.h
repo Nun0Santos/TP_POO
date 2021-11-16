@@ -11,7 +11,8 @@
 #include "mina_ferro.h"
 #include "ilha.h"
 
-
+void verificaComandos(string comando);
+void splitString(const string& str, const string& delimiter = " ");
 
 
 #endif //TP_POO_GERAL_H

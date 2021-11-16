@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/comandos.cpp
+iostream
+-
+vector
+-
+sstream
+-
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 iostream
 -
 string
@@ -14,19 +24,15 @@ string
 vector
 -
 mina_ferro.h
-/home/user/Desktop/GitHub/TP_POO/TP/mina_ferro.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
 ilha.h
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.cpp
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 geral.h
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
 geral.h
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
-
-/home/user/Desktop/GitHub/TP_POO/TP/mina_ferro.h
-geral.h
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 

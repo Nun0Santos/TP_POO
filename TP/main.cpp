@@ -4,18 +4,9 @@
 
 int main() {
     //ilha a;
-    string comando;
 
-    cout << "Boas" << endl;
-
-<<<<<<< Updated upstream
-    cout << "Comando : " << endl;
-    getline(cin, comando);
-
-    verificaComandos(comando);
-=======
+    comandos();
     //verificaComandos();
->>>>>>> Stashed changes
     /*a.defineLin();
     a.defineCol();
     a.ilha::criaIlha();

@@ -12,6 +12,7 @@
 #include "ilha.h"
 
 bool verificaComandos(const string& comando);
+void comandos();
 
 
 

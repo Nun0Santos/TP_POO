@@ -11,22 +11,45 @@
 using namespace std;
 
 bool verificaComandos(const string& comando){
-    string com = "cons";
 
     vector<string> comandos = {"exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debskill"};
 
-    if(find(comandos.begin(), comandos.end(), com) != comandos.end())
+    if(find(comandos.begin(), comandos.end(), comando) != comandos.end())
     {
-        cout << "\nO comando esta no vetor!" << endl;
         return true;
     }
-
     return false;
+}
+
+
+void tiraEspacos(string s, vector<string> &v){
+
+    string temp = "";
+    for(char i : s){
+
+        if(i==' '){
+            v.push_back(temp);
+            temp = "";
+        }
+        else{
+            temp.push_back(i);
+        }
+
+    }
+    v.push_back(temp);
 
 }
 
-void comandos(const string& comando){
-    bool TF = verificaComandos(comando);
+void comandos(){
+    string comando;
+    vector<string> v;
+
+    cout << "\nComando: " << endl;
+    getline(cin, comando);
+
+    tiraEspacos(comando, v);
+
+    bool TF = verificaComandos(v[0]);
     if(TF){
         if(comando=="cons"){
             //codigo para o cons

@@ -59,6 +59,8 @@ void comandos(){
         if(comando == "list"){
             //codigo para o list
 
+            //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
+
             return;
         }
 

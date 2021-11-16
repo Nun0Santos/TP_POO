@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/main.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
   "TP_POO.exe"
   "TP_POO.exe.manifest"
   "TP_POO.pdb"

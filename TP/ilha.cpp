@@ -29,6 +29,18 @@ void ilha::defineCol(){
     ilha::defineCol();
 }
 
+int ilha::obtemCol() const {
+    return col;
+}
+
+int ilha::obtemLin() const {
+    return lin;
+}
+
+void ilha::mudaValor(int lin, int col, string t) {
+    tabuleiro[lin][col] = t;
+}
+
 void ilha::criaIlha() {
     tabuleiro = new string*[lin];
     for (int i = 0; i < lin; ++i) {
@@ -37,11 +49,9 @@ void ilha::criaIlha() {
 
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            tabuleiro[i][j] = "ola";
+            tabuleiro[i][j] = "0";
         }
     }
-
-
 }
 
 void ilha::mostraIlha() {
@@ -59,19 +69,3 @@ void ilha::mostraIlha() {
         cout << "\n";
     }
 }
-
-/*void ilha::cria_tabela() {
-    int i, j;
-
-    for(i = 0; i < 3; i++){
-        for(j = 0; j < 3; j++){
-            ta
-        }
-    }
-
-}*/
-
-/*void ilha::defineZona() {
-
-
-}*/

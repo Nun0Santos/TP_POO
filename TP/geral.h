@@ -10,6 +10,7 @@
 #include <vector>
 #include "mina_ferro.h"
 #include "ilha.h"
+#include "zona.h"
 
 bool verificaComandos(const string& comando);
 void comandos();

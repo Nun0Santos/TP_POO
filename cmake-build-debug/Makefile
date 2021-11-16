@@ -248,6 +248,30 @@ TP/mina_ferro.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.s
 .PHONY : TP/mina_ferro.cpp.s
 
+TP/zona.obj: TP/zona.cpp.obj
+.PHONY : TP/zona.obj
+
+# target to build an object file
+TP/zona.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
+.PHONY : TP/zona.cpp.obj
+
+TP/zona.i: TP/zona.cpp.i
+.PHONY : TP/zona.i
+
+# target to preprocess a source file
+TP/zona.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.i
+.PHONY : TP/zona.cpp.i
+
+TP/zona.s: TP/zona.cpp.s
+.PHONY : TP/zona.s
+
+# target to generate assembly for a file
+TP/zona.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.s
+.PHONY : TP/zona.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -272,6 +296,9 @@ help:
 	@echo ... TP/mina_ferro.obj
 	@echo ... TP/mina_ferro.i
 	@echo ... TP/mina_ferro.s
+	@echo ... TP/zona.obj
+	@echo ... TP/zona.i
+	@echo ... TP/zona.s
 .PHONY : help
 
 

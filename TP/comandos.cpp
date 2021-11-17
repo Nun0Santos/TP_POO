@@ -57,7 +57,8 @@ void comandos(){
     bool TF = verificaComandos(v[0]);
     if(TF){
         if(v[0] == "exec"){
-            string filename("comandos.txt");
+            cout << "o exec esta a funcionar";
+            /*string filename("comandos.txt");
             vector <string> lines;
             string line;
 
@@ -71,7 +72,7 @@ void comandos(){
             for (const auto &i : lines)
                 cout << i << endl;
 
-            input_file.close();
+            input_file.close();*/
 
         }
         if(v[0] =="cons"){

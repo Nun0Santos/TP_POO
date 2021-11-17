@@ -62,10 +62,9 @@ void ilha::criaIlha() {
 
 void ilha::mostraIlha() {
     for (int i = 0; i < lin; ++i) {
-        cout << "\t+------";
         cout << "\n";
         for (int j = 0; j < 4; ++j) {
-            cout << "\t|    ";
+            cout << "|\t";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
@@ -83,10 +82,10 @@ void ilha::mostraIlha() {
                     default:
                         break;
                 }
-                cout << "\t";
+                cout << "\t|\t";
             }
             cout << "\n";
+
         }
-        //cout << "\t___________________";
     }
 }

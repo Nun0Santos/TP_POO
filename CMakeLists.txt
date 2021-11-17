@@ -12,4 +12,4 @@ add_executable(TP_POO
         TP/ilha.h
         TP/main.cpp
         TP/zona.cpp
-        TP/zona.h)
+        TP/zona.h config.cpp)

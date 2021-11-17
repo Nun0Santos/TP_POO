@@ -1,9 +1,12 @@
 #include "geral.h"
 
-
+#include <fstream>
 
 int main() {
     ilha a;
+
+    //leFich("fich_config.txt");
+
 
     //comandos();
     //verificaComandos();

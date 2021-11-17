@@ -79,24 +79,10 @@ CMakeFiles/TP_POO.dir/TP/comandos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/comandos.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\comandos.cpp -o CMakeFiles\TP_POO.dir\TP\comandos.cpp.s
 
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: ../TP/deserto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\deserto.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\deserto.cpp
-
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/deserto.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\deserto.cpp > CMakeFiles\TP_POO.dir\TP\deserto.cpp.i
-
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/deserto.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\deserto.cpp -o CMakeFiles\TP_POO.dir\TP\deserto.cpp.s
-
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: ../TP/ilha.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\ilha.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\ilha.cpp
 
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.i: cmake_force
@@ -110,7 +96,7 @@ CMakeFiles/TP_POO.dir/TP/ilha.cpp.s: cmake_force
 CMakeFiles/TP_POO.dir/TP/main.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
 CMakeFiles/TP_POO.dir/TP/main.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
 CMakeFiles/TP_POO.dir/TP/main.cpp.obj: ../TP/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP_POO.dir/TP/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP_POO.dir/TP/main.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\main.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\main.cpp
 
 CMakeFiles/TP_POO.dir/TP/main.cpp.i: cmake_force
@@ -121,24 +107,10 @@ CMakeFiles/TP_POO.dir/TP/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/main.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\main.cpp -o CMakeFiles\TP_POO.dir\TP\main.cpp.s
 
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj: ../TP/mina_ferro.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\mina_ferro.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\mina_ferro.cpp
-
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\mina_ferro.cpp > CMakeFiles\TP_POO.dir\TP\mina_ferro.cpp.i
-
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\mina_ferro.cpp -o CMakeFiles\TP_POO.dir\TP\mina_ferro.cpp.s
-
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: ../TP/zona.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\zona.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\zona.cpp
 
 CMakeFiles/TP_POO.dir/TP/zona.cpp.i: cmake_force
@@ -149,29 +121,41 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/zona.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\zona.cpp -o CMakeFiles\TP_POO.dir\TP\zona.cpp.s
 
+CMakeFiles/TP_POO.dir/config.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/config.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/config.cpp.obj: ../config.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP_POO.dir/config.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\config.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\config.cpp
+
+CMakeFiles/TP_POO.dir/config.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/config.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rafael\Desktop\GitHub\TP_POO\config.cpp > CMakeFiles\TP_POO.dir\config.cpp.i
+
+CMakeFiles/TP_POO.dir/config.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/config.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\config.cpp -o CMakeFiles\TP_POO.dir\config.cpp.s
+
 # Object files for target TP_POO
 TP_POO_OBJECTS = \
 "CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj" \
-"CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/main.cpp.obj" \
-"CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj" \
-"CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
+"CMakeFiles/TP_POO.dir/TP/zona.cpp.obj" \
+"CMakeFiles/TP_POO.dir/config.cpp.obj"
 
 # External object files for target TP_POO
 TP_POO_EXTERNAL_OBJECTS =
 
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj
-TP_POO.exe: CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/main.cpp.obj
-TP_POO.exe: CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/config.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/build.make
 TP_POO.exe: CMakeFiles/TP_POO.dir/linklibs.rsp
 TP_POO.exe: CMakeFiles/TP_POO.dir/objects1.rsp
 TP_POO.exe: CMakeFiles/TP_POO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TP_POO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable TP_POO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TP_POO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

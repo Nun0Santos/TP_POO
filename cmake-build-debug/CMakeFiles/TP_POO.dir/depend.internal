@@ -5,29 +5,22 @@ CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/comandos.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/deserto.cpp
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/deserto.h
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/main.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/main.cpp
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.cpp
- C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
+CMakeFiles/TP_POO.dir/config.cpp.obj
+ ../TP/geral.h
+ ../TP/ilha.h
+ ../TP/zona.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/config.cpp

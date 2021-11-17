@@ -38,9 +38,9 @@ int ilha::obtemLin() const {
 }
 
 void ilha::mudaValor(int lin, int col, string t) {
-    if(tabuleiro[lin][col].obte)
+    if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
+        return;
     tabuleiro[lin][col].defineEdificio(t);
-
 }
 
 void ilha::criaIlha() {
@@ -62,20 +62,23 @@ void ilha::criaIlha() {
 
 void ilha::mostraIlha() {
     for (int i = 0; i < lin; ++i) {
+        cout << "\t+------";
+        cout << "\n";
         for (int j = 0; j < 4; ++j) {
+            cout << "\t|    ";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
-                        tabuleiro[i][k].obtemTipo();
+                        cout << tabuleiro[i][k].obtemTipo();
                         break;
                     case 1:
-                        tabuleiro[i][k].obtemEdificio();
+                        cout << tabuleiro[i][k].obtemEdificio();
                         break;
                     case 2:
-                        tabuleiro[i][k].obtemTrab();
+                        cout << tabuleiro[i][k].obtemTrab();
                         break;
                     case 3:
-                        tabuleiro[i][k].obtemQuant_Trab();
+                        cout << tabuleiro[i][k].obtemQuant_Trab();
                         break;
                     default:
                         break;
@@ -84,5 +87,6 @@ void ilha::mostraIlha() {
             }
             cout << "\n";
         }
+        //cout << "\t___________________";
     }
 }

@@ -152,30 +152,6 @@ TP/comandos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/comandos.cpp.s
 .PHONY : TP/comandos.cpp.s
 
-TP/deserto.obj: TP/deserto.cpp.obj
-.PHONY : TP/deserto.obj
-
-# target to build an object file
-TP/deserto.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj
-.PHONY : TP/deserto.cpp.obj
-
-TP/deserto.i: TP/deserto.cpp.i
-.PHONY : TP/deserto.i
-
-# target to preprocess a source file
-TP/deserto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.i
-.PHONY : TP/deserto.cpp.i
-
-TP/deserto.s: TP/deserto.cpp.s
-.PHONY : TP/deserto.s
-
-# target to generate assembly for a file
-TP/deserto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.s
-.PHONY : TP/deserto.cpp.s
-
 TP/ilha.obj: TP/ilha.cpp.obj
 .PHONY : TP/ilha.obj
 
@@ -224,30 +200,6 @@ TP/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/main.cpp.s
 .PHONY : TP/main.cpp.s
 
-TP/mina_ferro.obj: TP/mina_ferro.cpp.obj
-.PHONY : TP/mina_ferro.obj
-
-# target to build an object file
-TP/mina_ferro.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj
-.PHONY : TP/mina_ferro.cpp.obj
-
-TP/mina_ferro.i: TP/mina_ferro.cpp.i
-.PHONY : TP/mina_ferro.i
-
-# target to preprocess a source file
-TP/mina_ferro.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.i
-.PHONY : TP/mina_ferro.cpp.i
-
-TP/mina_ferro.s: TP/mina_ferro.cpp.s
-.PHONY : TP/mina_ferro.s
-
-# target to generate assembly for a file
-TP/mina_ferro.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.s
-.PHONY : TP/mina_ferro.cpp.s
-
 TP/zona.obj: TP/zona.cpp.obj
 .PHONY : TP/zona.obj
 
@@ -272,6 +224,30 @@ TP/zona.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.s
 .PHONY : TP/zona.cpp.s
 
+config.obj: config.cpp.obj
+.PHONY : config.obj
+
+# target to build an object file
+config.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.obj
+.PHONY : config.cpp.obj
+
+config.i: config.cpp.i
+.PHONY : config.i
+
+# target to preprocess a source file
+config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.i
+.PHONY : config.cpp.i
+
+config.s: config.cpp.s
+.PHONY : config.s
+
+# target to generate assembly for a file
+config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.s
+.PHONY : config.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -284,21 +260,18 @@ help:
 	@echo ... TP/comandos.obj
 	@echo ... TP/comandos.i
 	@echo ... TP/comandos.s
-	@echo ... TP/deserto.obj
-	@echo ... TP/deserto.i
-	@echo ... TP/deserto.s
 	@echo ... TP/ilha.obj
 	@echo ... TP/ilha.i
 	@echo ... TP/ilha.s
 	@echo ... TP/main.obj
 	@echo ... TP/main.i
 	@echo ... TP/main.s
-	@echo ... TP/mina_ferro.obj
-	@echo ... TP/mina_ferro.i
-	@echo ... TP/mina_ferro.s
 	@echo ... TP/zona.obj
 	@echo ... TP/zona.i
 	@echo ... TP/zona.s
+	@echo ... config.obj
+	@echo ... config.i
+	@echo ... config.s
 .PHONY : help
 
 

@@ -87,12 +87,6 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/comandos.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/deserto.cpp">
-			<Option target="TP_POO"/>
-		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/deserto.h">
-			<Option target="TP_POO"/>
-		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h">
 			<Option target="TP_POO"/>
 		</Unit>
@@ -105,16 +99,13 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/main.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.cpp">
-			<Option target="TP_POO"/>
-		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/mina_ferro.h">
-			<Option target="TP_POO"/>
-		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/config.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/CMakeLists.txt">

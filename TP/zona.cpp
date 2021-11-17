@@ -54,3 +54,11 @@ int Zona::obtemQuant_Trab() const {
 string Zona::obtemEdificio() const {
     return edificio;
 }
+
+int Zona::obtemQuant_Edificios() const {
+    return quant_edificio;
+}
+
+int Zona::obtemOnOFF() const {
+    return onoff;
+}

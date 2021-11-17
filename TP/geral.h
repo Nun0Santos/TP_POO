@@ -14,6 +14,7 @@
 bool verificaComandos(const string& comando);
 void comandos();
 
+void leFich(const string& filename);
 
 
 

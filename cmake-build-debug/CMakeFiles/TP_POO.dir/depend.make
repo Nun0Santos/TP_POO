@@ -5,29 +5,22 @@ CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj: \
  ../TP/comandos.cpp \
  ../TP/geral.h \
  ../TP/ilha.h \
- ../TP/mina_ferro.h \
  ../TP/zona.h
-CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: \
- ../TP/deserto.cpp \
- ../TP/deserto.h
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: \
  ../TP/geral.h \
  ../TP/ilha.cpp \
  ../TP/ilha.h \
- ../TP/mina_ferro.h \
  ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/main.cpp.obj: \
  ../TP/geral.h \
  ../TP/ilha.h \
  ../TP/main.cpp \
- ../TP/mina_ferro.h \
- ../TP/zona.h
-CMakeFiles/TP_POO.dir/TP/mina_ferro.cpp.obj: \
- ../TP/geral.h \
- ../TP/ilha.h \
- ../TP/mina_ferro.cpp \
- ../TP/mina_ferro.h \
  ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/zona.cpp \
  ../TP/zona.h
+CMakeFiles/TP_POO.dir/config.cpp.obj: \
+ ../TP/geral.h \
+ ../TP/ilha.h \
+ ../TP/zona.h \
+ ../config.cpp

@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "mina_ferro.h"
 #include "ilha.h"
 #include "zona.h"
 

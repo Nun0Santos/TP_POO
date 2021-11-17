@@ -11,11 +11,11 @@
 
 using namespace std;
 
-bool verificaComandos(const string& comando){
+bool verificaComandos(const string& com){
 
     vector<string> comandos = {"exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debskill"};
 
-    if(find(comandos.begin(), comandos.end(), comando) != comandos.end())
+    if(find(comandos.begin(), comandos.end(), com) != comandos.end())
     {
         return true;
     }
@@ -39,6 +39,10 @@ void tiraEspacos(string s, vector<string> &v){
     }
     v.push_back(temp);
 
+}
+
+bool verificaTipo(const string& t){
+    vector<string> tipos = {"minaferro", "minacarvao", "centraleletrica", "bateria", "fundicao", "edificio-x"};
 }
 
 void comandos(){

@@ -33,7 +33,7 @@ private:
     const int maxLin = 8;
     const int maxCol = 16;
     const int minLin = 3;
-    string **tabuleiro;
+    Zona **tabuleiro;
     //Zona a;
 
     //variaveis das funções "temporárias"

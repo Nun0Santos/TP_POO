@@ -72,7 +72,7 @@ void comandos(){
         }
         if(v[0] =="cons"){
             //codigo para o cons
-
+            cout << "cons e valido";
             //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
 
             return;

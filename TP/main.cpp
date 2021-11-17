@@ -3,16 +3,16 @@
 
 
 int main() {
-    ilha a;
+    //ilha a;
 
-    //comandos();
+    comandos();
     //verificaComandos();
-    a.defineLin();
+    /*a.defineLin();
     a.defineCol();
     a.criaIlha();
     a.mostraIlha();
     a.mudaValor(2, 2, "minaferro");
-    a.mostraIlha();
+    a.mostraIlha();*/
 
     return 0;
 }

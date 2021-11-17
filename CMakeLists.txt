@@ -15,4 +15,5 @@ add_executable(TP_POO
         TP/main.cpp
         TP/mina_ferro.cpp
         TP/mina_ferro.h
-        TP/zona.cpp TP/zona.h)
+        TP/zona.cpp
+        TP/zona.h)

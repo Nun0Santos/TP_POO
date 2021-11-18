@@ -42,7 +42,7 @@ bool verificaComandos(const string& com){
 }*/
 
 bool verificaTipo(const string& t){
-    vector<string> tipos = {"minaferro", "minacarvao", "centraleletrica", "bateria", "fundicao", "edificio-x"};
+    vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edificio-x"};
 
     if(find(tipos.begin(), tipos.end(), t) != tipos.end())
     {
@@ -50,7 +50,6 @@ bool verificaTipo(const string& t){
     }
     return false;
 }
-
 bool verificaTrabalhador(const string& t){
     vector<string> trab = {"len", "oper", "min"};
 
@@ -60,13 +59,12 @@ bool verificaTrabalhador(const string& t){
     }
     return false;
 }
-
-bool comandos(vector<string> v) {
+bool comandos(vector<string> &v) {
     //tiraEspacos(comando, v);
 
     bool TF = verificaComandos(v[0]);
-    if(TF){
-        if(v[0] == "exec"){
+    if (TF) {
+        if (v[0] == "exec") {
             cout << "o exec esta a funcionar";
             string filename("comandos");
             vector<string> lines;
@@ -85,23 +83,22 @@ bool comandos(vector<string> v) {
             input_file.close();
 
         }
-        if(v[0] =="cons"){
+        if (v[0] == "cons") {
             //codigo para o cons
             //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
-
-            //bool flaglc = a.verificaLinCol(v[2], v[3]);
-            //if (flaglc) {
-                bool flagT = verificaTipo(v[1]);
-                if (flagT) {}
-            //}
-
+            if (verificaTipo(v[1])) {
+                return true;
+            }
+            return false;
         }
-        if(v[0] == "list"){
+        if (v[0] == "list") {
             //codigo para o list
 
         }
-        if(v[0] == "cont")
-
+        if (v[0] == "cont")
+            if (verificaTrabalhador(v[1])) {
+                return true;
+            }
 
         //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código
     }

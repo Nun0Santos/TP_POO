@@ -3,6 +3,9 @@
 //
 
 #include "geral.h"
+#include "ilha.h"
+#include <sstream>
+using namespace std;
 
 void ilha::defineLin() {
     int auxl;
@@ -38,47 +41,40 @@ int ilha::obtemLin() const {
 }
 
 vector<string> ilha::pedeComando() {
-    string temp = "", s;
+    string s1, s2;
     vector<string> v;
 
-    cout << "\nComando: " << endl;
-    getline(cin, s);
+    cout << "\nComando: ";
+    getline(cin, s1);
+    while((getchar()) != '\n');
+    stringstream ss(s1);
 
-
-    for(char i : s){
-
-        if(i==' '){
-            v.push_back(temp);
-            temp = "";
-        }
-        else{
-            temp.push_back(i);
-        }
+    while (getline(ss, s2, ' ')) {
+        v.push_back(s2);
 
     }
-    v.push_back(temp);
 
     return v;
 }
 
 void ilha::executa() {
     vector<string> v = pedeComando();
-
+    cout << "Aqui";
     int x = stoi(v[2]);//valor das linhas convertido para int
     int y = stoi(v[3]);//valor das colunas convertido para int
-    verificaLinCol(x, y);
 
 
-    if(verificaLinCol(x, y)){//verifica se as linhas e as colunas estão dentro do limite da ilha
         if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
-            
+            if (v[1] == "cons"){
+                if (verificaLinCol(x,y)){
+
+                    mudaValorEdificio(x,y,v[1]);
+                }
+            }
         }
     }
 
-}
-
-
-void ilha::mudaValorEdificio(int lin, int col, string t) {
+    void ilha::mudaValorEdificio(int lin, int col, string t) {
     if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
         return;
     tabuleiro[lin][col].defineEdificio(t);
@@ -90,14 +86,12 @@ void ilha::mudaValorEdificio(int lin, int col, string t) {
     }
 }*/
 
-
-/*bool verificaLinCol(int x, int y){
-    if (obtemLin() >= x && obtemCol() <= y)
+bool ilha::verificaLinCol(int x, int y) {
+    if (lin >= x && col <= y)
         return false;
     return true;
-};*/
 
-
+}
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];
     for (int i = 0; i < lin; ++i) {
@@ -126,7 +120,7 @@ void ilha::mostraIlha() {
     for (int i = 0; i < lin; ++i) {
         cout << "\n";
         for (int j = 0; j < 4; ++j) {
-            cout << "|\t";
+            cout << "|\t\t";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
@@ -144,7 +138,7 @@ void ilha::mostraIlha() {
                     default:
                         break;
                 }
-                cout << "\t|\t";
+                cout << "\t\t|\t\t";
             }
             cout << "\n";
         }
@@ -156,3 +150,4 @@ void ilha::mostraIlha() {
         }
     }
 }
+

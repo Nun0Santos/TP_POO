@@ -37,6 +37,47 @@ int ilha::obtemLin() const {
     return lin;
 }
 
+vector<string> ilha::pedeComando() {
+    string temp = "", s;
+    vector<string> v;
+
+    cout << "\nComando: " << endl;
+    getline(cin, s);
+
+
+    for(char i : s){
+
+        if(i==' '){
+            v.push_back(temp);
+            temp = "";
+        }
+        else{
+            temp.push_back(i);
+        }
+
+    }
+    v.push_back(temp);
+
+    return v;
+}
+
+void ilha::executa() {
+    vector<string> v = pedeComando();
+
+    int x = stoi(v[2]);//valor das linhas convertido para int
+    int y = stoi(v[3]);//valor das colunas convertido para int
+    verificaLinCol(x, y);
+
+
+    if(verificaLinCol(x, y)){//verifica se as linhas e as colunas estão dentro do limite da ilha
+        if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
+            
+        }
+    }
+
+}
+
+
 void ilha::mudaValorEdificio(int lin, int col, string t) {
     if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
         return;

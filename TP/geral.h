@@ -11,8 +11,10 @@
 #include "ilha.h"
 #include "zona.h"
 
+bool comandos(vector<string> v);
 bool verificaComandos(const string& comando);
-void comandos(ilha& a);
+bool verificaTipo(const string& t);
+bool verificaTrabalhador(const string& t);
 
 void leFich(const string& filename);
 

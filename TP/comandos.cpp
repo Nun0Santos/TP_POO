@@ -23,7 +23,7 @@ bool verificaComandos(const string& com){
 }
 
 
-void tiraEspacos(string s, vector<string> &v){
+/*void tiraEspacos(string s, vector<string> &v){
 
     string temp = "";
     for(char i : s){
@@ -39,7 +39,7 @@ void tiraEspacos(string s, vector<string> &v){
     }
     v.push_back(temp);
 
-}
+}*/
 
 bool verificaTipo(const string& t){
     vector<string> tipos = {"minaferro", "minacarvao", "centraleletrica", "bateria", "fundicao", "edificio-x"};
@@ -61,14 +61,8 @@ bool verificaTrabalhador(const string& t){
     return false;
 }
 
-void comandos(ilha& a){
-    string comando;
-    vector<string> v;
-
-    cout << "\nComando: " << endl;
-    getline(cin, comando);
-
-    tiraEspacos(comando, v);
+bool comandos(vector<string> v) {
+    //tiraEspacos(comando, v);
 
     bool TF = verificaComandos(v[0]);
     if(TF){
@@ -98,24 +92,18 @@ void comandos(ilha& a){
             //bool flaglc = a.verificaLinCol(v[2], v[3]);
             //if (flaglc) {
                 bool flagT = verificaTipo(v[1]);
-                if (flagT) {
-                    a.mudaValorEdificio(v[2], v[3], v[1]);
-                }
+                if (flagT) {}
             //}
 
-            return;
         }
         if(v[0] == "list"){
             //codigo para o list
 
-
-            return;
         }
         if(v[0] == "cont")
 
 
         //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código
-        return;
     }
 }
 

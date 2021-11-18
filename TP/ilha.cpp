@@ -37,11 +37,17 @@ int ilha::obtemLin() const {
     return lin;
 }
 
-void ilha::mudaValor(int lin, int col, string t) {
+void ilha::mudaValorEdificio(int lin, int col, string t) {
     if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
         return;
     tabuleiro[lin][col].defineEdificio(t);
 }
+
+/*void ilha::mudaValorQuantTrab(int lin, int col, string t) {
+    if(t == "oper"){
+        if(tabuleiro[lin][col].obtemTrab() == "O");
+    }
+}*/
 
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];

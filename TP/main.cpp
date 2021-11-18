@@ -3,17 +3,14 @@
 #include <fstream>
 
 int main() {
-    ilha a;
+    //ilha a;
 
-    leFich("fich_config.txt");
+    comandos();
 
-
-    //comandos();
-    //verificaComandos();
-    a.defineLin();
+    /*a.defineLin();
     a.defineCol();
     a.criaIlha();
-    a.mostraIlha();
+    a.mostraIlha();*/
     /*cout << "\n\n\n";
     a.mudaValor(2, 2, "mnF");
     a.mostraIlha();*/

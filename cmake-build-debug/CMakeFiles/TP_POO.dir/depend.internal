@@ -6,6 +6,11 @@ CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
+CMakeFiles/TP_POO.dir/TP/config.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/config.cpp
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.cpp
@@ -19,8 +24,6 @@ CMakeFiles/TP_POO.dir/TP/main.cpp.obj
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
-CMakeFiles/TP_POO.dir/config.cpp.obj
- ../TP/geral.h
- ../TP/ilha.h
- ../TP/zona.h
- C:/Users/Rafael/Desktop/GitHub/TP_POO/config.cpp
+CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/trabalhdores.cpp
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/trabalhdores.h

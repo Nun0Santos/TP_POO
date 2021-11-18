@@ -152,6 +152,30 @@ TP/comandos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/comandos.cpp.s
 .PHONY : TP/comandos.cpp.s
 
+TP/config.obj: TP/config.cpp.obj
+.PHONY : TP/config.obj
+
+# target to build an object file
+TP/config.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/config.cpp.obj
+.PHONY : TP/config.cpp.obj
+
+TP/config.i: TP/config.cpp.i
+.PHONY : TP/config.i
+
+# target to preprocess a source file
+TP/config.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/config.cpp.i
+.PHONY : TP/config.cpp.i
+
+TP/config.s: TP/config.cpp.s
+.PHONY : TP/config.s
+
+# target to generate assembly for a file
+TP/config.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/config.cpp.s
+.PHONY : TP/config.cpp.s
+
 TP/ilha.obj: TP/ilha.cpp.obj
 .PHONY : TP/ilha.obj
 
@@ -224,29 +248,29 @@ TP/zona.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.s
 .PHONY : TP/zona.cpp.s
 
-config.obj: config.cpp.obj
-.PHONY : config.obj
+trabalhdores.obj: trabalhdores.cpp.obj
+.PHONY : trabalhdores.obj
 
 # target to build an object file
-config.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.obj
-.PHONY : config.cpp.obj
+trabalhdores.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj
+.PHONY : trabalhdores.cpp.obj
 
-config.i: config.cpp.i
-.PHONY : config.i
+trabalhdores.i: trabalhdores.cpp.i
+.PHONY : trabalhdores.i
 
 # target to preprocess a source file
-config.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.i
-.PHONY : config.cpp.i
+trabalhdores.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.i
+.PHONY : trabalhdores.cpp.i
 
-config.s: config.cpp.s
-.PHONY : config.s
+trabalhdores.s: trabalhdores.cpp.s
+.PHONY : trabalhdores.s
 
 # target to generate assembly for a file
-config.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/config.cpp.s
-.PHONY : config.cpp.s
+trabalhdores.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.s
+.PHONY : trabalhdores.cpp.s
 
 # Help Target
 help:
@@ -260,6 +284,9 @@ help:
 	@echo ... TP/comandos.obj
 	@echo ... TP/comandos.i
 	@echo ... TP/comandos.s
+	@echo ... TP/config.obj
+	@echo ... TP/config.i
+	@echo ... TP/config.s
 	@echo ... TP/ilha.obj
 	@echo ... TP/ilha.i
 	@echo ... TP/ilha.s
@@ -269,9 +296,9 @@ help:
 	@echo ... TP/zona.obj
 	@echo ... TP/zona.i
 	@echo ... TP/zona.s
-	@echo ... config.obj
-	@echo ... config.i
-	@echo ... config.s
+	@echo ... trabalhdores.obj
+	@echo ... trabalhdores.i
+	@echo ... trabalhdores.s
 .PHONY : help
 
 

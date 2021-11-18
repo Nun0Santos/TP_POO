@@ -45,6 +45,10 @@ bool verificaTipo(const string& t){
     vector<string> tipos = {"minaferro", "minacarvao", "centraleletrica", "bateria", "fundicao", "edificio-x"};
 }
 
+bool verificaTrabalhador(const string& t){
+    vector<string> trab = {"len", "oper", "min"};
+}
+
 void comandos(){
     string comando;
     vector<string> v;
@@ -77,8 +81,8 @@ void comandos(){
         }
         if(v[0] =="cons"){
             //codigo para o cons
-            cout << "cons e valido";
             //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
+
 
             return;
         }
@@ -88,6 +92,7 @@ void comandos(){
 
             return;
         }
+        if(v[0] == "cont")
 
 
         //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código

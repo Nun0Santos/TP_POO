@@ -6,6 +6,11 @@ CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj: \
  ../TP/geral.h \
  ../TP/ilha.h \
  ../TP/zona.h
+CMakeFiles/TP_POO.dir/TP/config.cpp.obj: \
+ ../TP/config.cpp \
+ ../TP/geral.h \
+ ../TP/ilha.h \
+ ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: \
  ../TP/geral.h \
  ../TP/ilha.cpp \
@@ -19,8 +24,6 @@ CMakeFiles/TP_POO.dir/TP/main.cpp.obj: \
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/zona.cpp \
  ../TP/zona.h
-CMakeFiles/TP_POO.dir/config.cpp.obj: \
- ../TP/geral.h \
- ../TP/ilha.h \
- ../TP/zona.h \
- ../config.cpp
+CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj: \
+ ../trabalhdores.cpp \
+ ../trabalhdores.h

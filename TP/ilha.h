@@ -19,7 +19,9 @@ public:
     void defineLin();//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
     void mostraIlha();
-    void mudaValor(int lin, int col, string t);//muda o valor da "zona" no tabuleiro
+    void mudaValorEdificio(int lin, int col, string t);//muda o valor do edificio "zona" no tabuleiro
+    void mudaValorTrab(int lin, int col, string t);//muda o valor dos trabalhadores "zona" no tabuleiro
+    void mudaValorQuantTrab(int lin, int col, string t);//muda o valor da quantidade de trabalhadores da "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
     //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas

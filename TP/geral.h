@@ -12,7 +12,7 @@
 #include "zona.h"
 
 bool verificaComandos(const string& comando);
-void comandos();
+void comandos(ilha& a);
 
 void leFich(const string& filename);
 

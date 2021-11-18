@@ -49,6 +49,14 @@ void ilha::mudaValorEdificio(int lin, int col, string t) {
     }
 }*/
 
+
+/*bool verificaLinCol(int x, int y){
+    if (obtemLin() >= x && obtemCol() <= y)
+        return false;
+    return true;
+};*/
+
+
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];
     for (int i = 0; i < lin; ++i) {

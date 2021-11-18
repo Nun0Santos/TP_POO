@@ -24,6 +24,7 @@ public:
     void mudaValorQuantTrab(int lin, int col, string t);//muda o valor da quantidade de trabalhadores da "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
+    bool verificaLinCol(int x, int y);
     //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas
     //string obtemDescricaoZona(int lin, int col, Zona& z) const ;
 

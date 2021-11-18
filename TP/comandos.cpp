@@ -43,13 +43,25 @@ void tiraEspacos(string s, vector<string> &v){
 
 bool verificaTipo(const string& t){
     vector<string> tipos = {"minaferro", "minacarvao", "centraleletrica", "bateria", "fundicao", "edificio-x"};
+
+    if(find(tipos.begin(), tipos.end(), t) != tipos.end())
+    {
+        return true;
+    }
+    return false;
 }
 
 bool verificaTrabalhador(const string& t){
     vector<string> trab = {"len", "oper", "min"};
+
+    if(find(trab.begin(), trab.end(), t) != trab.end())
+    {
+        return true;
+    }
+    return false;
 }
 
-void comandos(){
+void comandos(ilha& a){
     string comando;
     vector<string> v;
 
@@ -62,27 +74,34 @@ void comandos(){
     if(TF){
         if(v[0] == "exec"){
             cout << "o exec esta a funcionar";
-            /*string filename("comandos.txt");
-            vector <string> lines;
+            string filename("comandos");
+            vector<string> lines;
             string line;
 
             ifstream input_file(filename);
-            if(!input_file.is_open()) {
+            if (!input_file.is_open()) {
                 cerr << "Erro ao tentar abrir o ficheiro";
             }
-            while (getline(input_file,line)){
+            while (getline(input_file, line)) {
                 lines.push_back(line);
             }
-            for (const auto &i : lines)
+            for (auto &i: lines)
                 cout << i << endl;
 
-            input_file.close();*/
+            input_file.close();
 
         }
         if(v[0] =="cons"){
             //codigo para o cons
             //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
 
+            //bool flaglc = a.verificaLinCol(v[2], v[3]);
+            //if (flaglc) {
+                bool flagT = verificaTipo(v[1]);
+                if (flagT) {
+                    a.mudaValorEdificio(v[2], v[3], v[1]);
+                }
+            //}
 
             return;
         }

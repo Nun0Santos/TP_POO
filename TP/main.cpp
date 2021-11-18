@@ -3,9 +3,9 @@
 #include <fstream>
 
 int main() {
-    //ilha a;
+    ilha a;
 
-    comandos();
+    comandos(a);
 
     /*a.defineLin();
     a.defineCol();

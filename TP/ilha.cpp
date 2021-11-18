@@ -61,6 +61,13 @@ void ilha::criaIlha() {
 }
 
 void ilha::mostraIlha() {
+    for (int k = 0; k < col; ++k) {
+        if(k < col-1)
+            cout << "+ ------------- ";
+        else
+            cout << "+ ------------- +";
+    }
+
     for (int i = 0; i < lin; ++i) {
         cout << "\n";
         for (int j = 0; j < 4; ++j) {
@@ -85,7 +92,12 @@ void ilha::mostraIlha() {
                 cout << "\t|\t";
             }
             cout << "\n";
-
+        }
+        for (int k = 0; k < col; ++k) {
+            if(k < col-1)
+                cout << "+ ------------- ";
+            else
+                cout << "+ ------------- +";
         }
     }
 }

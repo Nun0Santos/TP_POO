@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/comandos.cpp
-iostream
--
-vector
--
-sstream
--
-geral.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
-algorithm
--
-string
--
-fstream
--
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 iostream
 -
@@ -33,10 +17,6 @@ ilha.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 zona.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.cpp
-geral.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 geral.h

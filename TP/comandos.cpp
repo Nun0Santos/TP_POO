@@ -91,10 +91,6 @@ bool comandos(vector<string> &v) {
             }
             return false;
         }
-        if (v[0] == "list") {
-            //codigo para o list
-
-        }
         if (v[0] == "cont")
             if (verificaTrabalhador(v[1])) {
                 return true;

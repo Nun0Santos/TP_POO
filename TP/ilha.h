@@ -25,6 +25,7 @@ public:
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
     bool verificaLinCol(int x, int y);
+    void mostraZona(int x, int y);
     vector<string> pedeComando();
     void executa();
     //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas

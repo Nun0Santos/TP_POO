@@ -1,5 +1,4 @@
 #include "geral.h"
-
 #include <fstream>
 
 int main() {
@@ -9,14 +8,17 @@ int main() {
 
     a.defineLin();
     a.defineCol();
-    //a.mostraIlha();
     a.criaIlha();
+    a.mostraIlha();
     cout << "\n\n\n";
 
 
 
-    a.executa();
-
+        //  a.executa();
+        a.mudaValorEdificio(1,1,"mnF");
+        a.mudaValorTrab(1,1,"len");
+        a.mostraZona(1,1);
+        a.mostraIlha();
     //a.mostraIlha();
 
     /*cout << "\n\n\n";

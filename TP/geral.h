@@ -9,8 +9,9 @@
 #include <string>
 #include <vector>
 #include "ilha.h"
-#include "zona.h"
 
+
+using namespace std;
 bool comandos(vector<string> &v);
 bool verificaComandos(const string& comando);
 bool verificaTipo(const string& t);

@@ -4,6 +4,7 @@
 
 #include "geral.h"
 #include "ilha.h"
+#include "zona.h"
 #include <sstream>
 using namespace std;
 
@@ -59,21 +60,34 @@ vector<string> ilha::pedeComando() {
 
 void ilha::executa() {
     vector<string> v = pedeComando();
-    cout << "Aqui";
+
     int x = stoi(v[2]);//valor das linhas convertido para int
     int y = stoi(v[3]);//valor das colunas convertido para int
 
-
         if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
-            if (v[1] == "cons"){
+            if (v[0] == "cons"){
                 if (verificaLinCol(x,y)){
 
                     mudaValorEdificio(x,y,v[1]);
                 }
             }
+            if (v[0] == "cont"){
+                if(verificaTrabalhador(v[1])){
+                    mudaValorTrab(0,0,v[1]);
+                }
+            }
+            if(v[0] == "list"){
+                if(v.size() > 1){
+                    if(verificaLinCol(x,y)){
+                        mostraZona(x,y);
+                    }
+                }
+                else{
+                    mostraIlha();
+                }
+            }
         }
     }
-
     void ilha::mudaValorEdificio(int lin, int col, string t) {
     if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
         return;
@@ -85,12 +99,48 @@ void ilha::executa() {
         if(tabuleiro[lin][col].obtemTrab() == "O");
     }
 }*/
+void ilha::mudaValorTrab(int lin, int col, string t) {
+    if(t == "oper"){
+        cout << "aqui oper";
+        tabuleiro[lin][col].obtemTrab() = "O";
+    }
+    if(t == "len"){
+        cout << "teste";
+        cout << "\n";
+        tabuleiro[lin][col].obtemTrab() = 'L'; //Isto esta a mandar um - para o ecra
+        cout << tabuleiro[lin][col].obtemTrab();
+    }
+    if(t == "min"){
+        cout << "aqui min";
+        tabuleiro[lin][col].obtemTrab() = "M";
+    }
+}
 
 bool ilha::verificaLinCol(int x, int y) {
     if (lin >= x && col <= y)
-        return false;
-    return true;
+        return true;
+    return false;
 
+}
+void ilha::mostraZona(int x, int y) {
+        for(int i = 0; i < 4; ++i){
+            switch (i) {
+                case 0:
+                    cout << tabuleiro[x][y].obtemTipo() << endl;
+                    break;
+                case 1:
+                    cout << tabuleiro[x][y].obtemEdificio() << endl;
+                    break;
+                case 2:
+                    cout << tabuleiro[x][y].obtemTrab() << endl;
+                    break;
+                case 3:
+                    cout << tabuleiro[x][y].obtemQuant_Trab() << endl;
+                    break;
+                default:
+                    break;
+            }
+        }
 }
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];

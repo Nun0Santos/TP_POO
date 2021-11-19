@@ -21,11 +21,15 @@ void Zona::defineTrab(string s) {
     if(trab.size() > 5){
         return;
     }
-    trab.push_back(s);
+    trab.push_back(move(s));
 }
 
 void Zona::defineEdificio(string s) {
-    edificio = s;
+    edificio = move(s);
+}
+
+void Zona::defineQuantTrab() {
+    ++quant_trab;
 }
 
 int Zona::obtemC() const {
@@ -46,6 +50,8 @@ string Zona::obtemTrab() const {
         oss << i << " ";
     return oss.str();
 }
+
+
 
 int Zona::obtemQuant_Trab() const {
     return quant_trab;

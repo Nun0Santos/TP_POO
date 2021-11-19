@@ -15,12 +15,18 @@ vector
 -
 ilha.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
-zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.cpp
 geral.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/geral.h
+ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
+sstream
+-
+limits
+-
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/ilha.h
 geral.h
@@ -30,8 +36,6 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h
 iostream
--
-utility
 -
 vector
 -

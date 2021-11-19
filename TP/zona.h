@@ -5,7 +5,6 @@
 #ifndef TP_POO_ZONA_H
 #define TP_POO_ZONA_H
 #include <iostream>
-#include <utility>
 #include <vector>
 using namespace std;
 
@@ -22,6 +21,7 @@ public:
     void definePosC(int c);
     void defineTrab(string s);
     void defineEdificio(string s);
+    void defineQuantTrab();
     int obtemL() const;
     int obtemC() const;
     string obtemTrab() const;

@@ -12,7 +12,7 @@
 
 
 using namespace std;
-bool comandos(vector<string> &v);
+bool comandos(const vector<string> &v);
 bool verificaComandos(const string& comando);
 bool verificaTipo(const string& t);
 bool verificaTrabalhador(const string& t);

@@ -59,7 +59,7 @@ bool verificaTrabalhador(const string& t){
     }
     return false;
 }
-bool comandos(vector<string> &v) {
+bool comandos(const vector<string> &v) {
     //tiraEspacos(comando, v);
 
     bool TF = verificaComandos(v[0]);
@@ -89,15 +89,16 @@ bool comandos(vector<string> &v) {
             if (verificaTipo(v[1])) {
                 return true;
             }
-            return false;
         }
         if (v[0] == "cont")
             if (verificaTrabalhador(v[1])) {
                 return true;
             }
 
+
         //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código
     }
+    return false;
 }
 
 

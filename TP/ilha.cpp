@@ -6,6 +6,8 @@
 #include "ilha.h"
 #include "zona.h"
 #include <sstream>
+#include<limits>
+
 using namespace std;
 
 void ilha::defineLin() {
@@ -41,13 +43,18 @@ int ilha::obtemLin() const {
     return lin;
 }
 
-vector<string> ilha::pedeComando() {
+
+void ilha::executa() {
     string s1, s2;
     vector<string> v;
+    int x = 0, y = 0;
 
     cout << "\nComando: ";
+    cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
     getline(cin, s1);
-    while((getchar()) != '\n');
+
+    cout << "s1: " << s1 << "\n";
     stringstream ss(s1);
 
     while (getline(ss, s2, ' ')) {
@@ -55,32 +62,30 @@ vector<string> ilha::pedeComando() {
 
     }
 
-    return v;
-}
-
-void ilha::executa() {
-    vector<string> v = pedeComando();
-
-    int x = stoi(v[2]);//valor das linhas convertido para int
-    int y = stoi(v[3]);//valor das colunas convertido para int
+    if(v.size() > 2){
+        istringstream ossX(v[2]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[3]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+    }
 
         if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
             if (v[0] == "cons"){
                 if (verificaLinCol(x,y)){
 
-                    mudaValorEdificio(x,y,v[1]);
+                    mudaValorEdificio(x, y, v[1]);
                 }
             }
             if (v[0] == "cont"){
                 if(verificaTrabalhador(v[1])){
-                    mudaValorTrab(0,0,v[1]);
+                    mudaValorTrab(x, y, v[1]);
                 }
             }
             if(v[0] == "list"){
                 if(v.size() > 1){
-                    if(verificaLinCol(x,y)){
+                    //if(verificaLinCol(x,y)){
                         mostraZona(x,y);
-                    }
+                    //}
                 }
                 else{
                     mostraIlha();
@@ -88,39 +93,43 @@ void ilha::executa() {
             }
         }
     }
-    void ilha::mudaValorEdificio(int lin, int col, string t) {
-    if(tabuleiro[lin][col].obtemQuant_Edificios() > 0)
+    void ilha::mudaValorEdificio(int l, int c, string t) {
+    if(tabuleiro[l][c].obtemQuant_Edificios() > 0)
         return;
-    tabuleiro[lin][col].defineEdificio(t);
+    tabuleiro[l][c].defineEdificio(t);
 }
 
-/*void ilha::mudaValorQuantTrab(int lin, int col, string t) {
+void ilha::mudaValorTrab(int l, int c, string t) {
     if(t == "oper"){
-        if(tabuleiro[lin][col].obtemTrab() == "O");
-    }
-}*/
-void ilha::mudaValorTrab(int lin, int col, string t) {
-    if(t == "oper"){
-        cout << "aqui oper";
-        tabuleiro[lin][col].obtemTrab() = "O";
+        if(verificaTrabalhador("oper")){
+            tabuleiro[l][c].defineTrab("O");
+            tabuleiro[l][c].defineQuantTrab();
+            return;
+        }
+        cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
-        cout << "teste";
-        cout << "\n";
-        tabuleiro[lin][col].obtemTrab() = 'L'; //Isto esta a mandar um - para o ecra
-        cout << tabuleiro[lin][col].obtemTrab();
+        if(verificaTrabalhador("len")){
+            tabuleiro[lin][col].defineTrab("L");
+            tabuleiro[lin][col].defineQuantTrab();
+            return;
+        }
+        cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
-        cout << "aqui min";
-        tabuleiro[lin][col].obtemTrab() = "M";
+        if(verificaTrabalhador("min")){
+            tabuleiro[lin][col].defineTrab("M");
+            tabuleiro[lin][col].defineQuantTrab();
+            return;
+        }
+        cout << "Este trabalhador não existe" << endl;
     }
 }
 
 bool ilha::verificaLinCol(int x, int y) {
     if (lin >= x && col <= y)
-        return true;
-    return false;
-
+        return false;
+    return true;
 }
 void ilha::mostraZona(int x, int y) {
         for(int i = 0; i < 4; ++i){
@@ -170,7 +179,7 @@ void ilha::mostraIlha() {
     for (int i = 0; i < lin; ++i) {
         cout << "\n";
         for (int j = 0; j < 4; ++j) {
-            cout << "|\t\t";
+            cout << "|\t";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
@@ -188,7 +197,7 @@ void ilha::mostraIlha() {
                     default:
                         break;
                 }
-                cout << "\t\t|\t\t";
+                cout << "\t|\t";
             }
             cout << "\n";
         }

@@ -3,25 +3,23 @@
 
 int main() {
     ilha a;
+    string aux;
 
+    leFich("fich_config.txt");
 
 
     a.defineLin();
     a.defineCol();
     a.criaIlha();
     a.mostraIlha();
-    cout << "\n\n\n";
+    cout << "\n\n";
+    while(aux != "fim"){
+        aux = a.executa();
+        a.mostraIlha();
+    }
 
 
 
-    a.executa();
-    //a.mudaValorEdificio(1,1,"mnF");
-    //a.mudaValorTrab(1,1,"len");
-    a.mostraZona(1,1);
-    a.mostraIlha();
-    /*cout << "\n\n\n";
-    a.mudaValor(2, 2, "mnF");
-    a.mostraIlha();*/
 
     return 0;
 }

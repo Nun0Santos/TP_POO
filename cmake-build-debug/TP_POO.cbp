@@ -102,16 +102,16 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/main.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/trabalhdores.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/trabalhdores.h">
+			<Option target="TP_POO"/>
+		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/TP/zona.h">
-			<Option target="TP_POO"/>
-		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/trabalhdores.cpp">
-			<Option target="TP_POO"/>
-		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/trabalhdores.h">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/CMakeLists.txt">

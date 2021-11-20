@@ -59,20 +59,22 @@ bool verificaTrabalhador(const string& t){
     }
     return false;
 }
+
 bool comandos(const vector<string> &v) {
-    //tiraEspacos(comando, v);
 
     bool TF = verificaComandos(v[0]);
     if (TF) {
+        //comandos ficheiro
         if (v[0] == "exec") {
-            cout << "o exec esta a funcionar";
-            string filename("comandos");
+            return true;
+            /*string filename = v[1];
             vector<string> lines;
             string line;
 
             ifstream input_file(filename);
             if (!input_file.is_open()) {
                 cerr << "Erro ao tentar abrir o ficheiro";
+                return false;
             }
             while (getline(input_file, line)) {
                 lines.push_back(line);
@@ -82,20 +84,46 @@ bool comandos(const vector<string> &v) {
 
             input_file.close();
 
+            if (lines[0] == "cons") {
+                //codigo para o cons
+                //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
+                if (verificaTipo(lines[1])) {
+                    return true;
+                }
+            }
+            if (lines[0] == "cont")
+                if (verificaTrabalhador(lines[1])) {
+                    return true;
+                }
+
+            if(lines[0] == "list"){
+                return true;
+            }*/
+
         }
+
+        //comandos stdin
         if (v[0] == "cons") {
             //codigo para o cons
             //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
             if (verificaTipo(v[1])) {
                 return true;
+            }else{
+                cout << "tipo de edificio invalido" << endl;
             }
         }
-        if (v[0] == "cont")
+
+        if (v[0] == "cont"){
             if (verificaTrabalhador(v[1])) {
                 return true;
+            }else{
+                cout << "tipo de trabalhador invalido" << endl;
             }
+        }
 
-
+        if(v[0] == "list"){
+            return true;
+        }
         //senão for nenhum dos dois é porque é um comando que ainda não fizemos o código
     }
     return false;

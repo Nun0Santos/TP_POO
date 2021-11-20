@@ -3,10 +3,9 @@
 //
 
 #include "geral.h"
-#include "ilha.h"
-#include "zona.h"
 #include <sstream>
 #include<limits>
+#include <fstream>
 
 using namespace std;
 
@@ -43,65 +42,15 @@ int ilha::obtemLin() const {
     return lin;
 }
 
-
-void ilha::executa() {
-    string s1, s2;
-    vector<string> v;
-    int x = 0, y = 0;
-
-    cout << "\nComando: ";
-    cin.ignore(numeric_limits<streamsize>::max(),'\n');
-
-    getline(cin, s1);
-
-    cout << "s1: " << s1 << "\n";
-    stringstream ss(s1);
-
-    while (getline(ss, s2, ' ')) {
-        v.push_back(s2);
-
-    }
-
-    if(v.size() > 2){
-        istringstream ossX(v[2]);//transforma string em int
-        ossX >> x;//atribui valor transformado à variavel x
-        istringstream ossY(v[3]);//transforma string em int
-        ossY >> y;//atribui valor transformado à variavel y
-    }
-
-        if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
-            if (v[0] == "cons"){
-                if (verificaLinCol(x,y)){
-
-                    mudaValorEdificio(x, y, v[1]);
-                }
-            }
-            if (v[0] == "cont"){
-                if(verificaTrabalhador(v[1])){
-                    mudaValorTrab(x, y, v[1]);
-                }
-            }
-            if(v[0] == "list"){
-                if(v.size() > 1){
-                    //if(verificaLinCol(x,y)){
-                        mostraZona(x,y);
-                    //}
-                }
-                else{
-                    mostraIlha();
-                }
-            }
-        }
-    }
-    void ilha::mudaValorEdificio(int l, int c, string t) {
+void ilha::mudaValorEdificio(int& l, int& c, const string& t) {
     if(tabuleiro[l][c].obtemQuant_Edificios() > 0)
         return;
     tabuleiro[l][c].defineEdificio(t);
 }
 
-void ilha::mudaValorTrab(int l, int c, string t) {
+void ilha::mudaValorTrab(int& l, int& c, const string& t) {
     if(t == "oper"){
-        if(verificaTrabalhador("oper")){
+        if(verificaTrabalhador(t)){
             tabuleiro[l][c].defineTrab("O");
             tabuleiro[l][c].defineQuantTrab();
             return;
@@ -109,15 +58,15 @@ void ilha::mudaValorTrab(int l, int c, string t) {
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
-        if(verificaTrabalhador("len")){
-            tabuleiro[lin][col].defineTrab("L");
-            tabuleiro[lin][col].defineQuantTrab();
+        if(verificaTrabalhador(t)){
+            tabuleiro[lin][col].obtemTrab();
+            //tabuleiro[lin][col].defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
-        if(verificaTrabalhador("min")){
+        if(verificaTrabalhador(t)){
             tabuleiro[lin][col].defineTrab("M");
             tabuleiro[lin][col].defineQuantTrab();
             return;
@@ -127,9 +76,9 @@ void ilha::mudaValorTrab(int l, int c, string t) {
 }
 
 bool ilha::verificaLinCol(int x, int y) {
-    if (lin >= x && col <= y)
-        return false;
-    return true;
+   if(x<=lin && y<=col)
+       return true;
+    return false;
 }
 void ilha::mostraZona(int x, int y) {
         for(int i = 0; i < 4; ++i){
@@ -210,3 +159,138 @@ void ilha::mostraIlha() {
     }
 }
 
+
+string ilha::executa() {
+    string s1, s2;
+        vector<string> v;
+
+        int x = 0, y = 0;
+
+        cout << "\nComando: ";
+        cin.sync();
+        //cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
+        getline(cin, s1);
+
+        cout << "s1: " << s1 << "\n";
+        stringstream ss(s1);
+
+        while (getline(ss, s2, ' ')) {
+            v.push_back(s2);
+
+        }
+
+        if(v.size() > 2){
+            istringstream ossX(v[2]);//transforma string em int
+            ossX >> x;//atribui valor transformado à variavel x
+            istringstream ossY(v[3]);//transforma string em int
+            ossY >> y;//atribui valor transformado à variavel y
+        }
+
+        if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
+            //COMANDOS DO FICHEIRO
+            if(v[0] == "exec"){
+                vector<string> lines;
+                string line;
+                int fx, fy;
+
+                ifstream fich_leitura(v[1]);
+                if(!fich_leitura.is_open()) {
+                    cerr << "Erro ao tentar abrir o ficheiro";
+                    return s1;
+                }
+
+                getline(fich_leitura,line, '\n');
+
+                fich_leitura.close();
+
+                stringstream ss1(line);
+                while (getline(ss1, line, ' ')) {
+                    lines.push_back(line);
+                }
+
+                if(lines.size() > 2){
+                    istringstream ossFX(lines[2]);//transforma string em int
+                    ossFX >> fx;//atribui valor transformado à variavel x
+                    istringstream ossFY(lines[3]);//transforma string em int
+                    ossFY >> fy;//atribui valor transformado à variavel y
+                }
+
+                if(comandos(lines)){
+                    if (lines[0] == "cons"){
+                        if (verificaLinCol(fx,fy)){
+                            istringstream o(lines[1]);
+                            string aux;
+                            o>>aux;
+
+                            ilha::mudaValorEdificio(fx, fy, aux);
+                            return s1;
+                        }
+                    }
+                    if (lines[0] == "cont"){
+                        if(verificaTrabalhador(lines[1])){
+                            ilha::mudaValorTrab(fx, fy, lines[1]);
+                            return s1;
+                        }
+                    }
+                    if(lines[0] == "list"){
+                        if(v.size() > 1){
+                            if(verificaLinCol(fx,fy)){
+                                ilha::mostraZona(fx,fy);
+                                return s1;
+                            }
+                        }
+                        else{
+                            mostraIlha();
+                            return s1;
+                        }
+                    }
+                }else{
+                    cout << "comandos do ficheiro não são válidos" << endl;
+                    return s1;
+                }
+
+            }
+
+            //COMANDOS STDIN
+            if (v[0] == "cons"){
+                if (verificaLinCol(x,y)){
+                    istringstream o(v[1]);
+                    string aux;
+                    o>>aux;
+
+                    ilha::mudaValorEdificio(x, y, aux);
+                    return s1;
+                }else{
+                    cout << "fora dos limites" << endl;
+                    return s1;
+                }
+            }
+            if (v[0] == "cont"){
+                if (verificaLinCol(x,y)){
+                    istringstream o(v[1]);
+                    string aux;
+                    o>>aux;
+                    ilha::mudaValorTrab(x, y, aux);
+                    return s1;
+
+                }else{
+                    cout << "fora dos limites" << endl;
+                    return s1;
+                }
+            }
+            if(v[0] == "list"){
+                if(v.size() > 1){
+                    if(verificaLinCol(x,y)){
+                        ilha::mostraZona(x,y);
+                        return s1;
+                    }
+                }
+                else{
+                    ilha::mostraIlha();
+                    return s1;
+                }
+            }
+        }
+        return s1;
+}

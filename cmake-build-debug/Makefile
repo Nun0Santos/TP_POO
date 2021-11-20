@@ -224,6 +224,30 @@ TP/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/main.cpp.s
 .PHONY : TP/main.cpp.s
 
+TP/trabalhdores.obj: TP/trabalhdores.cpp.obj
+.PHONY : TP/trabalhdores.obj
+
+# target to build an object file
+TP/trabalhdores.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj
+.PHONY : TP/trabalhdores.cpp.obj
+
+TP/trabalhdores.i: TP/trabalhdores.cpp.i
+.PHONY : TP/trabalhdores.i
+
+# target to preprocess a source file
+TP/trabalhdores.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.i
+.PHONY : TP/trabalhdores.cpp.i
+
+TP/trabalhdores.s: TP/trabalhdores.cpp.s
+.PHONY : TP/trabalhdores.s
+
+# target to generate assembly for a file
+TP/trabalhdores.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.s
+.PHONY : TP/trabalhdores.cpp.s
+
 TP/zona.obj: TP/zona.cpp.obj
 .PHONY : TP/zona.obj
 
@@ -248,30 +272,6 @@ TP/zona.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.s
 .PHONY : TP/zona.cpp.s
 
-trabalhdores.obj: trabalhdores.cpp.obj
-.PHONY : trabalhdores.obj
-
-# target to build an object file
-trabalhdores.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj
-.PHONY : trabalhdores.cpp.obj
-
-trabalhdores.i: trabalhdores.cpp.i
-.PHONY : trabalhdores.i
-
-# target to preprocess a source file
-trabalhdores.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.i
-.PHONY : trabalhdores.cpp.i
-
-trabalhdores.s: trabalhdores.cpp.s
-.PHONY : trabalhdores.s
-
-# target to generate assembly for a file
-trabalhdores.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/trabalhdores.cpp.s
-.PHONY : trabalhdores.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -293,12 +293,12 @@ help:
 	@echo ... TP/main.obj
 	@echo ... TP/main.i
 	@echo ... TP/main.s
+	@echo ... TP/trabalhdores.obj
+	@echo ... TP/trabalhdores.i
+	@echo ... TP/trabalhdores.s
 	@echo ... TP/zona.obj
 	@echo ... TP/zona.i
 	@echo ... TP/zona.s
-	@echo ... trabalhdores.obj
-	@echo ... trabalhdores.i
-	@echo ... trabalhdores.s
 .PHONY : help
 
 

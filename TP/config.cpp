@@ -13,12 +13,16 @@ void leFich(const string& filename){
     ifstream fich_leitura(filename);
     if(!fich_leitura.is_open()) {
         cerr << "Erro ao tentar abrir o ficheiro";
+        return;
     }
     while(getline(fich_leitura,line)){
         lines.push_back(line);
     }
+
+    fich_leitura.close();
+
     for (const auto &i : lines)
         cout << i << endl;
 
-    fich_leitura.close();
+
 }

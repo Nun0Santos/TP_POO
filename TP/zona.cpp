@@ -18,10 +18,7 @@ void Zona::definePosL(int l) {
 }
 
 void Zona::defineTrab(string s) {
-    if(trab.size() > 5){
-        return;
-    }
-    trab.push_back(move(s));
+    trab.push_back(s);
 }
 
 void Zona::defineEdificio(string s) {
@@ -29,7 +26,7 @@ void Zona::defineEdificio(string s) {
 }
 
 void Zona::defineQuantTrab() {
-    ++quant_trab;
+    quant_trab = quant_trab + 1;
 }
 
 int Zona::obtemC() const {

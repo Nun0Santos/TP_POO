@@ -21,9 +21,9 @@ CMakeFiles/TP_POO.dir/TP/main.cpp.obj: \
  ../TP/ilha.h \
  ../TP/main.cpp \
  ../TP/zona.h
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj: \
+ ../TP/trabalhdores.cpp \
+ ../TP/trabalhdores.h
 CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/zona.cpp \
  ../TP/zona.h
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj: \
- ../trabalhdores.cpp \
- ../trabalhdores.h

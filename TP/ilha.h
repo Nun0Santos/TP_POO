@@ -19,14 +19,13 @@ public:
     void defineLin();//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
     void mostraIlha();
-    void mudaValorEdificio(int l, int c, string t);//muda o valor do edificio "zona" no tabuleiro
-    void mudaValorTrab(int l, int c, string t);//muda o valor dos trabalhadores "zona" no tabuleiro
+    void mudaValorEdificio(int& l, int& c, const string& t);//muda o valor do edificio "zona" no tabuleiro
+    void mudaValorTrab(int& l, int& c, const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
     bool verificaLinCol(int x, int y);
     void mostraZona(int x, int y);
-    vector<string> pedeComando();
-    void executa();
+    string executa();
     //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas
     //string obtemDescricaoZona(int lin, int col, Zona& z) const ;
 

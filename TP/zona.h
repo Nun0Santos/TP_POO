@@ -10,11 +10,7 @@ using namespace std;
 
 class Zona{
 public:
-    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), onoff(0) {
-        for (auto & i : trab) {
-            i = "-";
-        }
-    };
+    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), onoff(0){};
 
     void defineTipo(string str);
     void definePosL(int l);

@@ -135,19 +135,19 @@ CMakeFiles/TP_POO.dir/TP/config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/config.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\config.cpp -o CMakeFiles\TP_POO.dir\TP\config.cpp.s
 
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj: ../trabalhdores.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\trabalhdores.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\trabalhdores.cpp
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj: ../TP/trabalhdores.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Rafael\Desktop\GitHub\TP_POO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\trabalhdores.cpp.obj -c C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\trabalhdores.cpp
 
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/trabalhdores.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rafael\Desktop\GitHub\TP_POO\trabalhdores.cpp > CMakeFiles\TP_POO.dir\trabalhdores.cpp.i
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\trabalhdores.cpp > CMakeFiles\TP_POO.dir\TP\trabalhdores.cpp.i
 
-CMakeFiles/TP_POO.dir/trabalhdores.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/trabalhdores.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\trabalhdores.cpp -o CMakeFiles\TP_POO.dir\trabalhdores.cpp.s
+CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Rafael\Desktop\GitHub\TP_POO\TP\trabalhdores.cpp -o CMakeFiles\TP_POO.dir\TP\trabalhdores.cpp.s
 
 # Object files for target TP_POO
 TP_POO_OBJECTS = \
@@ -156,7 +156,7 @@ TP_POO_OBJECTS = \
 "CMakeFiles/TP_POO.dir/TP/main.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/zona.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/config.cpp.obj" \
-"CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj"
+"CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj"
 
 # External object files for target TP_POO
 TP_POO_EXTERNAL_OBJECTS =
@@ -166,7 +166,7 @@ TP_POO.exe: CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/main.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/config.cpp.obj
-TP_POO.exe: CMakeFiles/TP_POO.dir/trabalhdores.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/build.make
 TP_POO.exe: CMakeFiles/TP_POO.dir/linklibs.rsp
 TP_POO.exe: CMakeFiles/TP_POO.dir/objects1.rsp

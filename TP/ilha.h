@@ -25,6 +25,7 @@ public:
     int obtemCol() const;//return das colunas
     bool verificaLinCol(int x, int y);
     string mostraZona(int x, int y);
+    string mostraTodasZonas();
     string executa();
     //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas
     //string obtemDescricaoZona(int lin, int col, Zona& z) const ;

@@ -3,6 +3,8 @@
 //
 
 #include "geral.h"
+#include "ilha.h"
+
 #include <sstream>
 #include<limits>
 #include <fstream>
@@ -103,6 +105,22 @@ string ilha::mostraZona(int x, int y) {
         }
         return oss.str();
 }
+
+string ilha::mostraTodasZonas() {
+    ostringstream oss;
+    int a = 1;
+
+    for (int i = 0; i < lin; ++i) {
+        oss << "\n";
+            for (int j = 0; j < col; ++j) {
+                oss << "Zona " << a << "\n";
+                oss << mostraZona(i, j) << "\n";
+                ++a;
+            }
+    }
+    return oss.str();
+}
+
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];
     for (int i = 0; i < lin; ++i) {
@@ -247,7 +265,7 @@ string ilha::executa() {
                             }
                         }
                         else{
-                            cout << mostraIlha();
+                            cout << mostraTodasZonas();
                             return s1;
                         }
                     }
@@ -293,10 +311,11 @@ string ilha::executa() {
                     }
                 }
                 else{
-                    cout << mostraIlha();
+                    cout << mostraTodasZonas();
                     return s1;
                 }
             }
         }
         return s1;
 }
+

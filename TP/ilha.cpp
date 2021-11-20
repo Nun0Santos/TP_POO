@@ -80,25 +80,28 @@ bool ilha::verificaLinCol(int x, int y) {
        return true;
     return false;
 }
-void ilha::mostraZona(int x, int y) {
+string ilha::mostraZona(int x, int y) {
+    ostringstream oss;
+
         for(int i = 0; i < 4; ++i){
             switch (i) {
                 case 0:
-                    cout << tabuleiro[x][y].obtemTipo() << endl;
+                    oss << tabuleiro[x][y].obtemTipo() << endl;
                     break;
                 case 1:
-                    cout << tabuleiro[x][y].obtemEdificio() << endl;
+                    oss << tabuleiro[x][y].obtemEdificio() << endl;
                     break;
                 case 2:
-                    cout << tabuleiro[x][y].obtemTrab() << endl;
+                    oss << tabuleiro[x][y].obtemTrab() << endl;
                     break;
                 case 3:
-                    cout << tabuleiro[x][y].obtemQuant_Trab() << endl;
+                    oss << tabuleiro[x][y].obtemQuant_Trab() << endl;
                     break;
                 default:
                     break;
             }
         }
+        return oss.str();
 }
 void ilha::criaIlha() {
     tabuleiro = new Zona*[lin];
@@ -117,46 +120,49 @@ void ilha::criaIlha() {
     }
 }
 
-void ilha::mostraIlha() {
+string ilha::mostraIlha() {
+    ostringstream oss;
+
     for (int k = 0; k < col; ++k) {
         if(k < col-1)
-            cout << "+ ------------- ";
+            oss << "+ ------------- ";
         else
-            cout << "+ ------------- +";
+            oss << "+ ------------- +";
     }
 
     for (int i = 0; i < lin; ++i) {
-        cout << "\n";
+        oss << "\n";
         for (int j = 0; j < 4; ++j) {
-            cout << "|\t";
+            oss << "|\t";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
-                        cout << tabuleiro[i][k].obtemTipo();
+                        oss << tabuleiro[i][k].obtemTipo();
                         break;
                     case 1:
-                        cout << tabuleiro[i][k].obtemEdificio();
+                        oss << tabuleiro[i][k].obtemEdificio();
                         break;
                     case 2:
-                        cout << tabuleiro[i][k].obtemTrab();
+                        oss << tabuleiro[i][k].obtemTrab();
                         break;
                     case 3:
-                        cout << tabuleiro[i][k].obtemQuant_Trab();
+                        oss << tabuleiro[i][k].obtemQuant_Trab();
                         break;
                     default:
                         break;
                 }
-                cout << "\t|\t";
+                oss << "\t|\t";
             }
-            cout << "\n";
+            oss << "\n";
         }
         for (int k = 0; k < col; ++k) {
             if(k < col-1)
-                cout << "+ ------------- ";
+                oss << "+ ------------- ";
             else
-                cout << "+ ------------- +";
+                oss << "+ ------------- +";
         }
     }
+    return oss.str();
 }
 
 
@@ -236,12 +242,12 @@ string ilha::executa() {
                     if(lines[0] == "list"){
                         if(v.size() > 1){
                             if(verificaLinCol(fx,fy)){
-                                ilha::mostraZona(fx,fy);
+                                cout << mostraZona(fx,fy);
                                 return s1;
                             }
                         }
                         else{
-                            mostraIlha();
+                            cout << mostraIlha();
                             return s1;
                         }
                     }
@@ -282,12 +288,12 @@ string ilha::executa() {
             if(v[0] == "list"){
                 if(v.size() > 1){
                     if(verificaLinCol(x,y)){
-                        ilha::mostraZona(x,y);
+                        cout << mostraZona(x,y);
                         return s1;
                     }
                 }
                 else{
-                    ilha::mostraIlha();
+                    cout << mostraIlha();
                     return s1;
                 }
             }

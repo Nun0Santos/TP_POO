@@ -11,11 +11,11 @@ int main() {
     a.defineLin();
     a.defineCol();
     a.criaIlha();
-    a.mostraIlha();
+    cout << a.mostraIlha();
     cout << "\n\n";
     while(aux != "fim"){
         aux = a.executa();
-        a.mostraIlha();
+        cout << a.mostraIlha();
     }
 
 

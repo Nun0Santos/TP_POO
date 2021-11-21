@@ -23,7 +23,7 @@ public:
     void mudaValorTrab(int& l, int& c, const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
-    bool verificaLinCol(int x, int y);
+    bool verificaLinCol(int x, int y) const;
     string mostraZona(int x, int y);
     string mostraTodasZonas();
     string executa();

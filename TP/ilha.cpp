@@ -61,23 +61,23 @@ void ilha::mudaValorTrab(int& l, int& c, const string& t) {
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            tabuleiro[lin][col].obtemTrab();
-            //tabuleiro[lin][col].defineQuantTrab();
+            tabuleiro[l][c].defineTrab("L");
+            tabuleiro[l][c].defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            tabuleiro[lin][col].defineTrab("M");
-            tabuleiro[lin][col].defineQuantTrab();
+            tabuleiro[l][c].defineTrab("M");
+            tabuleiro[l][c].defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
 }
 
-bool ilha::verificaLinCol(int x, int y) {
+bool ilha::verificaLinCol(int x, int y) const {
    if(x<=lin && y<=col)
        return true;
     return false;
@@ -130,7 +130,7 @@ void ilha::criaIlha() {
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
             tabuleiro[i][j].defineTipo("-");
-            tabuleiro[i][j].defineTrab("-");
+            tabuleiro[i][j].defineTrab("");
             tabuleiro[i][j].definePosC(j);
             tabuleiro[i][j].definePosL(i);
             tabuleiro[i][j].defineEdificio("-");
@@ -204,13 +204,6 @@ string ilha::executa() {
 
         }
 
-        if(v.size() > 2){
-            istringstream ossX(v[2]);//transforma string em int
-            ossX >> x;//atribui valor transformado à variavel x
-            istringstream ossY(v[3]);//transforma string em int
-            ossY >> y;//atribui valor transformado à variavel y
-        }
-
         if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
             //COMANDOS DO FICHEIRO
             if(v[0] == "exec"){
@@ -243,6 +236,11 @@ string ilha::executa() {
                 if(comandos(lines)){
                     if (lines[0] == "cons"){
                         if (verificaLinCol(fx,fy)){
+                            istringstream ossX(v[2]);//transforma string em int
+                            ossX >> x;//atribui valor transformado à variavel x
+                            istringstream ossY(v[3]);//transforma string em int
+                            ossY >> y;//atribui valor transformado à variavel y
+
                             istringstream o(lines[1]);
                             string aux;
                             o>>aux;
@@ -259,6 +257,11 @@ string ilha::executa() {
                     }
                     if(lines[0] == "list"){
                         if(v.size() > 1){
+                            istringstream ossX(v[1]);//transforma string em int
+                            ossX >> x;//atribui valor transformado à variavel x
+                            istringstream ossY(v[2]);//transforma string em int
+                            ossY >> y;//atribui valor transformado à variavel y
+
                             if(verificaLinCol(fx,fy)){
                                 cout << mostraZona(fx,fy);
                                 return s1;
@@ -278,6 +281,11 @@ string ilha::executa() {
 
             //COMANDOS STDIN
             if (v[0] == "cons"){
+                istringstream ossX(v[2]);//transforma string em int
+                ossX >> x;//atribui valor transformado à variavel x
+                istringstream ossY(v[3]);//transforma string em int
+                ossY >> y;//atribui valor transformado à variavel y
+
                 if (verificaLinCol(x,y)){
                     istringstream o(v[1]);
                     string aux;
@@ -291,20 +299,21 @@ string ilha::executa() {
                 }
             }
             if (v[0] == "cont"){
-                if (verificaLinCol(x,y)){
                     istringstream o(v[1]);
                     string aux;
                     o>>aux;
-                    ilha::mudaValorTrab(x, y, aux);
-                    return s1;
+                    int ax = 0, ay = 0;
 
-                }else{
-                    cout << "fora dos limites" << endl;
+                    ilha::mudaValorTrab(ax, ay, aux);
                     return s1;
-                }
             }
             if(v[0] == "list"){
                 if(v.size() > 1){
+                    istringstream ossX(v[1]);//transforma string em int
+                    ossX >> x;//atribui valor transformado à variavel x
+                    istringstream ossY(v[2]);//transforma string em int
+                    ossY >> y;//atribui valor transformado à variavel y
+
                     if(verificaLinCol(x,y)){
                         cout << mostraZona(x,y);
                         return s1;

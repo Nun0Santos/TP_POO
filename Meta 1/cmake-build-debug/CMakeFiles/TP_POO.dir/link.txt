@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/TP_POO.dir/TP/comandos.cpp.o CMakeFiles/TP_POO.dir/TP/ilha.cpp.o CMakeFiles/TP_POO.dir/TP/main.cpp.o CMakeFiles/TP_POO.dir/TP/zona.cpp.o CMakeFiles/TP_POO.dir/TP/config.cpp.o CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.o -o TP_POO 

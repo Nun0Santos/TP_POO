@@ -27,22 +27,12 @@ public:
     string mostraZona(int x, int y);
     string mostraTodasZonas();
     string executa();
-    //Zona defineZona(int lin, int col, string t);//definir cada zona nas quadriculas
-    //string obtemDescricaoZona(int lin, int col, Zona& z) const ;
-
-    //Funções temporárias, não há certeza, perguntar ao stor se é correto
-    //void trabalhadorZona();//identificar os trabalhadores em cada zona
-    //void quanttrabalhaZona();//quantidade de trabalhores em cada zona
 private:
     int lin = 0, col = 0;
     const int maxLin = 8;
     const int maxCol = 16;
     const int minLin = 3;
     Zona **tabuleiro;
-    //Zona a;
-
-    //variaveis das funções "temporárias"
-    //int quant_zonas;
 };
 
 #endif //TP_POO_ILHA_H

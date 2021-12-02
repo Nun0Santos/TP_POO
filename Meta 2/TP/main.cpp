@@ -4,7 +4,7 @@
 int main() {
     Jogo j;
     UI interface(j);
-    interface.start();
+    interface.menu();
 
 
     return 0;

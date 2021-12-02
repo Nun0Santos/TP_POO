@@ -13,6 +13,7 @@ public:
     UI(Jogo& nJ) : j(nJ){};
 
     void start();
+    void menu();
 
 private:
     Jogo j;

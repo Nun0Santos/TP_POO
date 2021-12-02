@@ -1,0 +1,11 @@
+mnf 100
+mnc 100
+elec 15
+bat 100
+fun 10
+
+operario 15
+len 20
+mineiro 10
+
+

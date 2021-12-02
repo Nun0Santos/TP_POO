@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+iostream
+-
+string
+-
+vector
+-
+ilha.h
+/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+
+/home/user/Desktop/GitHub/TP_POO/TP/ilha.cpp
+geral.h
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+ilha.h
+/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+sstream
+-
+limits
+-
+fstream
+-
+
+/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+geral.h
+/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+zona.h
+/home/user/Desktop/GitHub/TP_POO/TP/zona.h
+
+/home/user/Desktop/GitHub/TP_POO/TP/zona.h
+iostream
+-
+vector
+-
+

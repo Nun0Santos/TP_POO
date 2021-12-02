@@ -2,6 +2,7 @@
 // Created by Rafael on 02/12/2021.
 //
 
+#include "geral.h"
 #include "jogo.h"
 
 void Jogo::gereIlha() {

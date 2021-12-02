@@ -5,11 +5,13 @@
 #ifndef TP_POO_GERAL_H
 #define TP_POO_GERAL_H
 
+
+
 #include <iostream>
 #include <string>
 #include <vector>
-#include "ilha.h"
 #include "jogo.h"
+#include "ilha.h"
 #include "UI.h"
 
 
@@ -20,7 +22,6 @@ bool verificaComandos(const string& comando);
 bool verificaTipo(const string& t);
 bool verificaTrabalhador(const string& t);
 void leFich(const string& filename);
-
 
 
 

@@ -3,7 +3,8 @@
 
 int main() {
     Jogo j;
-    UI interface(&j);
+    UI interface(j);
+    interface.start();
 
 
     return 0;

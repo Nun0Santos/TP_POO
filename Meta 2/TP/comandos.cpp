@@ -22,25 +22,6 @@ bool verificaComandos(const string& com){
     return false;
 }
 
-
-/*void tiraEspacos(string s, vector<string> &v){
-
-    string temp = "";
-    for(char i : s){
-
-        if(i==' '){
-            v.push_back(temp);
-            temp = "";
-        }
-        else{
-            temp.push_back(i);
-        }
-
-    }
-    v.push_back(temp);
-
-}*/
-
 bool verificaTipo(const string& t){
     vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edificio-x"};
 
@@ -67,39 +48,6 @@ bool comandos(const vector<string> &v) {
         //comandos ficheiro
         if (v[0] == "exec") {
             return true;
-            /*string filename = v[1];
-            vector<string> lines;
-            string line;
-
-            ifstream input_file(filename);
-            if (!input_file.is_open()) {
-                cerr << "Erro ao tentar abrir o ficheiro";
-                return false;
-            }
-            while (getline(input_file, line)) {
-                lines.push_back(line);
-            }
-            for (auto &i: lines)
-                cout << i << endl;
-
-            input_file.close();
-
-            if (lines[0] == "cons") {
-                //codigo para o cons
-                //chamar a função mudaValor e passar o v[1] para a lin, o v[2] para a col e o v[3] para t
-                if (verificaTipo(lines[1])) {
-                    return true;
-                }
-            }
-            if (lines[0] == "cont")
-                if (verificaTrabalhador(lines[1])) {
-                    return true;
-                }
-
-            if(lines[0] == "list"){
-                return true;
-            }*/
-
         }
 
         //comandos stdin

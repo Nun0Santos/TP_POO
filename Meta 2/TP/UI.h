@@ -10,7 +10,7 @@
 
 class UI{
 public:
-    UI(Jogo *nJ) : j(*nJ){};
+    UI(Jogo& nJ) : j(nJ){};
 
     void start();
 

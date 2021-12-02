@@ -47,6 +47,7 @@ int ilha::obtemLin() const {
 void ilha::mudaValorEdificio(int& l, int& c, const string& t) {
     if(tabuleiro[l][c].obtemQuant_Edificios() > 0)
         return;
+    //incrementar a quantidade de edificios
     tabuleiro[l][c].defineEdificio(t);
 }
 
@@ -201,7 +202,6 @@ string ilha::executa() {
 
         while (getline(ss, s2, ' ')) {
             v.push_back(s2);
-
         }
 
         if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
@@ -226,20 +226,15 @@ string ilha::executa() {
                     lines.push_back(line);
                 }
 
-                if(lines.size() > 2){
-                    istringstream ossFX(lines[2]);//transforma string em int
-                    ossFX >> fx;//atribui valor transformado à variavel x
-                    istringstream ossFY(lines[3]);//transforma string em int
-                    ossFY >> fy;//atribui valor transformado à variavel y
-                }
 
                 if(comandos(lines)){
                     if (lines[0] == "cons"){
+                        istringstream ossFX(lines[2]);//transforma string em int
+                        ossFX >> fx;//atribui valor transformado à variavel x
+                        istringstream ossFY(lines[3]);//transforma string em int
+                        ossFY >> fy;//atribui valor transformado à variavel y
+
                         if (verificaLinCol(fx,fy)){
-                            istringstream ossX(v[2]);//transforma string em int
-                            ossX >> x;//atribui valor transformado à variavel x
-                            istringstream ossY(v[3]);//transforma string em int
-                            ossY >> y;//atribui valor transformado à variavel y
 
                             istringstream o(lines[1]);
                             string aux;
@@ -250,20 +245,22 @@ string ilha::executa() {
                         }
                     }
                     if (lines[0] == "cont"){
-                        if(verificaTrabalhador(lines[1])){
-                            ilha::mudaValorTrab(fx, fy, lines[1]);
-                            return s1;
-                        }
+                        istringstream o(lines[1]);
+                        string aux;
+                        o>>aux;
+                        int ax = 0, ay = 0;
+
+                        ilha::mudaValorTrab(ax, ay, aux);
                     }
                     if(lines[0] == "list"){
-                        if(v.size() > 1){
-                            istringstream ossX(v[1]);//transforma string em int
+                        if(lines.size() > 1){
+                            istringstream ossX(lines[1]);//transforma string em int
                             ossX >> x;//atribui valor transformado à variavel x
-                            istringstream ossY(v[2]);//transforma string em int
+                            istringstream ossY(lines[2]);//transforma string em int
                             ossY >> y;//atribui valor transformado à variavel y
 
-                            if(verificaLinCol(fx,fy)){
-                                cout << mostraZona(fx,fy);
+                            if(verificaLinCol(x,y)){
+                                cout << mostraZona(x,y);
                                 return s1;
                             }
                         }

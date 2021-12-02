@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp
+iostream
+-
+vector
+-
+sstream
+-
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+algorithm
+-
+string
+-
+fstream
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 iostream
 -
 string
@@ -14,13 +30,13 @@ string
 vector
 -
 ilha.h
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
 
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.cpp
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp
 geral.h
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 ilha.h
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
 sstream
 -
 limits
@@ -28,13 +44,13 @@ limits
 fstream
 -
 
-/home/user/Desktop/GitHub/TP_POO/TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
 geral.h
-/home/user/Desktop/GitHub/TP_POO/TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 zona.h
-/home/user/Desktop/GitHub/TP_POO/TP/zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 
-/home/user/Desktop/GitHub/TP_POO/TP/zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 iostream
 -
 vector

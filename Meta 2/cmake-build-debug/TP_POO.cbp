@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h">
+			<Option target="TP_POO"/>
+		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
@@ -97,6 +103,12 @@
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/main.cpp">

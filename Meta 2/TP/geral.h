@@ -9,6 +9,9 @@
 #include <string>
 #include <vector>
 #include "ilha.h"
+#include "jogo.h"
+#include "UI.h"
+
 
 
 using namespace std;

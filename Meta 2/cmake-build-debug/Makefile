@@ -128,6 +128,30 @@ TP_POO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/build
 .PHONY : TP_POO/fast
 
+TP/UI.obj: TP/UI.cpp.obj
+.PHONY : TP/UI.obj
+
+# target to build an object file
+TP/UI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/UI.cpp.obj
+.PHONY : TP/UI.cpp.obj
+
+TP/UI.i: TP/UI.cpp.i
+.PHONY : TP/UI.i
+
+# target to preprocess a source file
+TP/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/UI.cpp.i
+.PHONY : TP/UI.cpp.i
+
+TP/UI.s: TP/UI.cpp.s
+.PHONY : TP/UI.s
+
+# target to generate assembly for a file
+TP/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/UI.cpp.s
+.PHONY : TP/UI.cpp.s
+
 TP/comandos.obj: TP/comandos.cpp.obj
 .PHONY : TP/comandos.obj
 
@@ -199,6 +223,30 @@ TP/ilha.s: TP/ilha.cpp.s
 TP/ilha.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/ilha.cpp.s
 .PHONY : TP/ilha.cpp.s
+
+TP/jogo.obj: TP/jogo.cpp.obj
+.PHONY : TP/jogo.obj
+
+# target to build an object file
+TP/jogo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj
+.PHONY : TP/jogo.cpp.obj
+
+TP/jogo.i: TP/jogo.cpp.i
+.PHONY : TP/jogo.i
+
+# target to preprocess a source file
+TP/jogo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/jogo.cpp.i
+.PHONY : TP/jogo.cpp.i
+
+TP/jogo.s: TP/jogo.cpp.s
+.PHONY : TP/jogo.s
+
+# target to generate assembly for a file
+TP/jogo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/jogo.cpp.s
+.PHONY : TP/jogo.cpp.s
 
 TP/main.obj: TP/main.cpp.obj
 .PHONY : TP/main.obj
@@ -281,6 +329,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TP_POO
+	@echo ... TP/UI.obj
+	@echo ... TP/UI.i
+	@echo ... TP/UI.s
 	@echo ... TP/comandos.obj
 	@echo ... TP/comandos.i
 	@echo ... TP/comandos.s
@@ -290,6 +341,9 @@ help:
 	@echo ... TP/ilha.obj
 	@echo ... TP/ilha.i
 	@echo ... TP/ilha.s
+	@echo ... TP/jogo.obj
+	@echo ... TP/jogo.i
+	@echo ... TP/jogo.s
 	@echo ... TP/main.obj
 	@echo ... TP/main.i
 	@echo ... TP/main.s

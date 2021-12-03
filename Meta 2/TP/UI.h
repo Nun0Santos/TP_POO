@@ -14,6 +14,9 @@ public:
 
     void start();
     void menu();
+    int defineL();
+    int defineC();
+    string defineComando();
 
 private:
     Jogo j;

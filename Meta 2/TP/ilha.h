@@ -15,8 +15,8 @@ public:
     ~ilha(){       //Destrutor
         delete(tabuleiro);
     }
-    void defineCol();//pedir quantas colunas quer
-    void defineLin();//pedir quantas linhas quer
+    void defineCol(int a);//pedir quantas colunas quer
+    void defineLin(int a);//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
     string mostraIlha();
     void mudaValorEdificio(int& l, int& c, const string& t);//muda o valor do edificio "zona" no tabuleiro
@@ -26,7 +26,7 @@ public:
     bool verificaLinCol(int x, int y) const;
     string mostraZona(int x, int y);
     string mostraTodasZonas();
-    string executa();
+    string executa(string s1);
 private:
     int lin = 0, col = 0;
     const int maxLin = 8;

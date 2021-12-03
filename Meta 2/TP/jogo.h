@@ -10,11 +10,13 @@
 
 class Jogo{
 public:
-    void gereIlha();
+    void criaIsland(int a, int b);
+    void gereIsland(const string& str);
     string gereDias();
+    string mostraIsland();
 
 private:
-    ilha a;
+    ilha island;
 };
 
 

@@ -3,12 +3,21 @@
 //
 
 #include "geral.h"
-#include "jogo.h"
 
-void Jogo::gereIlha() {
-
+void Jogo::gereIsland(const string& str) {
+    island.executa(str);
 }
 
 string Jogo::gereDias() {
     return std::string();
+}
+
+void Jogo::criaIsland(int a, int b) {
+    island.defineLin(a);
+    island.defineCol(b);
+    island.criaIlha();
+}
+
+string Jogo::mostraIsland() {
+    return island.mostraIlha();
 }

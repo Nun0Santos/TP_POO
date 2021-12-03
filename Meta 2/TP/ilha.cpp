@@ -11,29 +11,12 @@
 
 using namespace std;
 
-void ilha::defineLin() {
-    int auxl;
-    cout << "Quantas linhas quer? " << endl;
-    cin >> auxl;
-    if(auxl>=3 && auxl<=8){
-        lin = auxl;
-        return;
-    }
-    cout << "Valor errado" << endl;
-    ilha::defineLin();
+void ilha::defineLin(int a) {
+    lin = a;
 }
 
-void ilha::defineCol(){
-    int auxc;
-
-    cout << "Quantas colunas quer? " << endl;
-    cin >> auxc;
-    if(auxc>=3 && auxc<=16){
-        col = auxc;
-        return;
-    }
-    cout << "Valor errado" << endl;
-    ilha::defineCol();
+void ilha::defineCol(int a){
+    col = a;
 }
 
 int ilha::obtemCol() const {
@@ -184,24 +167,16 @@ string ilha::mostraIlha() {
 }
 
 
-string ilha::executa() {
-    string s1, s2;
+string ilha::executa(string s1) {
+    string s2;
     vector<string> v;
 
     int x = 0, y = 0;
 
-    cout << "\nComando: ";
-    cin.sync();
-    //cin.ignore(numeric_limits<streamsize>::max(),'\n');
-
-    getline(cin, s1);
-
-    cout << "s1: " << s1 << "\n";
     stringstream ss(s1);
 
     while (getline(ss, s2, ' ')) {
         v.push_back(s2);
-
     }
 
     if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
@@ -322,6 +297,6 @@ string ilha::executa() {
             }
         }
     }
-    return s1;
+    return "Comando invalido\n";
 }
 

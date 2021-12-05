@@ -9,13 +9,21 @@ void UI::start() {
     int l = defineL() , c = defineC();
     string str;
 
-
     j.criaIsland(l, c);
     cout << j.mostraIsland();
 
+
     while(str != "fim"){
-        str = defineComando();
-        j.gereIsland(str);
+        str = "-";
+        cout << "\nFase do dia : " <<j.gereDias("Manha") << endl;
+        while(str != "next"){
+            str = defineComando();
+            if(str  == "fim")
+                break;
+            j.gereIsland(str);
+
+        }
+        cout << "\nFase do dia : " <<j.gereDias("Tarde") << endl;
         cout << j.mostraIsland();
     }
 }
@@ -48,7 +56,7 @@ void UI::menu() {
                         cout << "Exit";
                         return;
                         default:
-                            cout << "Comando invalido";
+                            cout << "Comando invalido\n";
                             continue;
         }
         break;
@@ -84,5 +92,3 @@ string UI::defineComando() {
     getline(cin, str);
     return str;
 }
-
-//UI::UI(Jogo &nJ)  : j(nJ){}

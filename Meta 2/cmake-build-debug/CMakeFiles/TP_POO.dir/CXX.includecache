@@ -6,53 +6,43 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp
-iostream
--
-vector
--
-sstream
--
-geral.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
-algorithm
--
-string
--
-fstream
--
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+../TP/geral.h
 iostream
 -
 string
 -
 vector
 -
+jogo.h
+../TP/jogo.h
 ilha.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+../TP/ilha.h
+UI.h
+../TP/UI.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp
+../TP/ilha.h
 geral.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
-ilha.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
-sstream
--
-limits
--
-fstream
--
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
-geral.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+../TP/geral.h
 zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+../TP/zona.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+../TP/jogo.h
+geral.h
+../TP/geral.h
+ilha.h
+../TP/ilha.h
+
+../TP/zona.h
 iostream
 -
 vector
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp
+UI.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
+geral.h
 -
 

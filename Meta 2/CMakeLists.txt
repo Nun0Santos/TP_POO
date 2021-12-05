@@ -15,4 +15,8 @@ add_executable(TP_POO
         TP/zona.h
         TP/config.cpp
         TP/trabalhdores.cpp
-        TP/trabalhdores.h TP/UI.cpp TP/UI.h TP/jogo.cpp TP/jogo.h)
+        TP/trabalhdores.h
+        TP/UI.cpp
+        TP/UI.h
+        TP/jogo.cpp
+        TP/jogo.h)

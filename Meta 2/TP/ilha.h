@@ -13,7 +13,7 @@ using namespace std;
 class ilha{
 public:
     ~ilha(){       //Destrutor
-        delete(tabuleiro);
+        delete [] tabuleiro;
     }
     void defineCol(int a);//pedir quantas colunas quer
     void defineLin(int a);//pedir quantas linhas quer
@@ -29,9 +29,6 @@ public:
     string executa(string s1);
 private:
     int lin = 0, col = 0;
-    const int maxLin = 8;
-    const int maxCol = 16;
-    const int minLin = 3;
     Zona **tabuleiro;
 };
 

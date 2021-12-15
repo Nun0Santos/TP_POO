@@ -170,6 +170,7 @@ string ilha::mostraIlha() {
 string ilha::executa(string s1) {
     string s2;
     vector<string> v;
+    ostringstream oss;
 
     int x = 0, y = 0;
 
@@ -188,8 +189,8 @@ string ilha::executa(string s1) {
 
             ifstream fich_leitura(v[1]);
             if(!fich_leitura.is_open()) {
-                cerr << "Erro ao tentar abrir o ficheiro";
-                return s1;
+                oss << "Erro ao tentar abrir o ficheiro";
+                return oss.str();
             }
 
             getline(fich_leitura,line, '\n');
@@ -216,7 +217,7 @@ string ilha::executa(string s1) {
                         o>>aux;
 
                         ilha::mudaValorEdificio(fx, fy, aux);
-                        return s1;
+                        return oss.str();
                     }
                 }
                 if (lines[0] == "cont"){
@@ -236,17 +237,17 @@ string ilha::executa(string s1) {
 
                         if(verificaLinCol(x,y)){
                             cout << mostraZona(x,y);
-                            return s1;
+                            return oss.str();
                         }
                     }
                     else{
-                        cout << mostraTodasZonas();
-                        return s1;
+                        oss << mostraTodasZonas();
+                        return oss.str();
                     }
                 }
             }else{
-                cout << "comandos do ficheiro não são válidos" << endl;
-                return s1;
+                oss << "comandos do ficheiro não são válidos" << endl;
+                return oss.str();
             }
 
         }
@@ -264,10 +265,10 @@ string ilha::executa(string s1) {
                 o>>aux;
 
                 ilha::mudaValorEdificio(x, y, aux);
-                return s1;
+                return oss.str();
             }else{
-                cout << "fora dos limites" << endl;
-                return s1;
+                oss << "fora dos limites" << endl;
+                return oss.str();
             }
         }
         if (v[0] == "cont"){
@@ -277,7 +278,7 @@ string ilha::executa(string s1) {
             int ax = 0, ay = 0;
 
             ilha::mudaValorTrab(ax, ay, aux);
-            return s1;
+            return oss.str();
         }
         if(v[0] == "list"){
             if(v.size() > 1){
@@ -287,14 +288,17 @@ string ilha::executa(string s1) {
                 ossY >> y;//atribui valor transformado à variavel y
 
                 if(verificaLinCol(x,y)){
-                    cout << mostraZona(x,y);
-                    return s1;
+                    oss << mostraZona(x,y);
+                    return oss.str();
                 }
             }
             else{
-                cout << mostraTodasZonas();
-                return s1;
+                oss << mostraTodasZonas();
+                return oss.str();
             }
+        }
+        if(v[0] == "next"){
+            return oss.str();
         }
     }
     return "Comando invalido\n";

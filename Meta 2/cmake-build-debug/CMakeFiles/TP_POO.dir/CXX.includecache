@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-../TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
+geral.h
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 iostream
 -
 string
@@ -14,35 +18,39 @@ string
 vector
 -
 jogo.h
-../TP/jogo.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
 ilha.h
-../TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
 UI.h
-../TP/UI.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
 
-../TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp
 geral.h
-../TP/geral.h
-zona.h
-../TP/zona.h
-
-../TP/jogo.h
-geral.h
-../TP/geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 ilha.h
-../TP/ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+sstream
+-
+limits
+-
+fstream
+-
 
-../TP/zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 iostream
 -
 vector
--
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp
-UI.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
-geral.h
 -
 

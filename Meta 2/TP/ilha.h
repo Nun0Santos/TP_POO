@@ -13,6 +13,9 @@ using namespace std;
 class ilha{
 public:
     ~ilha(){       //Destrutor
+        for(int i = 0; i<col; ++i){
+            delete tabuleiro[i];
+        }
         delete [] tabuleiro;
     }
     void defineCol(int a);//pedir quantas colunas quer

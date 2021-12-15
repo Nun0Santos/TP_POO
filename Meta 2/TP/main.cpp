@@ -1,5 +1,4 @@
 #include "geral.h"
-#include <fstream>
 
 int main() {
     Jogo j;

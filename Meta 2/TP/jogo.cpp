@@ -25,7 +25,7 @@ string Jogo::gereDias(const string& str) {
         oss << stages[0];
         return oss.str();
     }
-    return "oi";
+    return "Etapa";
 }
 
 void Jogo::criaIsland(int a, int b) {

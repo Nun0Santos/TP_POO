@@ -21,7 +21,6 @@ void UI::start() {
             if(str  == "fim")
                 break;
             j.gereIsland(str);
-
         }
         cout << "\nFase do dia : " <<j.gereDias("Tarde") << endl;
         cout << j.mostraIsland();

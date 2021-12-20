@@ -19,4 +19,4 @@ add_executable(TP_POO
         TP/UI.cpp
         TP/UI.h
         TP/jogo.cpp
-        TP/jogo.h)
+        TP/jogo.h TP/deserto.cpp TP/deserto.h TP/pastagem.cpp TP/pastagem.h TP/floresta.cpp TP/floresta.h TP/montanha.cpp TP/montanha.h)

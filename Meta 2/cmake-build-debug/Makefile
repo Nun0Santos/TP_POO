@@ -200,6 +200,54 @@ TP/config.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/config.cpp.s
 .PHONY : TP/config.cpp.s
 
+TP/deserto.obj: TP/deserto.cpp.obj
+.PHONY : TP/deserto.obj
+
+# target to build an object file
+TP/deserto.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj
+.PHONY : TP/deserto.cpp.obj
+
+TP/deserto.i: TP/deserto.cpp.i
+.PHONY : TP/deserto.i
+
+# target to preprocess a source file
+TP/deserto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.i
+.PHONY : TP/deserto.cpp.i
+
+TP/deserto.s: TP/deserto.cpp.s
+.PHONY : TP/deserto.s
+
+# target to generate assembly for a file
+TP/deserto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/deserto.cpp.s
+.PHONY : TP/deserto.cpp.s
+
+TP/floresta.obj: TP/floresta.cpp.obj
+.PHONY : TP/floresta.obj
+
+# target to build an object file
+TP/floresta.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj
+.PHONY : TP/floresta.cpp.obj
+
+TP/floresta.i: TP/floresta.cpp.i
+.PHONY : TP/floresta.i
+
+# target to preprocess a source file
+TP/floresta.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/floresta.cpp.i
+.PHONY : TP/floresta.cpp.i
+
+TP/floresta.s: TP/floresta.cpp.s
+.PHONY : TP/floresta.s
+
+# target to generate assembly for a file
+TP/floresta.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/floresta.cpp.s
+.PHONY : TP/floresta.cpp.s
+
 TP/ilha.obj: TP/ilha.cpp.obj
 .PHONY : TP/ilha.obj
 
@@ -272,6 +320,54 @@ TP/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/main.cpp.s
 .PHONY : TP/main.cpp.s
 
+TP/montanha.obj: TP/montanha.cpp.obj
+.PHONY : TP/montanha.obj
+
+# target to build an object file
+TP/montanha.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj
+.PHONY : TP/montanha.cpp.obj
+
+TP/montanha.i: TP/montanha.cpp.i
+.PHONY : TP/montanha.i
+
+# target to preprocess a source file
+TP/montanha.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/montanha.cpp.i
+.PHONY : TP/montanha.cpp.i
+
+TP/montanha.s: TP/montanha.cpp.s
+.PHONY : TP/montanha.s
+
+# target to generate assembly for a file
+TP/montanha.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/montanha.cpp.s
+.PHONY : TP/montanha.cpp.s
+
+TP/pastagem.obj: TP/pastagem.cpp.obj
+.PHONY : TP/pastagem.obj
+
+# target to build an object file
+TP/pastagem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj
+.PHONY : TP/pastagem.cpp.obj
+
+TP/pastagem.i: TP/pastagem.cpp.i
+.PHONY : TP/pastagem.i
+
+# target to preprocess a source file
+TP/pastagem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/pastagem.cpp.i
+.PHONY : TP/pastagem.cpp.i
+
+TP/pastagem.s: TP/pastagem.cpp.s
+.PHONY : TP/pastagem.s
+
+# target to generate assembly for a file
+TP/pastagem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/pastagem.cpp.s
+.PHONY : TP/pastagem.cpp.s
+
 TP/trabalhdores.obj: TP/trabalhdores.cpp.obj
 .PHONY : TP/trabalhdores.obj
 
@@ -338,6 +434,12 @@ help:
 	@echo ... TP/config.obj
 	@echo ... TP/config.i
 	@echo ... TP/config.s
+	@echo ... TP/deserto.obj
+	@echo ... TP/deserto.i
+	@echo ... TP/deserto.s
+	@echo ... TP/floresta.obj
+	@echo ... TP/floresta.i
+	@echo ... TP/floresta.s
 	@echo ... TP/ilha.obj
 	@echo ... TP/ilha.i
 	@echo ... TP/ilha.s
@@ -347,6 +449,12 @@ help:
 	@echo ... TP/main.obj
 	@echo ... TP/main.i
 	@echo ... TP/main.s
+	@echo ... TP/montanha.obj
+	@echo ... TP/montanha.i
+	@echo ... TP/montanha.s
+	@echo ... TP/pastagem.obj
+	@echo ... TP/pastagem.i
+	@echo ... TP/pastagem.s
 	@echo ... TP/trabalhdores.obj
 	@echo ... TP/trabalhdores.i
 	@echo ... TP/trabalhdores.s

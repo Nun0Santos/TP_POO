@@ -96,6 +96,18 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/config.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h">
+			<Option target="TP_POO"/>
+		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h">
 			<Option target="TP_POO"/>
 		</Unit>
@@ -112,6 +124,18 @@
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/main.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h">
 			<Option target="TP_POO"/>
 		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhdores.cpp">

@@ -177,6 +177,62 @@ CMakeFiles/TP_POO.dir/TP/jogo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/jogo.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\jogo.cpp" -o CMakeFiles\TP_POO.dir\TP\jogo.cpp.s
 
+CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj: ../TP/deserto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\deserto.cpp.obj -c "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\deserto.cpp"
+
+CMakeFiles/TP_POO.dir/TP/deserto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/deserto.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\deserto.cpp" > CMakeFiles\TP_POO.dir\TP\deserto.cpp.i
+
+CMakeFiles/TP_POO.dir/TP/deserto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/deserto.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\deserto.cpp" -o CMakeFiles\TP_POO.dir\TP\deserto.cpp.s
+
+CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj: ../TP/pastagem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\pastagem.cpp.obj -c "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\pastagem.cpp"
+
+CMakeFiles/TP_POO.dir/TP/pastagem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/pastagem.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\pastagem.cpp" > CMakeFiles\TP_POO.dir\TP\pastagem.cpp.i
+
+CMakeFiles/TP_POO.dir/TP/pastagem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/pastagem.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\pastagem.cpp" -o CMakeFiles\TP_POO.dir\TP\pastagem.cpp.s
+
+CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj: ../TP/floresta.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\floresta.cpp.obj -c "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\floresta.cpp"
+
+CMakeFiles/TP_POO.dir/TP/floresta.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/floresta.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\floresta.cpp" > CMakeFiles\TP_POO.dir\TP\floresta.cpp.i
+
+CMakeFiles/TP_POO.dir/TP/floresta.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/floresta.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\floresta.cpp" -o CMakeFiles\TP_POO.dir\TP\floresta.cpp.s
+
+CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj: CMakeFiles/TP_POO.dir/flags.make
+CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj: CMakeFiles/TP_POO.dir/includes_CXX.rsp
+CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj: ../TP/montanha.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP_POO.dir\TP\montanha.cpp.obj -c "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\montanha.cpp"
+
+CMakeFiles/TP_POO.dir/TP/montanha.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP_POO.dir/TP/montanha.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\montanha.cpp" > CMakeFiles\TP_POO.dir\TP\montanha.cpp.i
+
+CMakeFiles/TP_POO.dir/TP/montanha.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP_POO.dir/TP/montanha.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\TP\montanha.cpp" -o CMakeFiles\TP_POO.dir\TP\montanha.cpp.s
+
 # Object files for target TP_POO
 TP_POO_OBJECTS = \
 "CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj" \
@@ -186,7 +242,11 @@ TP_POO_OBJECTS = \
 "CMakeFiles/TP_POO.dir/TP/config.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj" \
 "CMakeFiles/TP_POO.dir/TP/UI.cpp.obj" \
-"CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj"
+"CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj" \
+"CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj" \
+"CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj" \
+"CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj" \
+"CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj"
 
 # External object files for target TP_POO
 TP_POO_EXTERNAL_OBJECTS =
@@ -199,11 +259,15 @@ TP_POO.exe: CMakeFiles/TP_POO.dir/TP/config.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/UI.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj
+TP_POO.exe: CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj
 TP_POO.exe: CMakeFiles/TP_POO.dir/build.make
 TP_POO.exe: CMakeFiles/TP_POO.dir/linklibs.rsp
 TP_POO.exe: CMakeFiles/TP_POO.dir/objects1.rsp
 TP_POO.exe: CMakeFiles/TP_POO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable TP_POO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rafael\Desktop\GitHub\TP_POO\Meta 2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable TP_POO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TP_POO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

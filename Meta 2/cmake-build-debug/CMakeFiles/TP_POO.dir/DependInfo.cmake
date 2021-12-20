@@ -11,9 +11,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/UI.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/comandos.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/config.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/config.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/main.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/main.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhdores.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/trabalhdores.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
   )

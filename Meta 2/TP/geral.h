@@ -12,6 +12,7 @@
 #include <vector>
 #include "jogo.h"
 #include "ilha.h"
+#include "trabalhadores.h"
 #include "UI.h"
 
 

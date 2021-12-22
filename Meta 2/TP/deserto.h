@@ -9,9 +9,9 @@
 
 class Deserto : public Zona{
 public:
-    Deserto() : Zona("deserto", 0,0){}
+    Deserto() : Zona("deserto", 0,0), prod(0.05){}
 private:
-    float prod = 0.5;
+    float prod;
 };
 
 

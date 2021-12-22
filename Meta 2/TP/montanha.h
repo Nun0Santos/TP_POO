@@ -9,9 +9,13 @@
 
 class Montanha : public Zona{
 public:
+    Montanha();
 
+    void duplicaPrecoConstrução();
+    void produzFerro();
+    void aumentaProbDemissao();
 private:
-
+    float probDemissao, aumentoProd, quantFerro;
 };
 
 

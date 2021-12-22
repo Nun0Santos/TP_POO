@@ -11,7 +11,7 @@ using namespace std;
 
 class Trabalhador{
 public:
-    Trabalhador(int c, float prob, int x, int y, int d);
+    Trabalhador(int c, float prob, int x, int y, int d) : custo(c),probEmbora(prob),x(x),y(y), dias(d){++id;};
     int obtemCusto();
     float obtemProb();
     string obtemId();
@@ -25,7 +25,7 @@ private:
     int x;
     int y;
     int dias; //Dias da simulacao
-
 };
+int Trabalhador::id = 1;
 
 #endif //TP_POO_TRABALHADORES_H

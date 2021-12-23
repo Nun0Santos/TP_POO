@@ -4,9 +4,15 @@
 
 #include "zona.h"
 #include <sstream>
+#include "minaCarvao.h"
+#include "minaFerro.h"
+#include "bateria.h"
+#include "fundicao.h"
+#include "centralEletrica.h"
+
 
 void Zona::defineTipo(string str) {
-    tipo = str;
+    tipo = move(str);
 }
 
 void Zona::definePosC(int c) {
@@ -21,8 +27,32 @@ void Zona::defineTrab(string s) {
     trab.push_back(s);
 }
 
-void Zona::defineEdificio(string s) {
-    edificio = move(s);
+void Zona::defineEdificio(const string& s, ilha* i) {
+    if(s == "mnF"){
+        ed = new MinaFerro(this);
+        ++quant_edificio;
+        return;
+    }
+    if(s == "mnC"){
+        ed = new MinaCarvao(this);
+        ++quant_edificio;
+        return;
+    }
+    if(s == "fun"){
+        ed = new Fundicao(this, i);
+        ++quant_edificio;
+        return;
+    }
+    if(s == "elec"){
+        ed = new CentralEletrica(this, i);
+        ++quant_edificio;
+        return;
+    }
+    if(s == "bat"){
+        ed = new Bateria(this, i);
+        ++quant_edificio;
+        return;
+    }
 }
 
 void Zona::defineQuantTrab() {
@@ -55,7 +85,7 @@ int Zona::obtemQuant_Trab() const {
 }
 
 string Zona::obtemEdificio() const {
-    return edificio;
+    return ed->obtemTipo();
 }
 
 int Zona::obtemQuant_Edificios() const {
@@ -63,5 +93,9 @@ int Zona::obtemQuant_Edificios() const {
 }
 
 int Zona::obtemOnOFF() const {
-    return onoff;
+    return ed->getonoff();
+}
+
+Edificio *Zona::getEd() {
+    return ed;
 }

@@ -3,11 +3,20 @@
 //
 
 #include "geral.h"
-#include "ilha.h"
+
+#include "montanha.h"
+
+#include "pastagem.h"
+#include "pantano.h"
+#include "floresta.h"
+#include "deserto.h"
 
 #include <sstream>
-#include<limits>
+
 #include <fstream>
+#include <algorithm>
+#include <random>
+#include <chrono>
 
 using namespace std;
 
@@ -28,32 +37,32 @@ int ilha::obtemLin() const {
 }
 
 void ilha::mudaValorEdificio(int& l, int& c, const string& t) {
-    if(tabuleiro[l][c].obtemQuant_Edificios() > 0)
+    if(tabuleiro[l][c]->obtemQuant_Edificios() > 0)
         return;
-    tabuleiro[l][c].defineEdificio(t);
+    tabuleiro[l][c]->defineEdificio(t, this);
 }
 
 void ilha::mudaValorTrab(int& l, int& c, const string& t) {
     if(t == "oper"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c].defineTrab("O");
-            tabuleiro[l][c].defineQuantTrab();
+            tabuleiro[l][c]->defineTrab("O");
+            tabuleiro[l][c]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c].defineTrab("L");
-            tabuleiro[l][c].defineQuantTrab();
+            tabuleiro[l][c]->defineTrab("L");
+            tabuleiro[l][c]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c].defineTrab("M");
-            tabuleiro[l][c].defineQuantTrab();
+            tabuleiro[l][c]->defineTrab("M");
+            tabuleiro[l][c]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
@@ -71,16 +80,16 @@ string ilha::mostraZona(int x, int y) {
     for(int i = 0; i < 4; ++i){
         switch (i) {
             case 0:
-                oss << tabuleiro[x][y].obtemTipo() << endl;
+                oss << tabuleiro[x][y]->obtemTipo() << endl;
                 break;
                 case 1:
-                    oss << tabuleiro[x][y].obtemEdificio() << endl;
+                    oss << tabuleiro[x][y]->obtemEdificio() << endl;
                     break;
                     case 2:
-                        oss << tabuleiro[x][y].obtemTrab() << endl;
+                        oss << tabuleiro[x][y]->obtemTrab() << endl;
                         break;
                         case 3:
-                            oss << tabuleiro[x][y].obtemQuant_Trab() << endl;
+                            oss << tabuleiro[x][y]->obtemQuant_Trab() << endl;
                             break;
                             default:
                                 break;
@@ -105,18 +114,41 @@ string ilha::mostraTodasZonas() {
 }
 
 void ilha::criaIlha() {
-    tabuleiro = new Zona*[lin];
+    tabuleiro = new Zona**[lin];
     for (int i = 0; i < lin; ++i) {
-        tabuleiro[i] = new Zona[col];
+        tabuleiro[i] = new Zona*[col];
     }
+
+    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano", "zona-x"};
+    unsigned num = chrono::system_clock::now().time_since_epoch().count();
 
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            tabuleiro[i][j].defineTipo("-");
-            tabuleiro[i][j].defineTrab("");
-            tabuleiro[i][j].definePosC(j);
-            tabuleiro[i][j].definePosL(i);
-            tabuleiro[i][j].defineEdificio("-");
+            shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
+            if(tipos[0] == "pastagem"){
+                tabuleiro[i][j] = new Pastagem();
+                continue;
+            }
+            if(tipos[0] == "floresta"){
+                tabuleiro[i][j] = new Floresta();
+                continue;
+            }
+            if(tipos[0] == "deserto"){
+                tabuleiro[i][j] = new Deserto();
+                continue;
+            }
+            if(tipos[0] == "montanha"){
+                tabuleiro[i][j] = new Montanha();
+                continue;
+            }
+            if(tipos[0] == "pantano"){
+                tabuleiro[i][j] = new Pantano();
+                continue;
+            }
+            if(tipos[0] == "zona-x"){
+                tabuleiro[i][j] = new Pastagem();
+                continue;
+            }
         }
     }
 }
@@ -134,33 +166,37 @@ string ilha::mostraIlha() {
     for (int i = 0; i < lin; ++i) {
         oss << "\n";
         for (int j = 0; j < 4; ++j) {
-            oss << "|\t";
+            oss << " |    ";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
-                        oss << tabuleiro[i][k].obtemTipo();
+                        oss << tabuleiro[i][k]->obtemTipo() << "  ";
                         break;
-                        case 1:
-                            oss << tabuleiro[i][k].obtemEdificio();
+                    case 1:
+                        if(tabuleiro[i][j]->getEd() == nullptr){
+                            oss << "" << "\t\t";
                             break;
-                            case 2:
-                                oss << tabuleiro[i][k].obtemTrab();
-                                break;
-                                case 3:
-                                    oss << tabuleiro[i][k].obtemQuant_Trab();
-                                    break;
-                                    default:
-                                        break;
+                        }
+                        oss << tabuleiro[i][k]->obtemEdificio() << "\t\t";
+                        break;
+                    case 2:
+                        oss << tabuleiro[i][k]->obtemTrab() << "\t\t";
+                        break;
+                    case 3:
+                        oss << tabuleiro[i][k]->obtemQuant_Trab() << "\t\t";
+                        break;
+                    default:
+                        break;
                 }
-                oss << "\t|\t";
+                oss << " |    ";
             }
             oss << "\n";
         }
         for (int k = 0; k < col; ++k) {
             if(k < col-1)
-                oss << "+ ------------- ";
+                oss << " + -------------";
             else
-                oss << "+ ------------- +";
+                oss << " + ------------- +";
         }
     }
     return oss.str();

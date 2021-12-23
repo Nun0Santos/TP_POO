@@ -32,7 +32,7 @@ public:
     string executa(string s1);
 private:
     int lin = 0, col = 0;
-    Zona **tabuleiro;
+    Zona ***tabuleiro;
 };
 
 #endif //TP_POO_ILHA_H

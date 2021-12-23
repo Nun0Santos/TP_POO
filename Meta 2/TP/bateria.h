@@ -13,7 +13,9 @@ public:
     Bateria(Zona* z, ilha* i);
 
     void melhora();
+    string obtemTipo() override;
 private:
+    string tipo;
     int quantEletricidade, custoConst, nivel, upgradeDinheiro;
     ilha* i;
 };

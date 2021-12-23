@@ -6,7 +6,7 @@
 #include <random>
 
 
-MinaFerro::MinaFerro(Zona* z) : Edificio(z), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100){}
+MinaFerro::MinaFerro(Zona* z) : Edificio(z), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100), tipo("minaFerro"){}
 
 void MinaFerro::melhora() {
     if(nivel <= 5){
@@ -25,6 +25,10 @@ void MinaFerro::desaba() {//isto está mal feito
 
     }
 
+}
+
+string MinaFerro::obtemTipo() {
+    return tipo;
 }
 
 

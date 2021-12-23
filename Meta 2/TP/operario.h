@@ -4,12 +4,12 @@
 
 #ifndef TP_POO_OPERARIO_H
 #define TP_POO_OPERARIO_H
-#include "trabalhadores.h"
+//#include "trabalhadores.h"
 
-class Operario: public Trabalhador{
+//class Operario: public Trabalhador{
 
 
-};
+//};
 
 
 #endif //TP_POO_OPERARIO_H

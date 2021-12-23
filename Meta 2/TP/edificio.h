@@ -5,7 +5,11 @@
 #ifndef TP_POO_EDIFICIO_H
 #define TP_POO_EDIFICIO_H
 
-#include "zona.h"
+#include <iostream>
+using namespace std;
+
+class Zona;
+
 
 class Edificio {
 public:
@@ -13,7 +17,10 @@ public:
 
     void ligaDesliga();
     bool procuraTrabalhador(string str) const;
+    virtual string obtemTipo();
+    int getonoff() const;
 private:
+    string tipo;
     int onoff;
     Zona* z;
 };

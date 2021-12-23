@@ -4,7 +4,7 @@
 
 #include "pantano.h"
 
-Pantano::Pantano(int d) : Zona("pantano", 0, 0), dias(0){}
+Pantano::Pantano() : Zona("pantano", 0, 0), dias(0){}
 
 void Pantano::contaDias() {
     if(dias >= 10){

@@ -12,9 +12,8 @@
 #include <vector>
 #include "jogo.h"
 #include "ilha.h"
-#include "trabalhadores.h"
+//#include "trabalhadores.h"
 #include "UI.h"
-
 
 
 using namespace std;

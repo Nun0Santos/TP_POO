@@ -3,6 +3,7 @@
 //
 
 #include "edificio.h"
+#include "zona.h"
 
 Edificio::Edificio(Zona* z) : onoff(0), z(z){}
 
@@ -16,6 +17,14 @@ void Edificio::ligaDesliga() {
 
 bool Edificio::procuraTrabalhador(string str) const {
     return true;//criar funcao que procure se existe o trabalhador indicado
+}
+
+int Edificio::getonoff() const {
+    return onoff;
+}
+
+string Edificio::obtemTipo(){
+    return tipo;
 }
 
 

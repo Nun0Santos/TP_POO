@@ -8,11 +8,14 @@
 #include "edificio.h"
 #include "ilha.h"
 
+
 class CentralEletrica : public Edificio{
 public:
     CentralEletrica(Zona* z, ilha* i);
+
+    string obtemTipo() override;
 private:
-    //precisa de ter conhecimento da zona adjacente
+    string tipo;
     int quantCarvao, custoConst;
     ilha* i;
 };

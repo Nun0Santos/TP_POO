@@ -6,7 +6,10 @@
 #define TP_POO_JOGO_H
 
 #include "geral.h"
-#include "ilha.h"
+
+using namespace std;
+
+class ilha;
 
 class Jogo{
 public:
@@ -16,7 +19,7 @@ public:
     string mostraIsland();
 
 private:
-    ilha island;
+    ilha* island;
 };
 
 

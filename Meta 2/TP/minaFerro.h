@@ -13,7 +13,9 @@ public:
 
     void melhora();
     void desaba();
+    string obtemTipo() override;
 private:
+    string tipo;
     int custoConst, custoSubs, nivel, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;
 
 };

@@ -42,27 +42,39 @@ void ilha::mudaValorEdificio(int& l, int& c, const string& t) {
     tabuleiro[l][c]->defineEdificio(t, this);
 }
 
-void ilha::mudaValorTrab(int& l, int& c, const string& t) {
+void ilha::mudaValorTrab(const string& t) {
+    int auxl = 0, auxc = 0, flag = 0;
+
+    for (auxl ; auxl < lin; auxl++) {
+        for(auxc ; auxc < col; auxc++){
+            if(tabuleiro[auxl][auxc]->obtemTipo() == "pas"){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 1){break;}
+    }
+
     if(t == "oper"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c]->defineTrab("O");
-            tabuleiro[l][c]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("O");
+            tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c]->defineTrab("L");
-            tabuleiro[l][c]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("L");
+            tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            tabuleiro[l][c]->defineTrab("M");
-            tabuleiro[l][c]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("M");
+            tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
         cout << "Este trabalhador não existe" << endl;
@@ -83,6 +95,10 @@ string ilha::mostraZona(int x, int y) {
                 oss << tabuleiro[x][y]->obtemTipo() << endl;
                 break;
                 case 1:
+                    if(tabuleiro[x][y]->getEd() == nullptr){
+                        oss << "" << endl;
+                        break;
+                    }
                     oss << tabuleiro[x][y]->obtemEdificio() << endl;
                     break;
                     case 2:
@@ -158,45 +174,45 @@ string ilha::mostraIlha() {
 
     for (int k = 0; k < col; ++k) {
         if(k < col-1)
-            oss << "+ ------------- ";
+            oss << "+ ----------- ";
         else
-            oss << "+ ------------- +";
+            oss << "+ ----------- +";
     }
 
     for (int i = 0; i < lin; ++i) {
         oss << "\n";
         for (int j = 0; j < 4; ++j) {
-            oss << " |    ";
+            oss << " |";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
-                        oss << tabuleiro[i][k]->obtemTipo() << "  ";
+                        oss << "    " << tabuleiro[i][k]->obtemTipo() << "     ";
                         break;
                     case 1:
-                        if(tabuleiro[i][j]->getEd() == nullptr){
-                            oss << "" << "\t\t";
+                        if(tabuleiro[i][k]->getEd() == nullptr){
+                            oss << "            ";
                             break;
                         }
-                        oss << tabuleiro[i][k]->obtemEdificio() << "\t\t";
+                        oss << "    " << tabuleiro[i][k]->obtemEdificio() << "     ";
                         break;
                     case 2:
-                        oss << tabuleiro[i][k]->obtemTrab() << "\t\t";
+                        oss << "  " << tabuleiro[i][k]->obtemTrab();
                         break;
                     case 3:
-                        oss << tabuleiro[i][k]->obtemQuant_Trab() << "\t\t";
+                        oss <<  "     " << tabuleiro[i][k]->obtemQuant_Trab() << "      ";
                         break;
                     default:
                         break;
                 }
-                oss << " |    ";
+                oss << " |";
             }
             oss << "\n";
         }
         for (int k = 0; k < col; ++k) {
             if(k < col-1)
-                oss << " + -------------";
+                oss << " + -----------";
             else
-                oss << " + ------------- +";
+                oss << " + ----------- +";
         }
     }
     return oss.str();
@@ -260,9 +276,8 @@ string ilha::executa(string s1) {
                     istringstream o(lines[1]);
                     string aux;
                     o>>aux;
-                    int ax = 0, ay = 0;
 
-                    ilha::mudaValorTrab(ax, ay, aux);
+                    ilha::mudaValorTrab(aux);
                 }
                 if(lines[0] == "list"){
                     if(lines.size() > 1){
@@ -311,9 +326,8 @@ string ilha::executa(string s1) {
             istringstream o(v[1]);
             string aux;
             o>>aux;
-            int ax = 0, ay = 0;
 
-            ilha::mudaValorTrab(ax, ay, aux);
+            ilha::mudaValorTrab(aux);
             return oss.str();
         }
         if(v[0] == "list"){

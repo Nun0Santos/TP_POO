@@ -12,7 +12,9 @@ public:
     Pantano();
 
     void contaDias();
+    string obtemTipo() override;
 private:
+    string tipo;
     int dias;
 };
 

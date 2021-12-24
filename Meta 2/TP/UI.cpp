@@ -3,11 +3,14 @@
 //
 
 #include "UI.h"
+#include "sstream"
 
 void UI::start() {
 
     int l = defineL() , c = defineC();
-    string str;
+    string str, s2;
+    vector<string> v;
+    ostringstream oss;
 
     j.criaIsland(l, c);
     cout << j.mostraIsland();
@@ -18,9 +21,20 @@ void UI::start() {
         cout << "\nFase do dia : " <<j.gereDias("Manha") << endl;
         while(str != "next"){
             str = defineComando();
+
+            stringstream ss(str);
+
+            while (getline(ss, s2, ' ')) {
+                v.push_back(s2);
+            }
+
             if(str  == "fim")
                 break;
-            j.gereIsland(str);
+            if(v[0] == "list"){
+                cout << j.gereIsland(str);
+            }else{
+                j.gereIsland(str);
+            }
         }
         cout << "\nFase do dia : " <<j.gereDias("Tarde") << endl;
         cout << j.mostraIsland();

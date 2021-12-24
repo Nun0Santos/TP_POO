@@ -4,7 +4,7 @@
 
 #include "centralEletrica.h"
 
-CentralEletrica::CentralEletrica(Zona* z, ilha* i) : Edificio(z), custoConst(15), quantCarvao(100), i(i), tipo("centralEletrica"){}
+CentralEletrica::CentralEletrica(Zona* z, ilha* i) : Edificio(z), custoConst(15), quantCarvao(100), i(i), tipo("elec"){}
 
 string CentralEletrica::obtemTipo() {
     return tipo;

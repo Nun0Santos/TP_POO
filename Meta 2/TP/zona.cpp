@@ -24,7 +24,22 @@ void Zona::definePosL(int l) {
 }
 
 void Zona::defineTrab(string s) {
-    trab.push_back(s);
+    int i, flag = 0;
+    vector<string> aux;
+    for(i = 0; i < 5; ++i){
+        if(trab[i] == "-"){
+            if(flag == 0){
+                flag = 1;
+                aux.push_back(s);
+                ++i;
+            }
+
+        }
+        aux.push_back(trab[i]);
+    }
+
+    trab.clear();
+    trab = aux;
 }
 
 void Zona::defineEdificio(const string& s, ilha* i) {
@@ -67,7 +82,7 @@ int Zona::obtemL() const {
     return posL;
 }
 
-string Zona::obtemTipo() const {
+string Zona::obtemTipo(){
     return tipo;
 }
 

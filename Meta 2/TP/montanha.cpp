@@ -4,7 +4,7 @@
 
 #include "montanha.h"
 
-Montanha::Montanha() : Zona("montanha", 0, 0),probDemissao(0.05), aumentoProd(1), quantFerro(0){}
+Montanha::Montanha() : Zona("montanha", 0, 0),probDemissao(0.05), aumentoProd(1), quantFerro(0), tipo("mnt"){}
 
 void Montanha::produzFerro() {
     quantFerro += 0.1;
@@ -12,4 +12,8 @@ void Montanha::produzFerro() {
 
 void Montanha::aumentaProbDemissao() {
     //
+}
+
+string Montanha::obtemTipo() {
+    return tipo;
 }

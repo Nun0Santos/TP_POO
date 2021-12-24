@@ -6,8 +6,8 @@
 #include "sstream"
 #include "ilha.h"
 
-void Jogo::gereIsland(const string& str) {
-    island->executa(str);
+string Jogo::gereIsland(const string& str) {
+    return island->executa(str);
 }
 
 string Jogo::gereDias(const string& str) {

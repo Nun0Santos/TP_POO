@@ -23,7 +23,7 @@ public:
     void criaIlha();//alocar dinamicamente a ilha
     string mostraIlha();
     void mudaValorEdificio(int& l, int& c, const string& t);//muda o valor do edificio "zona" no tabuleiro
-    void mudaValorTrab(int& l, int& c, const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
+    void mudaValorTrab(const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
     bool verificaLinCol(int x, int y) const;
@@ -31,7 +31,7 @@ public:
     string mostraTodasZonas();
     string executa(string s1);
 private:
-    int lin = 0, col = 0;
+    int lin , col;
     Zona ***tabuleiro;
 };
 

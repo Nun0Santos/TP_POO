@@ -3,3 +3,7 @@
 //
 
 #include "deserto.h"
+
+string Deserto::obtemTipo() {
+    return tipo;
+}

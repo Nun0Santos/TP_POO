@@ -4,7 +4,7 @@
 
 #include "fundicao.h"
 
-Fundicao::Fundicao(Zona *z, ilha *i) : Edificio(z), i(i), custoConst(10), tipo("fundicao"){}
+Fundicao::Fundicao(Zona *z, ilha *i) : Edificio(z), i(i), custoConst(10), tipo("fun"){}
 
 string Fundicao::obtemTipo() {
     return tipo;

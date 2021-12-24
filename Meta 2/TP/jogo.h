@@ -14,7 +14,7 @@ class ilha;
 class Jogo{
 public:
     void criaIsland(int a, int b);
-    void gereIsland(const string& str);
+    string gereIsland(const string& str);
     string gereDias(const string& str);
     string mostraIsland();
 

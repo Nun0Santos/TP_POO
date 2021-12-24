@@ -14,7 +14,9 @@ public:
     void duplicaPrecoConstrução();
     void produzFerro();
     void aumentaProbDemissao();
+    string obtemTipo() override;
 private:
+    string tipo;
     float probDemissao, aumentoProd, quantFerro;
 };
 

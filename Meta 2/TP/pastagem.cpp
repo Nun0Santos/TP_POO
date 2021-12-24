@@ -3,3 +3,7 @@
 //
 
 #include "pastagem.h"
+
+string Pastagem::obtemTipo() {
+    return tipo;
+}

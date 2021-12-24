@@ -9,8 +9,11 @@
 
 class Deserto : public Zona{
 public:
-    Deserto() : Zona("deserto", 0,0), prod(0.05){}
+    Deserto() : Zona("deserto", 0,0), prod(0.05), tipo("dsr"){}
+
+    string obtemTipo() override;
 private:
+    string tipo;
     float prod;
 };
 

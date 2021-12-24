@@ -4,11 +4,15 @@
 
 #include "pantano.h"
 
-Pantano::Pantano() : Zona("pantano", 0, 0), dias(0){}
+Pantano::Pantano() : Zona("pantano", 0, 0), dias(0), tipo("pnt"){}
 
 void Pantano::contaDias() {
     if(dias >= 10){
         //remove edificio e trabalhador
     }
     ++dias;
+}
+
+string Pantano::obtemTipo() {
+    return tipo;
 }

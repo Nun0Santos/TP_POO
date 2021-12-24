@@ -16,3 +16,7 @@ int Floresta::defineArvores() {
 int Floresta::getNArvores() const {
     return nArvores;
 }
+
+string Floresta::obtemTipo() {
+    return tipo;
+}

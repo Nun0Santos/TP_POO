@@ -14,7 +14,11 @@ using namespace std;
 
 class Zona{
 public:
-    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), onoff(0), ed(nullptr){};
+    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), onoff(0), ed(nullptr){
+        for(int i = 0; i < 5; ++i){
+            trab.emplace_back("-");
+        }
+    };
 
     void defineTipo(string str);
     void definePosL(int l);
@@ -25,7 +29,7 @@ public:
     int obtemL() const;
     int obtemC() const;
     string obtemTrab() const;
-    string obtemTipo() const;
+    virtual string obtemTipo();
     int obtemQuant_Trab() const;
     string obtemEdificio() const;
     int obtemQuant_Edificios() const;

@@ -22,7 +22,7 @@ public:
     void defineLin(int a);//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
     string mostraIlha();
-    void mudaValorEdificio(int& l, int& c, const string& t);//muda o valor do edificio "zona" no tabuleiro
+    void mudaValorEdificio(int& l, int& c, const string& t, int dev);//muda o valor do edificio "zona" no tabuleiro
     void mudaValorTrab(const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas

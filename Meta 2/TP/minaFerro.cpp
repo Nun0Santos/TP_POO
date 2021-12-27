@@ -31,4 +31,8 @@ string MinaFerro::obtemTipo() {
     return tipo;
 }
 
+void MinaFerro::vende() {
+    //adicionar dinheiro aos recursos
+}
+
 

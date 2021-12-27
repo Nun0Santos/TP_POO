@@ -13,6 +13,7 @@ public:
     Fundicao(Zona* z, ilha* i);
 
     string obtemTipo() override;
+    void vende() override;
 private:
     string tipo;
     ilha* i;

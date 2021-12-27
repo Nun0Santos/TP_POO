@@ -42,7 +42,34 @@ void Zona::defineTrab(string s) {
     trab = aux;
 }
 
-void Zona::defineEdificio(const string& s, ilha* i) {
+void Zona::defineEdificio(const string& s, ilha* i, int dev) {
+    if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
+        if(s == "mnF"){
+            ed = new MinaFerro(this);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "mnC"){
+            ed = new MinaCarvao(this);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "fun"){
+            ed = new Fundicao(this, i);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "elec"){
+            ed = new CentralEletrica(this, i);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "bat"){
+            ed = new Bateria(this, i);
+            ++quant_edificio;
+            return;
+        }
+    }
     if(s == "mnF"){
         ed = new MinaFerro(this);
         ++quant_edificio;
@@ -113,4 +140,15 @@ int Zona::obtemOnOFF() const {
 
 Edificio *Zona::getEd() {
     return ed;
+}
+
+void Zona::vendeEdificio() {
+    ed->vende();
+    delete ed;
+    ed = nullptr;
+    quant_edificio = 0;
+}
+
+void Zona::ligaDesligaED() {
+    ed->ligaDesliga();
 }

@@ -30,7 +30,7 @@ void UI::start() {
 
             if(str  == "fim")
                 break;
-            if(v[0] == "list"){
+            if(v[0] == "list" || v[0] == "load"){
                 cout << j.gereIsland(str);
             }else{
                 j.gereIsland(str);

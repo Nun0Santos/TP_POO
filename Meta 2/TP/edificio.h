@@ -19,6 +19,7 @@ public:
     bool procuraTrabalhador(string str) const;
     virtual string obtemTipo();
     int getonoff() const;
+    virtual void vende();
 private:
     string tipo;
     int onoff;

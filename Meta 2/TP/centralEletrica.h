@@ -14,9 +14,10 @@ public:
     CentralEletrica(Zona* z, ilha* i);
 
     string obtemTipo() override;
+    void vende() override;
 private:
     string tipo;
-    int quantCarvao, custoConst;
+    int quantCarvao, custoConst, custoVenda;
     ilha* i;
 };
 

@@ -24,7 +24,7 @@ public:
     void definePosL(int l);
     void definePosC(int c);
     void defineTrab(string s);
-    void defineEdificio(const string& s, ilha* i);
+    void defineEdificio(const string& s, ilha* i, int dev);
     void defineQuantTrab();
     int obtemL() const;
     int obtemC() const;
@@ -35,6 +35,8 @@ public:
     int obtemQuant_Edificios() const;
     int obtemOnOFF() const;
     Edificio* getEd();
+    void vendeEdificio();
+    void ligaDesligaED();
 private:
     string tipo;
     Edificio* ed;

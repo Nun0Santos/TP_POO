@@ -9,3 +9,7 @@ Fundicao::Fundicao(Zona *z, ilha *i) : Edificio(z), i(i), custoConst(10), tipo("
 string Fundicao::obtemTipo() {
     return tipo;
 }
+
+void Fundicao::vende() {
+    //adicionar dinheiro aos recursos
+}

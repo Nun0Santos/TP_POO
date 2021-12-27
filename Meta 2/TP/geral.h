@@ -22,6 +22,7 @@ bool verificaComandos(const string& comando);
 bool verificaTipo(const string& t);
 bool verificaTrabalhador(const string& t);
 void leFich(const string& filename);
+bool verificaRecursos(const string& t);
 
 
 

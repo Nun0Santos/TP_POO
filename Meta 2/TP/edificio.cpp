@@ -5,7 +5,7 @@
 #include "edificio.h"
 #include "zona.h"
 
-Edificio::Edificio(Zona* z) : onoff(0), z(z){}
+Edificio::Edificio(Zona* z) : onoff(0), z(z), tipo(""){}
 
 void Edificio::ligaDesliga() {
     if(onoff == 0){
@@ -25,6 +25,10 @@ int Edificio::getonoff() const {
 
 string Edificio::obtemTipo(){
     return tipo;
+}
+
+void Edificio::vende() {
+    return;
 }
 
 

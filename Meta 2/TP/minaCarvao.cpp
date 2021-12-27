@@ -17,3 +17,7 @@ void MinaCarvao::melhora() {
 string MinaCarvao::obtemTipo() {
     return tipo;
 }
+
+void MinaCarvao::vende() {
+    //adicionar dinheiro aos recursos
+}

@@ -9,3 +9,7 @@ CentralEletrica::CentralEletrica(Zona* z, ilha* i) : Edificio(z), custoConst(15)
 string CentralEletrica::obtemTipo() {
     return tipo;
 }
+
+void CentralEletrica::vende() {
+    //adicionar o dinheiro aos recursos
+}

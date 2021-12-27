@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_FERRO_H
 #define TP_POO_FERRO_H
+#include "recursos.h"
 
-
-class ferro {
+class Ferro: public Recursos{
 
 };
 

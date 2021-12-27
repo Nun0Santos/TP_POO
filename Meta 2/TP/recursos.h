@@ -6,7 +6,15 @@
 #define TP_POO_RECURSOS_H
 
 
-class recursos {
+class Recursos {
+public:
+        Recursos(int a, int b, int c);
+
+
+private:
+    int precoVenda; // Por kg
+    int x,y;
+    int kg;
 
 };
 

@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_LENHADOR_H
 #define TP_POO_LENHADOR_H
+#include "trabalhadores.h"
 
-
-class lenhador {
+class Lenhador: public Trabalhador{
 
 };
 

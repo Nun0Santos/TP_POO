@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_MADEIRA_H
 #define TP_POO_MADEIRA_H
+#include "recursos.h"
 
-
-class madeira {
+class Madeira: public Recursos{
 
 };
 

@@ -8,149 +8,209 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
+				<Option working_dir="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="TP_POO">
-				<Option output="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/TP_POO.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_POO"/>
-					<CompileFile command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="TP_POO/fast">
-				<Option output="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/TP_POO.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/x86_64-w64-mingw32"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include/c++/10.2.0/backward"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../include"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/include-fixed"/>
-					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/10.2.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_POO/fast"/>
-					<CompileFile command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
+				<Option working_dir="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_POO">
+				<Option output="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/TP_POO" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_POO"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_POO/fast">
+				<Option output="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/TP_POO" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/user/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_POO/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/user/Desktop/GitHub/TP_POO/Meta\ 2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/UI.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/config.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/comandos.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/config.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/main.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhdores.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhdores.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.cpp">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/lenhador.cpp">
 			<Option target="TP_POO"/>
 		</Unit>
-		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/CMakeLists.txt">
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/lenhador.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/main.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/mineiro.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/mineiro.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/operario.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/operario.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/zona.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="/home/user/Desktop/GitHub/TP_POO/Meta 2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -19,4 +19,4 @@ add_executable(TP_POO
         TP/UI.cpp
         TP/UI.h
         TP/jogo.cpp
-        TP/jogo.h TP/deserto.cpp TP/deserto.h TP/pastagem.cpp TP/pastagem.h TP/floresta.cpp TP/floresta.h TP/montanha.cpp TP/montanha.h TP/operario.h TP/operario.cpp)
+        TP/jogo.h TP/deserto.cpp TP/deserto.h TP/pastagem.cpp TP/pastagem.h TP/floresta.cpp TP/floresta.h TP/montanha.cpp TP/montanha.h TP/operario.h TP/operario.cpp TP/lenhador.cpp TP/lenhador.h TP/mineiro.cpp TP/mineiro.h TP/recursos.cpp TP/recursos.h TP/ferro.cpp TP/ferro.h TP/barraAco.cpp TP/barraAco.h TP/carvao.cpp TP/carvao.h TP/madeira.cpp TP/madeira.h TP/vigasMadeira.cpp TP/vigasMadeira.h TP/eletricidade.cpp TP/eletricidade.h)

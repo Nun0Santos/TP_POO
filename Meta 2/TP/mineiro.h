@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_MINEIRO_H
 #define TP_POO_MINEIRO_H
+#include "trabalhadores.h"
 
-
-class mineiro {
+class Mineiro: public Trabalhador{
 
 };
 

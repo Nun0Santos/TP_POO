@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_ELETRICIDADE_H
 #define TP_POO_ELETRICIDADE_H
+#include "recursos.h"
 
-
-class eletricidade {
+class Eletricidade: public Recursos{
 
 };
 

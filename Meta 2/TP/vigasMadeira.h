@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_VIGASMADEIRA_H
 #define TP_POO_VIGASMADEIRA_H
+#include "recursos.h"
 
-
-class vigasMadeira {
+class VigasMadeira: public Recursos{
 
 };
 

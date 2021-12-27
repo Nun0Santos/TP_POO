@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_BARRAACO_H
 #define TP_POO_BARRAACO_H
+#include "recursos.h"
 
-
-class barraAco {
+class BarraAco: public Recursos{
 
 };
 

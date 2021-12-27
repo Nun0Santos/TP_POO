@@ -4,9 +4,9 @@
 
 #ifndef TP_POO_CARVAO_H
 #define TP_POO_CARVAO_H
+#include "recursos.h"
 
-
-class carvao {
+class Carvao: public Recursos{
 
 };
 

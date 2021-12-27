@@ -3,3 +3,6 @@
 //
 
 #include "recursos.h"
+
+
+Recursos::Recursos(int a, int b, int c): precoVenda(a), x(b), y(c) {};

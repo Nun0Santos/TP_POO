@@ -9,6 +9,7 @@
 class Recursos {
 public:
         Recursos(int a, int b, int c);
+        int obtemCoordenadas();
 
 
 private:

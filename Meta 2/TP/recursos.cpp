@@ -5,4 +5,6 @@
 #include "recursos.h"
 
 
-Recursos::Recursos(int a, int b, int c): precoVenda(a), x(b), y(c) {};
+Recursos::Recursos(int a, int b, int c): precoVenda(a), x(b), y(c) {}
+
+int Recursos::obtemCoordenadas() {return x,y;};

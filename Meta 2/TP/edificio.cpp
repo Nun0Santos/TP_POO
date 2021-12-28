@@ -3,9 +3,10 @@
 //
 
 #include "edificio.h"
-#include "zona.h"
+#include "ilha.h"
 
-Edificio::Edificio(Zona* z) : onoff(0), z(z), tipo(""){}
+
+Edificio::Edificio(ilha* i) : onoff(0), i(i), tipo(""){}
 
 void Edificio::ligaDesliga() {
     if(onoff == 0){
@@ -27,8 +28,32 @@ string Edificio::obtemTipo(){
     return tipo;
 }
 
+void Edificio::vende(string t, int quant) {
+    i->aumentaRecursos(move(t), quant);
+}
+
+void Edificio::produz() {
+
+}
+
+bool Edificio::gastaRecursos(string t, int quant) {
+    return i->gastaRecursos(move(t), quant);
+}
+
+void Edificio::aumentaRecursos(string t, int quant) {
+    i->aumentaRecursos(move(t), quant);
+}
+
 void Edificio::vende() {
-    return;
+
+}
+
+int Edificio::obtemCusto() {
+    return 0;
+}
+
+int Edificio::obtemCustoSubs() {
+    return 0;
 }
 
 

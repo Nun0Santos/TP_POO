@@ -4,7 +4,7 @@
 
 #include "minaCarvao.h"
 
-MinaCarvao::MinaCarvao(Zona* z) : Edificio(z), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100), tipo("mnC"){}
+MinaCarvao::MinaCarvao(ilha* i) : Edificio(i), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100), tipo("mnC"){}
 
 void MinaCarvao::melhora() {
     if(nivel <= 5){
@@ -19,5 +19,13 @@ string MinaCarvao::obtemTipo() {
 }
 
 void MinaCarvao::vende() {
-    //adicionar dinheiro aos recursos
+    Edificio::aumentaRecursos("Dinheiro", custoConst);
+}
+
+int MinaCarvao::obtemCusto() {
+    return custoConst;
+}
+
+int MinaCarvao::obtemCustoSubs() {
+    return custoSubs;
 }

@@ -4,12 +4,17 @@
 
 #include "fundicao.h"
 
-Fundicao::Fundicao(Zona *z, ilha *i) : Edificio(z), i(i), custoConst(10), tipo("fun"){}
+Fundicao::Fundicao(ilha *i) : Edificio(i), custoConst(10), tipo("fun"){}
 
 string Fundicao::obtemTipo() {
     return tipo;
 }
 
 void Fundicao::vende() {
-    //adicionar dinheiro aos recursos
+    Edificio::aumentaRecursos("Dinheiro", custoConst);
 }
+
+int Fundicao::obtemCusto() {
+    return custoConst;
+}
+

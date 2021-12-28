@@ -375,9 +375,7 @@ string ilha::executa(string s1) {
             if(verificaLinCol(x, y)){
                 //vender o edificio na posicao indicada
                 if(tabuleiro[x][y]->getEd() != nullptr){
-                    if(tabuleiro[x][y]->obtemOnOFF() == 1){
-                        tabuleiro[x][y]->vendeEdificio();
-                    }
+                    tabuleiro[x][y]->vendeEdificio();
                 }
                 return oss.str();
             }
@@ -396,6 +394,8 @@ string ilha::executa(string s1) {
             istringstream ossQ(v[1]);
             ossQ >> x;
             aumentaRecursos("Dinheiro", x);
+
+            return oss.str();
         }
         if(v[0] == "debed"){
             istringstream ossX(v[2]);//transforma string em int
@@ -462,14 +462,19 @@ void ilha::aumentaRecursos(string str, int quant) {
     }
 }
 
-void ilha::gastaRecursos(string str, int quant) {
+bool ilha::gastaRecursos(string str, int quant) {
     auto it = recursos.begin();
     while(it != recursos.end()){
         if((*it)->obtemTipo() == str){
-            (*it)->gasta(quant);
+            if((*it)->obtemQuantidade() >= quant){
+                (*it)->gasta(quant);
+                return true;
+            }
             break;
         }
+        ++it;
     }
+    return false;
 }
 
 void ilha::trataTrabalhadores() {
@@ -663,5 +668,19 @@ string ilha::executaFich(string s1) {
     }
 
     return "Comando invalido\n";
+}
+
+bool ilha::gastaRecursos(string str, double quant) {
+    auto it = recursos.begin();
+    while(it != recursos.end()){
+        if((*it)->obtemTipo() == str){
+            if((*it)->obtemQuantidade() >= quant){
+                (*it)->gasta(quant);
+                return true;
+            }
+            break;
+        }
+    }
+    return false;
 }
 

@@ -41,6 +41,7 @@ public:
     void ligaDesligaED();
     void verificaDespedimento();
     void trataTrabalhadores();
+    void trataEdificios();
     void defineTrab(Trabalhador* t);
 private:
     string tipo;

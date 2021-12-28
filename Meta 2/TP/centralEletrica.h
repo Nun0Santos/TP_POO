@@ -6,19 +6,20 @@
 #define TP_POO_CENTRALELETRICA_H
 
 #include "edificio.h"
-#include "ilha.h"
 
 
 class CentralEletrica : public Edificio{
 public:
-    CentralEletrica(Zona* z, ilha* i);
+    CentralEletrica(ilha* i, int x, int y);
 
     string obtemTipo() override;
     void vende() override;
+    void produz(int i);
+    int obtemCusto() override;
 private:
+    int x, y;
     string tipo;
-    int quantCarvao, custoConst, custoVenda;
-    ilha* i;
+    int quantCarvao, custoConst;
 };
 
 

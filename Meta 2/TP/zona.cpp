@@ -72,53 +72,76 @@ void Zona::defineTrab(string s, int dia) {
 void Zona::defineEdificio(const string& s, ilha* i, int dev) {
     if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
         if(s == "mnF"){
-            ed = new MinaFerro(this);
-            ++quant_edificio;
-            return;
+            MinaFerro m(i);
+            int custo = m.obtemCusto();
+            if(i->gastaRecursos("Madeira", custo)){
+                ed = new MinaFerro(i);
+                ++quant_edificio;
+                return;
+            }
+
+            custo = m.obtemCustoSubs();
+            if(i->gastaRecursos("Dinheiro", custo)){
+                ed = new MinaFerro(i);
+                ++quant_edificio;
+                return;
+            }
         }
         if(s == "mnC"){
-            ed = new MinaCarvao(this);
-            ++quant_edificio;
-            return;
+            MinaCarvao m(i);
+            if(i->gastaRecursos("Madeira", m.obtemCusto()) || i->gastaRecursos("Dinheiro", m.obtemCustoSubs())){
+                ed = new MinaCarvao(i);
+                ++quant_edificio;
+                return;
+            }
         }
         if(s == "fun"){
-            ed = new Fundicao(this, i);
-            ++quant_edificio;
-            return;
+            Fundicao m(i);
+            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+                ed = new Fundicao(i);
+                ++quant_edificio;
+                return;
+            }
         }
         if(s == "elec"){
-            ed = new CentralEletrica(this, i);
-            ++quant_edificio;
-            return;
+            CentralEletrica m(i, posL, posC);
+            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+                ed = new CentralEletrica(i, posL, posC);
+                ++quant_edificio;
+                return;
+            }
         }
         if(s == "bat"){
-            ed = new Bateria(this, i);
-            ++quant_edificio;
-            return;
+            Bateria m(i);
+            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+                ed = new Bateria(i);
+                ++quant_edificio;
+                return;
+            }
         }
     }
     if(s == "mnF"){
-        ed = new MinaFerro(this);
+        ed = new MinaFerro(i);
         ++quant_edificio;
         return;
     }
     if(s == "mnC"){
-        ed = new MinaCarvao(this);
+        ed = new MinaCarvao(i);
         ++quant_edificio;
         return;
     }
     if(s == "fun"){
-        ed = new Fundicao(this, i);
+        ed = new Fundicao(i);
         ++quant_edificio;
         return;
     }
     if(s == "elec"){
-        ed = new CentralEletrica(this, i);
+        ed = new CentralEletrica(i, posL, posC);
         ++quant_edificio;
         return;
     }
     if(s == "bat"){
-        ed = new Bateria(this, i);
+        ed = new Bateria(i);
         ++quant_edificio;
         return;
     }
@@ -230,4 +253,8 @@ void Zona::defineTrab(Trabalhador* t) {
         Lenhador* l();
         workers.push_back(l);
     }*/
+}
+
+void Zona::trataEdificios() {
+
 }

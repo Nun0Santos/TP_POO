@@ -4,7 +4,7 @@
 
 #include "bateria.h"
 
-Bateria::Bateria(Zona *z, ilha *i) : Edificio(z), i(i), quantEletricidade(100), nivel(1), upgradeDinheiro(5), custoConst(10), tipo("bat"){}
+Bateria::Bateria(ilha *i) : Edificio(i), quantEletricidade(100), nivel(1), upgradeDinheiro(5), custoConst(10), tipo("bat"){}
 
 void Bateria::melhora() {
     if(nivel <= 5){
@@ -14,4 +14,12 @@ void Bateria::melhora() {
 
 string Bateria::obtemTipo(){
     return tipo;
+}
+
+void Bateria::vende() {
+    Edificio::vende("Dinheiro", custoConst);
+}
+
+int Bateria::obtemCusto() {
+    return custoConst;
 }

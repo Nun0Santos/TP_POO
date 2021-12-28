@@ -36,8 +36,11 @@ public:
     void despedimentos();
     void iniciaRecursos();
     void aumentaRecursos(string str, int quant);
-    void gastaRecursos(string str, int quant);
+    bool gastaRecursos(string str, int quant);
+    bool gastaRecursos(string str, double quant);
+    int obtemCustoProdRec();
     void trataTrabalhadores();
+    void trataEdificios();
 private:
     int lin , col, dias;
     Zona ***tabuleiro;

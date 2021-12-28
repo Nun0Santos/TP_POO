@@ -9,12 +9,14 @@
 
 class MinaCarvao : public Edificio{
 public:
-    MinaCarvao(Zona* z);
+    MinaCarvao(ilha* i);
 
     void melhora();
     void desaba();
     string obtemTipo() override;
     void vende() override;
+    int obtemCusto() override;
+    int obtemCustoSubs() override;
 private:
     string tipo;
     int custoConst, custoSubs, nivel, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;

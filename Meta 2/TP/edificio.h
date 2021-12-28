@@ -6,24 +6,31 @@
 #define TP_POO_EDIFICIO_H
 
 #include <iostream>
+
 using namespace std;
 
-class Zona;
-
+class ilha;
 
 class Edificio {
 public:
-    Edificio(Zona* z);
+    Edificio(ilha* i);
 
     void ligaDesliga();
     bool procuraTrabalhador(string str) const;
     virtual string obtemTipo();
     int getonoff() const;
     virtual void vende();
+    void vende(string t, int quant);
+    void produz();
+    bool gastaRecursos(string t, int quant);
+    void aumentaRecursos(string t, int quant);
+    bool verificaLaterais(int x, int y);
+    virtual int obtemCusto();
+    virtual int obtemCustoSubs();
 private:
     string tipo;
     int onoff;
-    Zona* z;
+    ilha* i;
 };
 
 

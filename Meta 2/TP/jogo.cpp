@@ -34,6 +34,7 @@ void Jogo::criaIsland(int a, int b) {
     island->defineLin(a);
     island->defineCol(b);
     island->criaIlha();
+    island->iniciaRecursos();
 }
 
 string Jogo::mostraIsland() {

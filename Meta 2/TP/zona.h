@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include "edificio.h"
+#include "trabalhadores.h"
 
 class ilha;
 
@@ -23,12 +24,13 @@ public:
     void defineTipo(string str);
     void definePosL(int l);
     void definePosC(int c);
-    void defineTrab(string s);
+    void defineTrab(string s, int dia);
     void defineEdificio(const string& s, ilha* i, int dev);
     void defineQuantTrab();
     int obtemL() const;
     int obtemC() const;
     string obtemTrab() const;
+    string obtemWorkers() const;
     virtual string obtemTipo();
     int obtemQuant_Trab() const;
     string obtemEdificio() const;
@@ -37,10 +39,14 @@ public:
     Edificio* getEd();
     void vendeEdificio();
     void ligaDesligaED();
+    void verificaDespedimento();
+    void trataTrabalhadores();
+    void defineTrab(Trabalhador* t);
 private:
     string tipo;
     Edificio* ed;
     vector<string> trab;
+    vector<Trabalhador*> workers;
     int quant_trab, quant_edificio, onoff;
     int posL, posC;
 };

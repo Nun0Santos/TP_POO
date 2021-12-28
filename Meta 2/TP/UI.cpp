@@ -21,20 +21,9 @@ void UI::start() {
         cout << "\nFase do dia : " <<j.gereDias("Manha") << endl;
         while(str != "next"){
             str = defineComando();
-
-            stringstream ss(str);
-
-            while (getline(ss, s2, ' ')) {
-                v.push_back(s2);
-            }
-
             if(str  == "fim")
                 break;
-            if(v[0] == "list" || v[0] == "load"){
-                cout << j.gereIsland(str);
-            }else{
-                j.gereIsland(str);
-            }
+            cout << j.gereIsland(str);
         }
         cout << "\nFase do dia : " <<j.gereDias("Tarde") << endl;
         cout << j.mostraIsland();

@@ -4,17 +4,47 @@
 
 #include "trabalhadores.h"
 #include <sstream>
-//Trabalhador::Trabalhador(int c, float prob, int x, int y, int d):custo(c),probEmbora(prob),x(x),y(y), dias(d){++id;}
 
-int Trabalhador::obtemCusto() {return custo;}
+int Trabalhador::id = 0;
 
-float Trabalhador::obtemProb() {return probEmbora;}
+int Trabalhador::ID() const {
+    return id_trab;
+}
 
-/*string Trabalhador::obtemId() {
-    ostringstream oss;
-    oss << id << "." << dias;
-    return oss.str();
-}*/
+string Trabalhador::obtemTipo(){
+    return "-";
+}
+
+string Trabalhador::obtemID() {
+    return "-";
+}
+
+int Trabalhador::pedeDemissao() {
+    return 0;
+}
+
+void Trabalhador::aumentaDias() {
+
+}
+
+int Trabalhador::vidaBoa() {
+    return 0;
+}
+
+Trabalhador::Trabalhador(const Trabalhador &outro) {
+    *this = outro;
+}
+
+Trabalhador &Trabalhador::operator=(const Trabalhador &outro) {
+    if(this == &outro){return *this;}
+
+    id_trab = outro.id_trab;
+
+    return *this;
+}
+
+
+
 
 
 

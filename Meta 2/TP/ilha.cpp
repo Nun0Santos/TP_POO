@@ -11,13 +11,24 @@
 #include "floresta.h"
 #include "deserto.h"
 
+
+
 #include <sstream>
 
 #include <fstream>
 #include <algorithm>
 #include <random>
 #include <chrono>
-#include <filesystem>
+
+#include "dinheiro.h"
+#include "barraAco.h"
+#include "ferro.h"
+#include "vigasMadeira.h"
+#include "madeira.h"
+#include "eletricidade.h"
+#include "carvao.h"
+#include "ilha.h"
+
 
 using namespace std;
 
@@ -44,10 +55,10 @@ void ilha::mudaValorEdificio(int& l, int& c, const string& t, int dev) {
 }
 
 void ilha::mudaValorTrab(const string& t) {
-    int auxl = 0, auxc = 0, flag = 0;
+    int auxl, auxc , flag = 0;
 
-    for (auxl ; auxl < lin; auxl++) {
-        for(auxc ; auxc < col; auxc++){
+    for (auxl = 0; auxl < lin; auxl++) {
+        for(auxc = 0; auxc < col; auxc++){
             if(tabuleiro[auxl][auxc]->obtemTipo() == "pas"){
                 flag = 1;
                 break;
@@ -58,7 +69,7 @@ void ilha::mudaValorTrab(const string& t) {
 
     if(t == "oper"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("O");
+            tabuleiro[auxl][auxc]->defineTrab("O", dias);
             tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
@@ -66,7 +77,7 @@ void ilha::mudaValorTrab(const string& t) {
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("L");
+            tabuleiro[auxl][auxc]->defineTrab("L", dias);
             tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
@@ -74,7 +85,7 @@ void ilha::mudaValorTrab(const string& t) {
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("M");
+            tabuleiro[auxl][auxc]->defineTrab("M", dias);
             tabuleiro[auxl][auxc]->defineQuantTrab();
             return;
         }
@@ -103,7 +114,7 @@ string ilha::mostraZona(int x, int y) {
                     oss << tabuleiro[x][y]->obtemEdificio() << endl;
                     break;
                     case 2:
-                        oss << tabuleiro[x][y]->obtemTrab() << endl;
+                        oss << tabuleiro[x][y]->obtemWorkers() << endl;
                         break;
                         case 3:
                             oss << tabuleiro[x][y]->obtemQuant_Trab() << endl;
@@ -173,6 +184,14 @@ void ilha::criaIlha() {
 string ilha::mostraIlha() {
     ostringstream oss;
 
+    oss << "Dia " << dias << endl;
+
+    for(auto & it : recursos){
+        oss << it->obtemTipo() << ": " << it->obtemQuantidade() << "| ";
+    }
+
+    oss << "\n";
+
     for (int k = 0; k < col; ++k) {
         if(k < col-1)
             oss << "+ ----------- ";
@@ -236,72 +255,7 @@ string ilha::executa(string s1) {
     if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
         //COMANDOS DO FICHEIRO
         if(v[0] == "exec"){
-            vector<string> lines;
-            string line;
-            int fx, fy;
-
-            ifstream fich_leitura(v[1]);
-            if(!fich_leitura.is_open()) {
-                oss << "Erro ao tentar abrir o ficheiro";
-                return oss.str();
-            }
-
-            getline(fich_leitura,line, '\n');
-
-            fich_leitura.close();
-
-            stringstream ss1(line);
-            while (getline(ss1, line, ' ')) {
-                lines.push_back(line);
-            }
-
-
-            if(comandos(lines)){
-                if (lines[0] == "cons"){
-                    istringstream ossFX(lines[2]);//transforma string em int
-                    ossFX >> fx;//atribui valor transformado à variavel x
-                    istringstream ossFY(lines[3]);//transforma string em int
-                    ossFY >> fy;//atribui valor transformado à variavel y
-
-                    if (verificaLinCol(fx,fy)){
-
-                        istringstream o(lines[1]);
-                        string aux;
-                        o>>aux;
-
-                        ilha::mudaValorEdificio(fx, fy, aux, 0);
-                        return oss.str();
-                    }
-                }
-                if (lines[0] == "cont"){
-                    istringstream o(lines[1]);
-                    string aux;
-                    o>>aux;
-
-                    ilha::mudaValorTrab(aux);
-                }
-                if(lines[0] == "list"){
-                    if(lines.size() > 1){
-                        istringstream ossX(lines[1]);//transforma string em int
-                        ossX >> x;//atribui valor transformado à variavel x
-                        istringstream ossY(lines[2]);//transforma string em int
-                        ossY >> y;//atribui valor transformado à variavel y
-
-                        if(verificaLinCol(x,y)){
-                            cout << mostraZona(x,y);
-                            return oss.str();
-                        }
-                    }
-                    else{
-                        oss << mostraTodasZonas();
-                        return oss.str();
-                    }
-                }
-            }else{
-                oss << "comandos do ficheiro não são válidos" << endl;
-                return oss.str();
-            }
-
+            executaFich(v[1]);
         }
 
         //COMANDOS STDIN
@@ -352,6 +306,9 @@ string ilha::executa(string s1) {
         }
 
         if(v[0] == "next"){
+            //trataTrabalhadores();
+            //despedimentos();
+            ++dias;
             return oss.str();
         }
 
@@ -392,7 +349,14 @@ string ilha::executa(string s1) {
         }
 
         if(v[0] == "move"){
-            //mudar o trabalhador de sitio
+            istringstream ossX(v[2]);//transforma string em int
+            ossX >> x;//atribui valor transformado à variavel x
+            istringstream ossY(v[3]);//transforma string em int
+            ossY >> y;//atribui valor transformado à variavel y
+
+            if(verificaLinCol(x, y)){
+
+            }
         }
 
         if(v[0] == "vende"){
@@ -429,7 +393,9 @@ string ilha::executa(string s1) {
             //apagar a ilha auxiliar
         }
         if(v[0] == "debcash"){
-            //adicionar dinheiro
+            istringstream ossQ(v[1]);
+            ossQ >> x;
+            aumentaRecursos("Dinheiro", x);
         }
         if(v[0] == "debed"){
             istringstream ossX(v[2]);//transforma string em int
@@ -453,6 +419,249 @@ string ilha::executa(string s1) {
             //apagar um trabalhador através do id
         }
     }
+    return "Comando invalido\n";
+}
+
+void ilha::despedimentos() {
+    for (int i = 0; i < lin; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->obtemQuant_Trab() == 0){
+                continue;
+            }
+            tabuleiro[i][j]->verificaDespedimento();
+        }
+    }
+
+    for (int i = 0; i < lin; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->obtemQuant_Trab() == 0){
+                continue;
+            }
+            tabuleiro[i][j]->verificaDespedimento();
+        }
+    }
+}
+
+void ilha::iniciaRecursos() {
+    recursos.push_back(new Dinheiro);
+    recursos.push_back(new Carvao);
+    recursos.push_back(new Ferro);
+    recursos.push_back(new BarraAco);
+    recursos.push_back(new Eletricidade);
+    recursos.push_back(new VigasMadeira);
+    recursos.push_back(new Madeira);
+}
+
+void ilha::aumentaRecursos(string str, int quant) {
+    auto it = recursos.begin();
+    while(it != recursos.end()){
+        if((*it)->obtemTipo() == str){
+            (*it)->aumenta(quant);
+            break;
+        }
+    }
+}
+
+void ilha::gastaRecursos(string str, int quant) {
+    auto it = recursos.begin();
+    while(it != recursos.end()){
+        if((*it)->obtemTipo() == str){
+            (*it)->gasta(quant);
+            break;
+        }
+    }
+}
+
+void ilha::trataTrabalhadores() {
+    for (int i = 0; i < lin; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->obtemQuant_Trab() == 0){
+                continue;
+            }
+            tabuleiro[i][j]->trataTrabalhadores();
+        }
+    }
+}
+
+string ilha::executaFich(string s1) {
+    vector<string> v;
+    string line;
+    int x, y;
+    ostringstream oss;
+
+
+    ifstream fich_leitura(s1);
+    if(!fich_leitura.is_open()) {
+        oss << "Erro ao tentar abrir o ficheiro";
+        return oss.str();
+    }
+
+    getline(fich_leitura,line, '\n');
+
+    fich_leitura.close();
+
+    stringstream ss1(line);
+    while (getline(ss1, line, ' ')) {
+        v.push_back(line);
+    }
+
+    if (v[0] == "cons"){
+        istringstream ossX(v[2]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[3]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if (verificaLinCol(x,y)){
+            istringstream o(v[1]);
+            string aux;
+            o>>aux;
+
+            ilha::mudaValorEdificio(x, y, aux, 0);
+            return oss.str();
+        }else{
+            oss << "fora dos limites" << endl;
+            return oss.str();
+        }
+    }
+
+    if (v[0] == "cont"){
+        istringstream o(v[1]);
+        string aux;
+        o>>aux;
+
+        ilha::mudaValorTrab(aux);
+        return oss.str();
+    }
+
+    if(v[0] == "list"){
+        if(v.size() > 1){
+            istringstream ossX(v[1]);//transforma string em int
+            ossX >> x;//atribui valor transformado à variavel x
+            istringstream ossY(v[2]);//transforma string em int
+            ossY >> y;//atribui valor transformado à variavel y
+
+            if(verificaLinCol(x,y)){
+                oss << mostraZona(x,y);
+                return oss.str();
+            }
+        }
+        else{
+            oss << mostraTodasZonas();
+            return oss.str();
+        }
+    }
+
+    if(v[0] == "next"){
+        trataTrabalhadores();
+        despedimentos();
+        ++dias;
+        return oss.str();
+    }
+
+    if(v[0] == "liga"){
+        istringstream ossX(v[1]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[2]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if(verificaLinCol(x,y)){
+            if(tabuleiro[x][y]->getEd() == nullptr){
+                return oss.str();
+            }
+            if(tabuleiro[x][y]->obtemOnOFF() == 0){
+                tabuleiro[x][y]->ligaDesligaED();
+            }
+            oss << tabuleiro[x][y]->obtemOnOFF();
+            return oss.str();
+        }
+    }
+
+    if(v[0] == "des"){
+        istringstream ossX(v[1]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[2]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if(verificaLinCol(x,y)){
+            if(tabuleiro[x][y]->getEd() == nullptr){
+                return oss.str();
+            }
+            if(tabuleiro[x][y]->obtemOnOFF() == 1){
+                tabuleiro[x][y]->ligaDesligaED();
+            }
+            oss << tabuleiro[x][y]->obtemOnOFF();
+            return oss.str();
+        }
+    }
+
+    if(v[0] == "move"){
+        //mudar o trabalhador de sitio
+    }
+
+    if(v[0] == "vende"){
+        //vender recursos
+        //vender um edificio
+        //fazer a distinção usando um vector onde temos os tipos de rescursos ou transformando em inteiro e verificar se é um numero
+        if(verificaRecursos(v[1])){
+            //verificar se a quantidade introduzida é valida
+            //se for, vender os recursos, senao fazer o return
+        }
+        istringstream ossX(v[1]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[2]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if(verificaLinCol(x, y)){
+            //vender o edificio na posicao indicada
+            if(tabuleiro[x][y]->getEd() != nullptr){
+                if(tabuleiro[x][y]->obtemOnOFF() == 1){
+                    tabuleiro[x][y]->vendeEdificio();
+                }
+            }
+            return oss.str();
+        }
+    }
+
+    if(v[0] == "save"){
+        //temos que copiar a nossa ilha atual para uma ilha auxiliar, para usarmos os operadores e construtores por copia
+    }
+
+    if(v[0] == "load"){
+        //mostrar a ilha auxiliar
+    }
+
+    if(v[0] == "apaga"){
+        //apagar a ilha auxiliar
+    }
+
+    if(v[0] == "debcash"){
+        istringstream ossQ(v[1]);
+        ossQ >> x;
+        aumentaRecursos("Dinheiro", x);
+    }
+
+    if(v[0] == "debed"){
+        istringstream ossX(v[2]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[3]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if (verificaLinCol(x,y)){
+            istringstream o(v[1]);
+            string aux;
+            o>>aux;
+
+            ilha::mudaValorEdificio(x, y, aux, 1);//passamos o 1 para indicar que é o comando do programador
+            return oss.str();
+        }else{
+            oss << "fora dos limites" << endl;
+            return oss.str();
+        }
+    }
+    if(v[0] == "debkill"){
+        //apagar um trabalhador através do id
+    }
+
     return "Comando invalido\n";
 }
 

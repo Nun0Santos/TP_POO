@@ -6,26 +6,31 @@
 #define TP_POO_TRABALHADORES_H
 
 #include <iostream>
+#include <sstream>
+
 using namespace std;
 
+class Zona;
 
 class Trabalhador{
 public:
-    Trabalhador(int c, float prob, int x, int y, int d) : custo(c),probEmbora(prob),x(x),y(y), dias(d){++id;};
-    int obtemCusto();
-    float obtemProb();
-    string obtemId();
-    int obtemCoordenadas();
+    Trabalhador() {
+        id_trab = ++id;
+    };
+    Trabalhador(const Trabalhador& outro);
 
 
+    int ID() const;
+    virtual string obtemTipo();
+    virtual string obtemID();
+    virtual int pedeDemissao();
+    virtual void aumentaDias();
+    virtual int vidaBoa();
+    Trabalhador& operator=(const Trabalhador& outro);
 private:
-    int custo; //Custo do trabalhador
-    float probEmbora; //Probabilidade do trabalhador ir embora
-    static int id; // Identificador do trabalhador com o formato n.d (n = numero crescente e d = dia da simulacao)
-    int x;
-    int y;
-    int dias; //Dias da simulacao
+    int id_trab; //Custo do trabalhador / id do trabalhador
+    static int id;
 };
-int Trabalhador::id = 1;
+
 
 #endif //TP_POO_TRABALHADORES_H

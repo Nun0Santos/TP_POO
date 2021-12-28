@@ -7,7 +7,18 @@
 #include "recursos.h"
 
 class Carvao: public Recursos{
+public:
+    Carvao();
 
+    int vende(int quant) override;
+    int producao() override;
+    void aumenta(int quant) override;
+    int obtemQuantidade() override;
+    string obtemTipo() override;
+    bool gasta(int quant) override;
+private:
+    string tipo;
+    int custoVenda, quantidade, custoProducao;
 };
 
 

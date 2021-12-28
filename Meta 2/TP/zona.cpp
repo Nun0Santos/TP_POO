@@ -4,11 +4,16 @@
 
 #include "zona.h"
 #include <sstream>
+
 #include "minaCarvao.h"
 #include "minaFerro.h"
 #include "bateria.h"
 #include "fundicao.h"
 #include "centralEletrica.h"
+
+#include "operario.h"
+#include "lenhador.h"
+#include "mineiro.h"
 
 
 void Zona::defineTipo(string str) {
@@ -23,7 +28,29 @@ void Zona::definePosL(int l) {
     posL = l;
 }
 
-void Zona::defineTrab(string s) {
+void Zona::defineTrab(string s, int dia) {
+    if(s == "O"){
+        Operario o(dia, this);
+        /*if(o.obtemCusto() > recursos.dinheiro)
+            return;*/
+
+        workers.push_back(&o);
+    }
+    if(s == "L"){
+        Lenhador o(dia, this);
+        /*if(o.obtemCusto() > recursos.dinheiro)
+            return;*/
+
+        workers.push_back(&o);
+    }
+    if(s == "M"){
+        Mineiro o(dia, this);
+        /*if(o.obtemCusto() > recursos.dinheiro)
+            return;*/
+
+        workers.push_back(&o);
+    }
+
     int i, flag = 0;
     vector<string> aux;
     for(i = 0; i < 5; ++i){
@@ -151,4 +178,56 @@ void Zona::vendeEdificio() {
 
 void Zona::ligaDesligaED() {
     ed->ligaDesliga();
+}
+
+string Zona::obtemWorkers() const {
+    ostringstream oss;
+    for(const auto & i : workers)
+        oss << i->obtemTipo() << " : " << i->obtemID() << " | ";
+    return oss.str();
+}
+
+void Zona::verificaDespedimento() {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->pedeDemissao() == 1){
+            if((*it)->obtemTipo() == "L"){
+                if((*it)->vidaBoa() != 0){
+                    continue;
+                }
+            }
+
+            delete (*it);
+            it = workers.erase(it);
+        }
+        ++it;
+    }
+}
+
+void Zona::trataTrabalhadores() {
+    auto it = workers.begin();
+    while(it != workers.end()){
+        (*it)->aumentaDias();
+
+        if((*it)->obtemTipo() == "L"){
+            (*it)->vidaBoa();
+        }
+
+        ++it;
+    }
+}
+
+void Zona::defineTrab(Trabalhador* t) {
+    auto it = workers.begin();
+    while(it != workers.end()){
+        if((*it) == t){
+            return;
+        }
+        ++it;
+    }
+
+    /*if(t->obtemTipo() == "L"){
+        Lenhador* l();
+        workers.push_back(l);
+    }*/
 }

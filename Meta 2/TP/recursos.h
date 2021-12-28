@@ -5,17 +5,22 @@
 #ifndef TP_POO_RECURSOS_H
 #define TP_POO_RECURSOS_H
 
+#include <iostream>
+
+using namespace std;
 
 class Recursos {
 public:
-        Recursos(int a, int b, int c);
-        int obtemCoordenadas();
-
-
+    virtual int vende(int quant);
+    virtual double vendeE(int quant);
+    virtual int producao();
+    virtual double producaoBAF();
+    virtual double producaoBAC();
+    virtual void aumenta(int quant);
+    virtual bool gasta(int quant);
+    virtual string obtemTipo();
+    virtual int obtemQuantidade();
 private:
-    int precoVenda; // Por kg
-    int x,y;
-    int kg;
 
 };
 

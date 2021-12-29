@@ -9,7 +9,7 @@
 
 class MinaCarvao : public Edificio{
 public:
-    MinaCarvao(ilha* i);
+    MinaCarvao(ilha* i, int x, int y);
 
     void melhora();
     void desaba();
@@ -20,6 +20,7 @@ public:
 private:
     string tipo;
     int custoConst, custoSubs, nivel, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;
+    int x, y;
 };
 
 

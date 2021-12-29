@@ -16,8 +16,8 @@ void Edificio::ligaDesliga() {
     onoff = 0;
 }
 
-bool Edificio::procuraTrabalhador(string str) const {
-    return true;//criar funcao que procure se existe o trabalhador indicado
+bool Edificio::procuraTrabalhador(int x, int y, string str) const {
+    return i->procuraTrabalhador(x, y, move(str));
 }
 
 int Edificio::getonoff() const {
@@ -36,11 +36,11 @@ void Edificio::produz() {
 
 }
 
-bool Edificio::gastaRecursos(string t, int quant) {
+bool Edificio::gastaRecursos(string t, double quant) {
     return i->gastaRecursos(move(t), quant);
 }
 
-void Edificio::aumentaRecursos(string t, int quant) {
+void Edificio::aumentaRecursos(string t, double quant) {
     i->aumentaRecursos(move(t), quant);
 }
 
@@ -54,6 +54,10 @@ int Edificio::obtemCusto() {
 
 int Edificio::obtemCustoSubs() {
     return 0;
+}
+
+bool Edificio::verificaLaterais(int x, int y, string t) {
+    return i->verificaLaterais(x, y, move(t));
 }
 
 

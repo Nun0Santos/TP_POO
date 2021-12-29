@@ -14,7 +14,7 @@ public:
 
     string obtemTipo() override;
     void vende() override;
-    void produz(int i);
+    void produz() override;
     int obtemCusto() override;
 private:
     int x, y;

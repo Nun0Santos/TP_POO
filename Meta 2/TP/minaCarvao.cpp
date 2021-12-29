@@ -4,7 +4,7 @@
 
 #include "minaCarvao.h"
 
-MinaCarvao::MinaCarvao(ilha* i) : Edificio(i), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100), tipo("mnC"){}
+MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100), tipo("mnC"), x(x), y(y){}
 
 void MinaCarvao::melhora() {
     if(nivel <= 5){

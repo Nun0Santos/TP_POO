@@ -69,24 +69,21 @@ void ilha::mudaValorTrab(const string& t) {
 
     if(t == "oper"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("O", dias);
-            tabuleiro[auxl][auxc]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("O", dias, this);
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("L", dias);
-            tabuleiro[auxl][auxc]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("L", dias, this);
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            tabuleiro[auxl][auxc]->defineTrab("M", dias);
-            tabuleiro[auxl][auxc]->defineQuantTrab();
+            tabuleiro[auxl][auxc]->defineTrab("M", dias, this);
             return;
         }
         cout << "Este trabalhador não existe" << endl;
@@ -306,7 +303,7 @@ string ilha::executa(string s1) {
         }
 
         if(v[0] == "next"){
-            //trataTrabalhadores();
+            trataTrabalhadores();
             //despedimentos();
             ++dias;
             return oss.str();
@@ -682,5 +679,137 @@ bool ilha::gastaRecursos(string str, double quant) {
         }
     }
     return false;
+}
+
+void ilha::trataEdificios() {
+    for (int i = 0; i < lin; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->getEd() == nullptr){
+                continue;
+            }
+            if(tabuleiro[i][j]->obtemOnOFF() == 0){
+                continue;
+            }
+            tabuleiro[i][j]->trataEdificios();
+        }
+    }
+}
+
+bool ilha::verificaLaterais(int x, int y, string t) {
+    if(t == "elec"){
+        if(tabuleiro[x][y]->obtemTipo() == t){
+            if((x>=1 && x<lin-1) && (y>=1 && y < col-1)){
+                if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                    if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
+                        return true;
+                    }
+                }
+            }else{
+                if(x == 0 && y == 0){
+                    if(tabuleiro[x+1][y]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                        if(tabuleiro[x+1][y]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+                if(x == lin-1 && y == col-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" ){
+                        if(tabuleiro[x-1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+                if(x == 0){
+                    if(tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                        if(tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+                if(y == 0){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                        if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+                if(x == lin-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                        if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+                if(y == col-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat"){
+                        if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr"){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if(t == "fun"){
+        if(tabuleiro[x][y]->obtemTipo() == t){
+            if((x>=1 && x<lin-1) && (y>=1 && y < col-1)){
+                if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
+                    if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemTipo() == "mnC" ||tabuleiro[x][y-1]->obtemTipo() == "mnC" || tabuleiro[x][y+1]->obtemTipo() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemTipo() == "elec" ||tabuleiro[x][y-1]->obtemTipo() == "elec" || tabuleiro[x][y+1]->obtemTipo() == "elec")){
+                        return true;
+                    }
+                }
+            }else{
+                if(x == 0 && y == 0){
+                    if(tabuleiro[x+1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
+                        if((tabuleiro[x+1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+                if(x == lin-1 && y == col-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" ){
+                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+                if(x == 0){
+                    if(tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
+                        if((tabuleiro[x+1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+                if(y == 0){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
+                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+                if(x == lin-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
+                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y-1]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x][y-1]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+                if(y == col-1){
+                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF"){
+                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec")){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
+bool ilha::procuraTrabalhador(int x, int y, string t) {
+    return tabuleiro[x][y]->procuraTrab(move(t));
 }
 

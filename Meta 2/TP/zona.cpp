@@ -28,27 +28,30 @@ void Zona::definePosL(int l) {
     posL = l;
 }
 
-void Zona::defineTrab(string s, int dia) {
+void Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "O"){
         Operario o(dia, this);
-        /*if(o.obtemCusto() > recursos.dinheiro)
-            return;*/
+        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+            return;
 
-        workers.push_back(&o);
+        workers.push_back(new Operario(dia, this));
+        ++quant_trab;
     }
     if(s == "L"){
         Lenhador o(dia, this);
-        /*if(o.obtemCusto() > recursos.dinheiro)
-            return;*/
+        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+            return;
 
-        workers.push_back(&o);
+        workers.push_back(new Lenhador(dia, this));
+        ++quant_trab;
     }
     if(s == "M"){
         Mineiro o(dia, this);
-        /*if(o.obtemCusto() > recursos.dinheiro)
-            return;*/
+        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+            return;
 
-        workers.push_back(&o);
+        workers.push_back(new Mineiro(dia, this));
+        ++quant_trab;
     }
 
     int i, flag = 0;
@@ -88,17 +91,17 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
             }
         }
         if(s == "mnC"){
-            MinaCarvao m(i);
+            MinaCarvao m(i, posL, posC);
             if(i->gastaRecursos("Madeira", m.obtemCusto()) || i->gastaRecursos("Dinheiro", m.obtemCustoSubs())){
-                ed = new MinaCarvao(i);
+                ed = new MinaCarvao(i, posL, posC);
                 ++quant_edificio;
                 return;
             }
         }
         if(s == "fun"){
-            Fundicao m(i);
+            Fundicao m(i, posL, posC);
             if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
-                ed = new Fundicao(i);
+                ed = new Fundicao(i, posL, posC);
                 ++quant_edificio;
                 return;
             }
@@ -119,32 +122,34 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
                 return;
             }
         }
+    }else{
+        if(s == "mnF"){
+            ed = new MinaFerro(i);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "mnC"){
+            ed = new MinaCarvao(i, posL, posC);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "fun"){
+            ed = new Fundicao(i, posL, posC);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "elec"){
+            ed = new CentralEletrica(i, posL, posC);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "bat"){
+            ed = new Bateria(i);
+            ++quant_edificio;
+            return;
+        }
     }
-    if(s == "mnF"){
-        ed = new MinaFerro(i);
-        ++quant_edificio;
-        return;
-    }
-    if(s == "mnC"){
-        ed = new MinaCarvao(i);
-        ++quant_edificio;
-        return;
-    }
-    if(s == "fun"){
-        ed = new Fundicao(i);
-        ++quant_edificio;
-        return;
-    }
-    if(s == "elec"){
-        ed = new CentralEletrica(i, posL, posC);
-        ++quant_edificio;
-        return;
-    }
-    if(s == "bat"){
-        ed = new Bateria(i);
-        ++quant_edificio;
-        return;
-    }
+
 }
 
 void Zona::defineQuantTrab() {
@@ -256,5 +261,16 @@ void Zona::defineTrab(Trabalhador* t) {
 }
 
 void Zona::trataEdificios() {
+    ed->produz();
+}
 
+bool Zona::procuraTrab(string t) {
+    auto  it = trab.begin();
+    while (it != trab.end()){
+        if((*it) == t){
+            return true;
+        }
+        ++it;
+    }
+    return false;
 }

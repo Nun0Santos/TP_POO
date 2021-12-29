@@ -16,15 +16,15 @@ public:
     Edificio(ilha* i);
 
     void ligaDesliga();
-    bool procuraTrabalhador(string str) const;
+    bool procuraTrabalhador(int x, int y, string str) const;
     virtual string obtemTipo();
     int getonoff() const;
     virtual void vende();
     void vende(string t, int quant);
-    void produz();
-    bool gastaRecursos(string t, int quant);
-    void aumentaRecursos(string t, int quant);
-    bool verificaLaterais(int x, int y);
+    virtual void produz();
+    bool gastaRecursos(string t, double quant);
+    void aumentaRecursos(string t, double quant);
+    bool verificaLaterais(int x, int y, string t);
     virtual int obtemCusto();
     virtual int obtemCustoSubs();
 private:

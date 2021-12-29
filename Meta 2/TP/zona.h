@@ -24,7 +24,7 @@ public:
     void defineTipo(string str);
     void definePosL(int l);
     void definePosC(int c);
-    void defineTrab(string s, int dia);
+    void defineTrab(string s, int dia, ilha* il);
     void defineEdificio(const string& s, ilha* i, int dev);
     void defineQuantTrab();
     int obtemL() const;
@@ -43,6 +43,7 @@ public:
     void trataTrabalhadores();
     void trataEdificios();
     void defineTrab(Trabalhador* t);
+    bool procuraTrab(string t);
 private:
     string tipo;
     Edificio* ed;

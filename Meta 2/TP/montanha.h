@@ -11,7 +11,7 @@ class Montanha : public Zona{
 public:
     Montanha();
 
-    void duplicaPrecoConstrução();
+    void duplicaPrecoConstrucao();
     void produzFerro();
     void aumentaProbDemissao();
     string obtemTipo() override;

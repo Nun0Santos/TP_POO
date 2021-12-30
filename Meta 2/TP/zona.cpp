@@ -274,3 +274,15 @@ bool Zona::procuraTrab(string t) {
     }
     return false;
 }
+bool Zona::apagaTrabID(string id) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == id){
+            delete *it;
+            workers.erase(it);
+            return true;
+        }
+        ++it;
+    }
+    return false;
+}

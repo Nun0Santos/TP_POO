@@ -414,6 +414,7 @@ string ilha::executa(string s1) {
         }
         if(v[0] == "debkill"){
             //apagar um trabalhador através do id
+
         }
     }
     return "Comando invalido\n";
@@ -662,6 +663,8 @@ string ilha::executaFich(string s1) {
     }
     if(v[0] == "debkill"){
         //apagar um trabalhador através do id
+        apagaTrabID(v[1]);
+
     }
 
     return "Comando invalido\n";
@@ -811,5 +814,17 @@ bool ilha::verificaLaterais(int x, int y, string t) {
 
 bool ilha::procuraTrabalhador(int x, int y, string t) {
     return tabuleiro[x][y]->procuraTrab(move(t));
+}
+bool ilha::apagaTrabID(string id) {
+    for(int i=0; i<lin; ++i){
+        for(int j=0; j<col; ++j){
+            if(tabuleiro[i][j]->obtemQuant_Trab() > 0){
+                if (tabuleiro[i][j]->apagaTrabID(id)){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 

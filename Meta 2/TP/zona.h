@@ -44,6 +44,7 @@ public:
     void trataEdificios();
     void defineTrab(Trabalhador* t);
     bool procuraTrab(string t);
+    bool apagaTrabID(string id);
 private:
     string tipo;
     Edificio* ed;

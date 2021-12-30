@@ -43,6 +43,7 @@ public:
     void trataEdificios();
     bool verificaLaterais(int x, int y, string t);
     bool procuraTrabalhador(int x, int y, string t);
+    bool apagaTrabID(string id);
 private:
     int lin , col, dias;
     Zona ***tabuleiro;

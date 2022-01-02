@@ -209,24 +209,27 @@ string ilha::mostraIlha() {
 
     for (int i = 0; i < lin; ++i) {
         oss << "\n";
-        for (int j = 0; j < 4; ++j) {
+        for (int j = 0; j < 5; ++j) {
             oss << " |";
             for (int k = 0; k < col; ++k) {
                 switch (j) {
                     case 0:
-                        oss << "    " << tabuleiro[i][k]->obtemTipo() << "     ";
+                        oss << i << "/" << k << "         ";
                         break;
                     case 1:
+                        oss << "    " << tabuleiro[i][k]->obtemTipo() << "     ";
+                        break;
+                    case 2:
                         if(tabuleiro[i][k]->getEd() == nullptr){
                             oss << "            ";
                             break;
                         }
                         oss << "    " << tabuleiro[i][k]->obtemEdificio() << "     ";
                         break;
-                    case 2:
+                    case 3:
                         oss << "  " << tabuleiro[i][k]->obtemTrab();
                         break;
-                    case 3:
+                    case 4:
                         oss <<  "     " << tabuleiro[i][k]->obtemQuant_Trab() << "      ";
                         break;
                     default:

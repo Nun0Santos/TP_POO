@@ -6,7 +6,11 @@
 #include "zona.h"
 #include <random>
 
-Lenhador::Lenhador(int dia, Zona* z) : z(z), desp(0), custo(20), probEmbora(0), dias(0), d(dia), tipo("L"), descanso(0){}
+
+Lenhador::Lenhador(int dia, Zona* z) : Trabalhador(setID()), z(z), desp(0), custo(20), probEmbora(0), dias(0), d(dia), tipo("L"), descanso(0){}
+
+Lenhador::Lenhador(int a, int b, int c, double d, int e, int f, int g, Zona *z) : Trabalhador(a), z(z), desp(b), custo(c), probEmbora(d), dias(e), d(f), descanso(g), tipo("L"){}
+
 
 void Lenhador::despedimento() {
     if(probEmbora == 0)
@@ -19,9 +23,9 @@ void Lenhador::despedimento() {
     }
 }
 
-int Lenhador::obtemCusto() const{return custo;}
+int Lenhador::obtemCusto() {return custo;}
 
-float Lenhador::obtemProb() const{return probEmbora;}
+double Lenhador::obtemProb() {return probEmbora;}
 
 void Lenhador::aumentaDias() {
     ++dias;
@@ -33,7 +37,7 @@ string Lenhador::obtemID(){
     return oss.str();
 }
 
-int Lenhador::obtemDiasSim() const {
+int Lenhador::obtemDiasSim() {
     return dias;
 }
 
@@ -62,10 +66,6 @@ string Lenhador::obtemTipo() {
     return tipo;
 }
 
-Lenhador::Lenhador(const Lenhador &outro) {
-    *this = outro;
-}
-
 Lenhador &Lenhador::operator=(const Lenhador &outro) {
     if(this == &outro){return *this;}
 
@@ -75,4 +75,16 @@ Lenhador &Lenhador::operator=(const Lenhador &outro) {
     z = outro.z;
 
     return *this;
+}
+
+int Lenhador::obtemIDT() {
+    return Trabalhador::ID();
+}
+
+int Lenhador::obtemDescanso() {
+    return descanso;
+}
+
+int Lenhador::obtemDID() {
+    return d;
 }

@@ -6,7 +6,7 @@
 
 Dinheiro::Dinheiro() : quantidade(0), tipo("Dinheiro"){}
 
-void Dinheiro::aumenta(int quant) {
+void Dinheiro::aumenta(double quant) {
     quantidade += quant;
 }
 

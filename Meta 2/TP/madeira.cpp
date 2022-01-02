@@ -31,3 +31,7 @@ bool Madeira::gasta(int quant) {
     quantidade -= quant;
     return true;
 }
+
+void Madeira::aumenta(double quant) {
+    quantidade+=quant;
+}

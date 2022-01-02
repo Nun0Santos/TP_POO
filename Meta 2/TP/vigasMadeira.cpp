@@ -19,7 +19,7 @@ int VigasMadeira::producao() {
     return custoProducao;
 }
 
-void VigasMadeira::aumenta(int quant) {
+void VigasMadeira::aumenta(double quant) {
     quantidade += quant;
 }
 

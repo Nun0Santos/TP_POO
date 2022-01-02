@@ -139,39 +139,46 @@ string ilha::mostraTodasZonas() {
 }
 
 void ilha::criaIlha() {
+    int t ;
     tabuleiro = new Zona**[lin];
     for (int i = 0; i < lin; ++i) {
         tabuleiro[i] = new Zona*[col];
     }
 
-    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano", "zona-x"};
-    unsigned num = chrono::system_clock::now().time_since_epoch().count();
+    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano"};
+    //unsigned num = chrono::system_clock::now().time_since_epoch().count();
+
 
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
-            if(tipos[0] == "pastagem"){
-                tabuleiro[i][j] = new Pastagem();
+            //shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
+
+            random_device dev;
+            mt19937 rng(dev());
+            uniform_int_distribution<mt19937::result_type> dist6(0,4);
+            t = dist6(rng);
+            if(tipos[t] == "pastagem"){
+                tabuleiro[i][j] = new Pastagem("pastagem", i, j);
                 continue;
             }
-            if(tipos[0] == "floresta"){
-                tabuleiro[i][j] = new Floresta();
+            if(tipos[t] == "floresta"){
+                tabuleiro[i][j] = new Floresta("floresta", i, j);
                 continue;
             }
-            if(tipos[0] == "deserto"){
-                tabuleiro[i][j] = new Deserto();
+            if(tipos[t] == "deserto"){
+                tabuleiro[i][j] = new Deserto("deserto", i, j);
                 continue;
             }
-            if(tipos[0] == "montanha"){
-                tabuleiro[i][j] = new Montanha();
+            if(tipos[t] == "montanha"){
+                tabuleiro[i][j] = new Montanha("montanha", i, j);
                 continue;
             }
-            if(tipos[0] == "pantano"){
-                tabuleiro[i][j] = new Pantano();
+            if(tipos[t] == "pantano"){
+                tabuleiro[i][j] = new Pantano("pantano", i, j);
                 continue;
             }
-            if(tipos[0] == "zona-x"){
-                tabuleiro[i][j] = new Pastagem();
+            if(tipos[t] == "zona-x"){
+                tabuleiro[i][j] = new Pastagem("pastagem", i, j);
                 continue;
             }
         }
@@ -184,6 +191,10 @@ string ilha::mostraIlha() {
     oss << "Dia " << dias << endl;
 
     for(auto & it : recursos){
+        if (it->obtemTipo() == "Ferro" || it->obtemTipo() == "Carvao"){
+            oss << it->obtemTipo() << ": " << it->obtemQuantidadeD() << "| ";
+            continue;
+        }
         oss << it->obtemTipo() << ": " << it->obtemQuantidade() << "| ";
     }
 
@@ -252,7 +263,8 @@ string ilha::executa(string s1) {
     if(comandos(v)){//função que verifica se o comando e se o tipo são válidos
         //COMANDOS DO FICHEIRO
         if(v[0] == "exec"){
-            executaFich(v[1]);
+            oss << executaFich(v[1]);
+            return oss.str();
         }
 
         //COMANDOS STDIN
@@ -303,8 +315,10 @@ string ilha::executa(string s1) {
         }
 
         if(v[0] == "next"){
+            trataZonas();
             trataTrabalhadores();
-            //despedimentos();
+            despedimentos();
+            trataEdificios();
             ++dias;
             return oss.str();
         }
@@ -352,7 +366,8 @@ string ilha::executa(string s1) {
             ossY >> y;//atribui valor transformado à variavel y
 
             if(verificaLinCol(x, y)){
-
+                moveTrabalhador(x, y, v[1]);
+                return oss.str();
             }
         }
 
@@ -414,22 +429,14 @@ string ilha::executa(string s1) {
         }
         if(v[0] == "debkill"){
             //apagar um trabalhador através do id
-
+            apagaTrabID(v[1]);
+            return oss.str();
         }
     }
     return "Comando invalido\n";
 }
 
 void ilha::despedimentos() {
-    for (int i = 0; i < lin; ++i) {
-        for (int j = 0; j < col; ++j) {
-            if(tabuleiro[i][j]->obtemQuant_Trab() == 0){
-                continue;
-            }
-            tabuleiro[i][j]->verificaDespedimento();
-        }
-    }
-
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
             if(tabuleiro[i][j]->obtemQuant_Trab() == 0){
@@ -457,6 +464,7 @@ void ilha::aumentaRecursos(string str, int quant) {
             (*it)->aumenta(quant);
             break;
         }
+        ++it;
     }
 }
 
@@ -555,8 +563,10 @@ string ilha::executaFich(string s1) {
     }
 
     if(v[0] == "next"){
+        trataZonas();
         trataTrabalhadores();
         despedimentos();
+        trataEdificios();
         ++dias;
         return oss.str();
     }
@@ -598,7 +608,15 @@ string ilha::executaFich(string s1) {
     }
 
     if(v[0] == "move"){
-        //mudar o trabalhador de sitio
+        istringstream ossX(v[2]);//transforma string em int
+        ossX >> x;//atribui valor transformado à variavel x
+        istringstream ossY(v[3]);//transforma string em int
+        ossY >> y;//atribui valor transformado à variavel y
+
+        if(verificaLinCol(x, y)){
+            moveTrabalhador(x, y, v[1]);
+            return oss.str();
+        }
     }
 
     if(v[0] == "vende"){
@@ -617,9 +635,7 @@ string ilha::executaFich(string s1) {
         if(verificaLinCol(x, y)){
             //vender o edificio na posicao indicada
             if(tabuleiro[x][y]->getEd() != nullptr){
-                if(tabuleiro[x][y]->obtemOnOFF() == 1){
-                    tabuleiro[x][y]->vendeEdificio();
-                }
+                tabuleiro[x][y]->vendeEdificio();
             }
             return oss.str();
         }
@@ -628,21 +644,19 @@ string ilha::executaFich(string s1) {
     if(v[0] == "save"){
         //temos que copiar a nossa ilha atual para uma ilha auxiliar, para usarmos os operadores e construtores por copia
     }
-
     if(v[0] == "load"){
         //mostrar a ilha auxiliar
     }
-
     if(v[0] == "apaga"){
         //apagar a ilha auxiliar
     }
-
     if(v[0] == "debcash"){
         istringstream ossQ(v[1]);
         ossQ >> x;
         aumentaRecursos("Dinheiro", x);
-    }
 
+        return oss.str();
+    }
     if(v[0] == "debed"){
         istringstream ossX(v[2]);//transforma string em int
         ossX >> x;//atribui valor transformado à variavel x
@@ -664,7 +678,7 @@ string ilha::executaFich(string s1) {
     if(v[0] == "debkill"){
         //apagar um trabalhador através do id
         apagaTrabID(v[1]);
-
+        return oss.str();
     }
 
     return "Comando invalido\n";
@@ -680,6 +694,7 @@ bool ilha::gastaRecursos(string str, double quant) {
             }
             break;
         }
+        ++it;
     }
     return false;
 }
@@ -700,51 +715,51 @@ void ilha::trataEdificios() {
 
 bool ilha::verificaLaterais(int x, int y, string t) {
     if(t == "elec"){
-        if(tabuleiro[x][y]->obtemTipo() == t){
+        if(tabuleiro[x][y]->obtemEdificio() == t){
             if((x>=1 && x<lin-1) && (y>=1 && y < col-1)){
-                if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "bat") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "bat") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "bat")){
                     if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
                         return true;
                     }
                 }
             }else{
                 if(x == 0 && y == 0){
-                    if(tabuleiro[x+1][y]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                    if((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "bat")){
                         if(tabuleiro[x+1][y]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
                             return true;
                         }
                     }
                 }
                 if(x == lin-1 && y == col-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" ){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "bat") ){
                         if(tabuleiro[x-1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr"){
                             return true;
                         }
                     }
                 }
                 if(x == 0){
-                    if(tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                    if((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "bat") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "bat")){
                         if(tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
                             return true;
                         }
                     }
                 }
                 if(y == 0){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "bat") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "bat")){
                         if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
                             return true;
                         }
                     }
                 }
                 if(x == lin-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x][y-1]->obtemEdificio() == "bat" || tabuleiro[x][y+1]->obtemEdificio() == "bat"){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "bat") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "bat")){
                         if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x][y-1]->obtemTipo() == "flr" || tabuleiro[x][y+1]->obtemTipo() == "flr"){
                             return true;
                         }
                     }
                 }
                 if(y == col-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "bat" || tabuleiro[x+1][y]->obtemEdificio() == "bat" ||tabuleiro[x][y-1]->obtemEdificio() == "bat"){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "bat") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "bat") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "bat")){
                         if(tabuleiro[x-1][y]->obtemTipo() == "flr" || tabuleiro[x+1][y]->obtemTipo() == "flr" ||tabuleiro[x][y-1]->obtemTipo() == "flr"){
                             return true;
                         }
@@ -755,52 +770,52 @@ bool ilha::verificaLaterais(int x, int y, string t) {
     }
 
     if(t == "fun"){
-        if(tabuleiro[x][y]->obtemTipo() == t){
+        if(tabuleiro[x][y]->obtemEdificio() == t){
             if((x>=1 && x<lin-1) && (y>=1 && y < col-1)){
-                if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
-                    if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemTipo() == "mnC" ||tabuleiro[x][y-1]->obtemTipo() == "mnC" || tabuleiro[x][y+1]->obtemTipo() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemTipo() == "elec" ||tabuleiro[x][y-1]->obtemTipo() == "elec" || tabuleiro[x][y+1]->obtemTipo() == "elec")){
+                if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnF") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnF") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnF")){
+                    if(((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemTipo() == "mnC") ||(tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemTipo() == "mnC") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemTipo() == "mnC")) || ((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "elec") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemTipo() == "elec") ||(tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemTipo() == "elec") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemTipo() == "elec"))){
                         return true;
                     }
                 }
             }else{
                 if(x == 0 && y == 0){
-                    if(tabuleiro[x+1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
-                        if((tabuleiro[x+1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnF")){
+                        if(((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnC")) || ((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "elec)"))){
                             return true;
                         }
                     }
                 }
                 if(x == lin-1 && y == col-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" ){
-                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnF") ||(tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnF") ){
+                        if(((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnC")) || ((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "elec"))){
                             return true;
                         }
                     }
                 }
                 if(x == 0){
-                    if(tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
-                        if((tabuleiro[x+1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnF") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnF")){
+                        if(((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnC")) || ((tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "elec") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "elec"))){
                             return true;
                         }
                     }
                 }
                 if(y == 0){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
-                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnF") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnF")){
+                        if(((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnC")) || ((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "elec") || (tabuleiro[x+1][y]->getEd() != nullptr &&tabuleiro[x+1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "elec"))){
                             return true;
                         }
                     }
                 }
                 if(x == lin-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x][y-1]->obtemEdificio() == "mnF" || tabuleiro[x][y+1]->obtemEdificio() == "mnF"){
-                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x][y-1]->obtemEdificio() == "mnC" || tabuleiro[x][y+1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x][y-1]->obtemEdificio() == "elec" || tabuleiro[x][y+1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnF") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnF")){
+                        if(((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "mnC")) || ((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "elec") || (tabuleiro[x][y+1]->getEd() != nullptr && tabuleiro[x][y+1]->obtemEdificio() == "elec"))){
                             return true;
                         }
                     }
                 }
                 if(y == col-1){
-                    if(tabuleiro[x-1][y]->obtemEdificio() == "mnF" || tabuleiro[x+1][y]->obtemEdificio() == "mnF" ||tabuleiro[x][y-1]->obtemEdificio() == "mnF"){
-                        if((tabuleiro[x-1][y]->obtemEdificio() == "mnC" || tabuleiro[x+1][y]->obtemEdificio() == "mnC" ||tabuleiro[x][y-1]->obtemEdificio() == "mnC") || (tabuleiro[x-1][y]->obtemEdificio() == "elec" || tabuleiro[x+1][y]->obtemEdificio() == "elec" ||tabuleiro[x][y-1]->obtemEdificio() == "elec")){
+                    if((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnF") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnF") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnF")){
+                        if(((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "mnC") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "mnC") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "mnC")) || ((tabuleiro[x-1][y]->getEd() != nullptr && tabuleiro[x-1][y]->obtemEdificio() == "elec") || (tabuleiro[x+1][y]->getEd() != nullptr && tabuleiro[x+1][y]->obtemEdificio() == "elec") || (tabuleiro[x][y-1]->getEd() != nullptr && tabuleiro[x][y-1]->obtemEdificio() == "elec"))){
                             return true;
                         }
                     }
@@ -825,6 +840,65 @@ bool ilha::apagaTrabID(string id) {
             }
         }
     }
+    return false;
+}
+
+void ilha::trataZonas() {
+    for (int i = 0; i < lin; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->obtemTipo() == "flr"){
+                aumentaRecursos("Madeira", tabuleiro[i][j]->produz());
+            }
+            if(tabuleiro[i][j]->obtemTipo() == "mnt"){
+                aumentaRecursos("Ferro", tabuleiro[i][j]->produzD());
+            }
+            if(tabuleiro[i][j]->obtemTipo() == "pnt"){
+                if(tabuleiro[i][j]->getEd() != nullptr){
+                    if(tabuleiro[i][j]->aumentaDestroi()){
+                        tabuleiro[i][j]->destroiED();
+                        tabuleiro[i][j]->apagaTodosTrab();
+                    }
+                }
+            }
+        }
+    }
+}
+
+void ilha::aumentaRecursos(string str, double quant) {
+    auto it = recursos.begin();
+    while(it != recursos.end()){
+        if((*it)->obtemTipo() == str){
+            (*it)->aumenta(quant);
+            break;
+        }
+        ++it;
+    }
+}
+
+bool ilha::moveTrabalhador(int x, int y, string t) {
+    for(int i = 0; i < lin; ++i){
+        for (int j = 0; j < col; ++j) {
+            if(tabuleiro[i][j]->obtemQuant_Trab() > 0){
+                if(tabuleiro[i][j]->procuraTrab(t, 0)){
+                    if(tabuleiro[i][j]->obtemTipo(t) == "L"){
+                        tabuleiro[x][y]->definetrab("L", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), tabuleiro[i][j]->obtemDescanso(t));
+                    }
+                    if(tabuleiro[i][j]->obtemTipo(t) == "M"){
+                        tabuleiro[x][y]->definetrab("M", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
+                    }
+                    if(tabuleiro[i][j]->obtemTipo(t) == "O"){
+                        tabuleiro[x][y]->definetrab("O", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
+                    }
+
+                    tabuleiro[i][j]->apagaTrabID(t);
+
+                    return true;
+                }
+
+            }
+        }
+    }
+
     return false;
 }
 

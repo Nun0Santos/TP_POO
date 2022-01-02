@@ -13,14 +13,15 @@ public:
     int vende(int quant) override;
     double producaoBAC() override;
     double producaoBAF() override;
-    void aumenta(int quant) override;
+    void aumenta(double quant) override;
     string obtemTipo() override;
     int obtemQuantidade() override;
     bool gasta(int quant) override;
 private:
     string  tipo;
     double custoFerro, custoCarvao;
-    int custoVenda, quantidade;
+    int custoVenda;
+    double quantidade;
 };
 
 

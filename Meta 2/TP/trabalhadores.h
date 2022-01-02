@@ -14,23 +14,27 @@ class Zona;
 
 class Trabalhador{
 public:
-    Trabalhador() {
-        id_trab = ++id;
-    };
+    Trabalhador(int i) : id_trab(i){};
     Trabalhador(const Trabalhador& outro);
 
 
     int ID() const;
     virtual string obtemTipo();
     virtual string obtemID();
+    virtual int obtemDiasSim();
     virtual int pedeDemissao();
     virtual void aumentaDias();
     virtual int vidaBoa();
+    virtual int obtemIDT();
+    virtual int obtemCusto();
+    virtual double obtemProb();
+    virtual int obtemDescanso();
+    virtual int obtemDID();
     Trabalhador& operator=(const Trabalhador& outro);
+    static int setID();
 private:
-    int id_trab; //Custo do trabalhador / id do trabalhador
+    int id_trab; //id do trabalhador
     static int id;
 };
-
 
 #endif //TP_POO_TRABALHADORES_H

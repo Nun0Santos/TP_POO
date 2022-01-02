@@ -14,6 +14,7 @@ public:
     string obtemTipo() override;
     int obtemQuantidade() override;
     bool gasta(int quant) override;
+    void aumenta(double quant) override;
 private:
     string tipo;
     int custoVenda, quantidade;

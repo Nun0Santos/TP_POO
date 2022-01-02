@@ -12,7 +12,7 @@ public:
 
     int vende(int quant) override;
     int producao() override;
-    void aumenta(int quant) override;
+    void aumenta(double quant) override;
     int obtemQuantidade() override;
     string obtemTipo() override;
     bool gasta(int quant) override;

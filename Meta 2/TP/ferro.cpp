@@ -15,11 +15,11 @@ int Ferro::vende(int quant) {
     return custoVenda*quant;
 }
 
-void Ferro::aumenta(int quant) {
+void Ferro::aumenta(double quant) {
     quantidade += quant;
 }
 
-int Ferro::obtemQuantidade() {
+double Ferro::obtemQuantidadeD() {
     return quantidade;
 }
 

@@ -1,2 +1,1 @@
-cont min
-s
+debcash 1000

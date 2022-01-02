@@ -25,6 +25,7 @@ public:
     void definePosL(int l);
     void definePosC(int c);
     void defineTrab(string s, int dia, ilha* il);
+    void definetrab(string t, int a, int b, int c, double d, int e, int f, int g);
     void defineEdificio(const string& s, ilha* i, int dev);
     void defineQuantTrab();
     int obtemL() const;
@@ -42,9 +43,24 @@ public:
     void verificaDespedimento();
     void trataTrabalhadores();
     void trataEdificios();
-    void defineTrab(Trabalhador* t);
+    void trataZonas();
+    virtual int produz();
+    virtual double produzD();
     bool procuraTrab(string t);
     bool apagaTrabID(string id);
+    int contaTrab(string t);
+    string obtemTipo(string t);
+    int obtemCusto(string t);
+    double obtemProb(string t);
+    int obtemDiasSim(string t);
+    int pedeDemissao(string t);
+    int obtemIDT(string t);
+    int obtemDescanso(string t);
+    int obtemDID(string t);
+    bool procuraTrab(string t, int a);
+    virtual bool aumentaDestroi();
+    void destroiED();
+    void apagaTodosTrab();
 private:
     string tipo;
     Edificio* ed;

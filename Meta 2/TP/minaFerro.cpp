@@ -43,4 +43,8 @@ int MinaFerro::obtemCustoSubs() {
     return custoSubs;
 }
 
+void MinaFerro::produz() {
+    Edificio::produz();
+}
+
 

@@ -16,10 +16,11 @@ public:
     virtual int producao();
     virtual double producaoBAF();
     virtual double producaoBAC();
-    virtual void aumenta(int quant);
+    virtual void aumenta(double quant);
     virtual bool gasta(int quant);
     virtual string obtemTipo();
     virtual int obtemQuantidade();
+    virtual double obtemQuantidadeD();
 private:
 
 };

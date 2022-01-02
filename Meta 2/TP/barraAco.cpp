@@ -23,7 +23,7 @@ double BarraAco::producaoBAF() {
     return custoFerro;
 }
 
-void BarraAco::aumenta(int quant) {
+void BarraAco::aumenta(double quant) {
     quantidade += quant;
 }
 

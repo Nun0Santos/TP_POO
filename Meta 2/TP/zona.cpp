@@ -245,21 +245,6 @@ void Zona::trataTrabalhadores() {
     }
 }
 
-void Zona::defineTrab(Trabalhador* t) {
-    auto it = workers.begin();
-    while(it != workers.end()){
-        if((*it) == t){
-            return;
-        }
-        ++it;
-    }
-
-    /*if(t->obtemTipo() == "L"){
-        Lenhador* l();
-        workers.push_back(l);
-    }*/
-}
-
 void Zona::trataEdificios() {
     ed->produz();
 }
@@ -275,21 +260,242 @@ bool Zona::procuraTrab(string t) {
     return false;
 }
 bool Zona::apagaTrabID(string id) {
+    vector<string>::reverse_iterator i;
     auto it = workers.begin();
     while (it != workers.end()){
         if((*it)->obtemID() == id){
-            auto iter = trab.rbegin();
-            while(iter != trab.rend()){
-                if((*it)->obtemTipo() == (*iter)){
-                    //trab.erase(iter);
+            if(quant_trab <= 5){
+                for(i = trab.rbegin(); i < trab.rend(); ++i){
+                    if((*i) == (*it)->obtemTipo()){
+                        trab.erase((i+1).base());
+                        trab.emplace_back("-");
+                    }
                 }
-                ++iter;
             }
             delete *it;
             workers.erase(it);
+            --quant_trab;
             return true;
         }
         ++it;
     }
     return false;
+}
+
+void Zona::trataZonas() {
+
+}
+
+int Zona::produz() {
+    return 0;
+}
+
+int Zona::contaTrab(string t) {
+    int i = 0;
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemTipo() == t){
+            ++i;
+        }
+        ++it;
+    }
+    return i;
+}
+
+double Zona::produzD() {
+    return 0;
+}
+
+string Zona::obtemTipo(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemTipo();
+        }
+
+        ++it;
+    }
+    return "-";
+}
+
+int Zona::obtemCusto(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemCusto();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+double Zona::obtemProb(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemProb();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+int Zona::obtemDiasSim(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemDiasSim();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+int Zona::pedeDemissao(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->pedeDemissao();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+int Zona::obtemIDT(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemIDT();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+int Zona::obtemDescanso(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemDescanso();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+int Zona::obtemDID(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemDID();
+        }
+        ++it;
+    }
+    return 0;
+}
+
+void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int g) {
+    if(t == "L"){
+        workers.push_back(new Lenhador(a, b, c, d, e, f,g, this));
+        int i, flag = 0;
+        vector<string> aux;
+        for(i = 0; i < 5; ++i){
+            if(trab[i] == "-"){
+                if(flag == 0){
+                    flag = 1;
+                    aux.push_back(t);
+                    ++i;
+                }
+
+            }
+            aux.push_back(trab[i]);
+        }
+
+        trab.clear();
+        trab = aux;
+        ++quant_trab;
+        return;
+    }
+    if(t == "O"){
+        workers.push_back(new Operario(a, b, c, d, e, f, this));
+        int i, flag = 0;
+        vector<string> aux;
+        for(i = 0; i < 5; ++i){
+            if(trab[i] == "-"){
+                if(flag == 0){
+                    flag = 1;
+                    aux.push_back(t);
+                    ++i;
+                }
+
+            }
+            aux.push_back(trab[i]);
+        }
+
+        trab.clear();
+        trab = aux;
+        ++quant_trab;
+        return;
+    }
+    if(t == "M"){
+        workers.push_back(new Mineiro(a, b, c, d, e, f, this));
+        int i, flag = 0;
+        vector<string> aux;
+        for(i = 0; i < 5; ++i){
+            if(trab[i] == "-"){
+                if(flag == 0){
+                    flag = 1;
+                    aux.push_back(t);
+                    ++i;
+                }
+
+            }
+            aux.push_back(trab[i]);
+        }
+
+        trab.clear();
+        trab = aux;
+        ++quant_trab;
+        return;
+    }
+
+}
+
+bool Zona::procuraTrab(string t, int a) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return true;
+        }
+        ++it;
+    }
+    return false;
+}
+
+bool Zona::aumentaDestroi() {
+    return false;
+}
+
+void Zona::destroiED() {
+    delete ed;
+    ed = nullptr;
+    --quant_edificio;
+}
+
+void Zona::apagaTodosTrab() {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        delete *it;
+        it = workers.erase(it);
+    }
+
+    workers.clear();
+
+    trab.clear();
+
+    for (int i = 0; i < 5; ++i) {
+        trab.emplace_back("-");
+    }
+    quant_trab = 0;
 }

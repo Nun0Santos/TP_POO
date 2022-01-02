@@ -11,13 +11,14 @@ public:
     Ferro();
 
     int vende(int quant) override;
-    void aumenta(int quant) override;
-    int obtemQuantidade() override;
+    void aumenta(double quant) override;
+    double obtemQuantidadeD() override;
     string obtemTipo() override;
     bool gasta(int quant) override;
 private:
     string tipo;
-    int custoVenda, quantidade;
+    int custoVenda;
+    double quantidade;
 };
 
 

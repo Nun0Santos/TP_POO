@@ -9,12 +9,13 @@
 
 class Montanha : public Zona{
 public:
-    Montanha();
+    Montanha(string t, int x, int y);
 
     void duplicaPrecoConstrucao();
     void produzFerro();
     void aumentaProbDemissao();
     string obtemTipo() override;
+    double produzD() override;
 private:
     string tipo;
     float probDemissao, aumentoProd, quantFerro;

@@ -36,13 +36,15 @@ public:
     void despedimentos();
     void iniciaRecursos();
     void aumentaRecursos(string str, int quant);
+    void aumentaRecursos(string str, double quant);
     bool gastaRecursos(string str, int quant);
     bool gastaRecursos(string str, double quant);
-    int obtemCustoProdRec();
     void trataTrabalhadores();
     void trataEdificios();
+    void trataZonas();
     bool verificaLaterais(int x, int y, string t);
     bool procuraTrabalhador(int x, int y, string t);
+    bool moveTrabalhador(int x, int y, string t);
     bool apagaTrabID(string id);
 private:
     int lin , col, dias;

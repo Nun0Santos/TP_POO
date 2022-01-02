@@ -9,13 +9,14 @@
 
 class Pantano : public Zona{
 public:
-    Pantano();
+    Pantano(string t, int x, int y);
 
     void contaDias();
     string obtemTipo() override;
+    bool aumentaDestroi() override;
 private:
     string tipo;
-    int dias;
+    int dias, destroi;
 };
 
 

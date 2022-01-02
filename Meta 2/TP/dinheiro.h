@@ -11,7 +11,7 @@ class Dinheiro : public Recursos{
 public:
     Dinheiro();
 
-    void aumenta(int quant) override;
+    void aumenta(double quant) override;
     bool gasta(int quant) override;
     string obtemTipo() override;
     int obtemQuantidade() override;

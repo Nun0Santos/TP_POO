@@ -25,10 +25,6 @@ double Recursos::producaoBAC() {
     return 0;
 }
 
-void Recursos::aumenta(int quant) {
-
-}
-
 bool Recursos::gasta(int quant) {
     return false;
 }
@@ -38,5 +34,13 @@ string Recursos::obtemTipo() {
 }
 
 int Recursos::obtemQuantidade() {
+    return 0;
+}
+
+void Recursos::aumenta(double quant) {
+
+}
+
+double Recursos::obtemQuantidadeD() {
     return 0;
 }

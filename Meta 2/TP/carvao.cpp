@@ -4,7 +4,7 @@
 
 #include "carvao.h"
 
-Carvao::Carvao() : custoProducao(1), custoVenda(1), quantidade(0), tipo("carvao"){}
+Carvao::Carvao() : custoProducao(1), custoVenda(1), quantidade(0), tipo("Carvao"){}
 
 int Carvao::vende(int quant) {
     if(quant > quantidade){
@@ -19,11 +19,11 @@ int Carvao::producao() {
     return custoProducao;
 }
 
-void Carvao::aumenta(int quant) {
+void Carvao::aumenta(double quant) {
     quantidade += quant;
 }
 
-int Carvao::obtemQuantidade() {
+double Carvao::obtemQuantidadeD() {
     return quantidade;
 }
 

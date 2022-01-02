@@ -20,3 +20,16 @@ int Floresta::getNArvores() const {
 string Floresta::obtemTipo() {
     return tipo;
 }
+
+int Floresta::produz() {
+    if(Zona::obtemQuant_Edificios() == 0){
+        if(dias == 2){
+            ++nArvores;
+            dias = 0;
+        }
+    }else{
+        ++dias;
+        --nArvores;
+    }
+    return Zona::contaTrab("L");
+}

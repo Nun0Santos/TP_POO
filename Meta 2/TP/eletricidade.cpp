@@ -19,7 +19,7 @@ int Eletricidade::producao() {
     return custoProducao;
 }
 
-void Eletricidade::aumenta(int quant) {
+void Eletricidade::aumenta(double quant) {
     quantidade += quant;
 }
 

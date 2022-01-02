@@ -5,7 +5,7 @@
 #include "trabalhadores.h"
 #include <sstream>
 
-int Trabalhador::id = 0;
+int Trabalhador::id = -1;
 
 int Trabalhador::ID() const {
     return id_trab;
@@ -41,6 +41,34 @@ Trabalhador &Trabalhador::operator=(const Trabalhador &outro) {
     id_trab = outro.id_trab;
 
     return *this;
+}
+
+int Trabalhador::setID() {
+    return id++;
+}
+
+int Trabalhador::obtemDiasSim() {
+    return 0;
+}
+
+int Trabalhador::obtemIDT() {
+    return 0;
+}
+
+int Trabalhador::obtemCusto() {
+    return 0;
+}
+
+double Trabalhador::obtemProb() {
+    return 0;
+}
+
+int Trabalhador::obtemDescanso() {
+    return 0;
+}
+
+int Trabalhador::obtemDID() {
+    return 0;
 }
 
 

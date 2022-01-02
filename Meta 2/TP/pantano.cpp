@@ -4,7 +4,7 @@
 
 #include "pantano.h"
 
-Pantano::Pantano() : Zona("pantano", 0, 0), dias(0), tipo("pnt"){}
+Pantano::Pantano(string t, int x, int y) : Zona(t, x , y), dias(0), tipo("pnt"), destroi(0){}
 
 void Pantano::contaDias() {
     if(dias >= 10){
@@ -15,4 +15,13 @@ void Pantano::contaDias() {
 
 string Pantano::obtemTipo() {
     return tipo;
+}
+
+bool Pantano::aumentaDestroi() {
+    if(destroi == 10){
+        destroi = 0;
+        return true;
+    }
+    ++destroi;
+    return false;
 }

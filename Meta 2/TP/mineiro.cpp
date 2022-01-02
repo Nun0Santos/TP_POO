@@ -6,7 +6,11 @@
 #include "zona.h"
 #include <random>
 
-Mineiro::Mineiro(int dia, Zona* z) : z(z), desp(0), custo(10), probEmbora(0.1), dias(0), d(dia), tipo("M"){}
+
+Mineiro::Mineiro(int dia, Zona* z) : Trabalhador(setID()), z(z), desp(0), custo(10), probEmbora(0.1), dias(0), d(dia), tipo("M"){}
+
+Mineiro::Mineiro(int a, int b, int c, double d, int e, int f, Zona *z) : Trabalhador(a), z(z), desp(b), custo(c), probEmbora(d), dias(e), d(f), tipo("M"){}
+
 
 void Mineiro::despedimento() {
     if(dias < 2)
@@ -19,9 +23,9 @@ void Mineiro::despedimento() {
     }
 }
 
-int Mineiro::obtemCusto() const{return custo;}
+int Mineiro::obtemCusto() {return custo;}
 
-float Mineiro::obtemProb() const{return probEmbora;}
+double Mineiro::obtemProb() {return probEmbora;}
 
 void Mineiro::aumentaDias() {
     ++dias;
@@ -33,7 +37,7 @@ string Mineiro::obtemID(){
     return oss.str();
 }
 
-int Mineiro::obtemDiasSim() const {
+int Mineiro::obtemDiasSim() {
     return dias;
 }
 
@@ -56,6 +60,10 @@ Mineiro &Mineiro::operator=(const Mineiro &outro) {
     return *this;
 }
 
-Mineiro::Mineiro(const Mineiro &outro) {
-    *this = outro;
+int Mineiro::obtemIDT() {
+    return Trabalhador::ID();
+}
+
+int Mineiro::obtemDID() {
+    return d;
 }

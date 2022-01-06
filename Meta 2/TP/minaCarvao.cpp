@@ -4,33 +4,27 @@
 
 #include "minaCarvao.h"
 
-MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100), tipo("mnC"), x(x), y(y){}
+MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i,"mnC", 10, x, y), custoSubs(10), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100){}
 
 void MinaCarvao::melhora() {
-    if(nivel <= 5){
-        ++nivel;
-        ++quantProd;
-        quantArmazenamento += 10;
+    if(Edificio::getNivel() <= 5){
+        if(gastaRecursos("Dinheiro", upgradeDinheiro)){
+            if(gastaRecursos("VigaMadeira", upgradeRecurso)){
+                Edificio::incrementaNivel();
+                ++quantProd;
+                quantArmazenamento += 10;
+            }else{
+                aumentaRecursos("Dinheiro", upgradeDinheiro);
+            }
+        }
     }
 }
 
-string MinaCarvao::obtemTipo() {
-    return tipo;
-}
-
-void MinaCarvao::vende() {
-    Edificio::aumentaRecursos("Dinheiro", custoConst);
-}
-
-int MinaCarvao::obtemCusto() {
-    return custoConst;
-}
-
 int MinaCarvao::obtemCustoSubs() {
-    return custoSubs;
+    return custoSubs*10;
 }
 
 void MinaCarvao::produz() {
-    if(!Edificio::procuraTrabalhador(x, y, "O")) return;
+    if(!Edificio::procuraTrabalhador("O")) return;
 
 }

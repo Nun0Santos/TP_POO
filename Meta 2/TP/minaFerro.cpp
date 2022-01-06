@@ -6,13 +6,19 @@
 #include <random>
 
 
-MinaFerro::MinaFerro(ilha* i) : Edificio(i), custoConst(10), custoSubs(10), nivel(1), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100), tipo("mnF"){}
+MinaFerro::MinaFerro(ilha* i) : Edificio(i, "mnF", 10, 0, 0), custoSubs(10), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100){}
 
 void MinaFerro::melhora() {
-    if(nivel <= 5){
-        ++nivel;
-        ++quantProd;
-        quantArmazenamento += 10;
+    if(Edificio::getNivel() <= 5){
+        if(gastaRecursos("Dinheiro", upgradeDinheiro)){
+            if(gastaRecursos("VigaMadeira", upgradeRecurso)){
+                Edificio::incrementaNivel();
+                ++quantProd;
+                quantArmazenamento += 10;
+            }else{
+                aumentaRecursos("Dinheiro", upgradeDinheiro);
+            }
+        }
     }
 }
 
@@ -27,20 +33,8 @@ void MinaFerro::desaba() {//isto está mal feito
 
 }
 
-string MinaFerro::obtemTipo() {
-    return tipo;
-}
-
-void MinaFerro::vende() {
-    Edificio::vende("Dinheiro", custoSubs);
-}
-
-int MinaFerro::obtemCusto() {
-    return custoConst;
-}
-
 int MinaFerro::obtemCustoSubs() {
-    return custoSubs;
+    return custoSubs*10;
 }
 
 void MinaFerro::produz() {

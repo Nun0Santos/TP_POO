@@ -13,24 +13,27 @@ class ilha;
 
 class Edificio {
 public:
-    Edificio(ilha* i);
+    Edificio(ilha* i, string t, int c, int x, int y);
 
     void ligaDesliga();
-    bool procuraTrabalhador(int x, int y, string str) const;
-    virtual string obtemTipo();
+    bool procuraTrabalhador(string str) const;
+    string obtemTipo();
     int getonoff() const;
-    virtual void vende();
-    void vende(string t, int quant);
+    void vende();
     virtual void produz();
     bool gastaRecursos(string t, double quant);
     void aumentaRecursos(string t, double quant);
-    bool verificaLaterais(int x, int y, string t);
-    virtual int obtemCusto();
+    bool verificaLaterais(string t);
+    int obtemCustoDinheiro() const;
     virtual int obtemCustoSubs();
+    int getNivel() const;
+    void incrementaNivel();
+    virtual void melhora();
 private:
     string tipo;
-    int onoff;
+    int onoff, custoDinheiro, nivel;
     ilha* i;
+    int x, y;
 };
 
 

@@ -13,14 +13,10 @@ public:
 
     void melhora();
     void desaba();
-    string obtemTipo() override;
-    void vende() override;
-    int obtemCusto() override;
     int obtemCustoSubs() override;
     void produz() override;
 private:
-    string tipo;
-    int custoConst, custoSubs, nivel, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;
+    int custoSubs, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;
 
 };
 

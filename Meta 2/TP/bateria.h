@@ -11,13 +11,10 @@ class Bateria : public Edificio{
 public:
     Bateria(ilha* i);
 
-    void melhora();
-    string obtemTipo() override;
-    void vende() override;
-    int obtemCusto() override;
+    void melhora() override;
+
 private:
-    string tipo;
-    int quantEletricidade, custoConst, nivel, upgradeDinheiro;
+    int quantEletricidade, upgradeDinheiro;
 };
 
 

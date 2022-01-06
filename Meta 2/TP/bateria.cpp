@@ -4,22 +4,13 @@
 
 #include "bateria.h"
 
-Bateria::Bateria(ilha *i) : Edificio(i), quantEletricidade(100), nivel(1), upgradeDinheiro(5), custoConst(10), tipo("bat"){}
+Bateria::Bateria(ilha *i) : Edificio(i, "bat", 10, 0, 0), quantEletricidade(100), upgradeDinheiro(5){}
 
 void Bateria::melhora() {
-    if(nivel <= 5){
-        ++nivel;
+    if(Edificio::getNivel() <= 5){
+        if(gastaRecursos("Dinheiro", upgradeDinheiro)){
+            Edificio::incrementaNivel();
+            quantEletricidade += 50;
+        }
     }
-}
-
-string Bateria::obtemTipo(){
-    return tipo;
-}
-
-void Bateria::vende() {
-    Edificio::vende("Dinheiro", custoConst);
-}
-
-int Bateria::obtemCusto() {
-    return custoConst;
 }

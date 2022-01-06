@@ -12,14 +12,9 @@ class CentralEletrica : public Edificio{
 public:
     CentralEletrica(ilha* i, int x, int y);
 
-    string obtemTipo() override;
-    void vende() override;
     void produz() override;
-    int obtemCusto() override;
 private:
-    int x, y;
-    string tipo;
-    int quantCarvao, custoConst;
+    int quantCarvao;
 };
 
 

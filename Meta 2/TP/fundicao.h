@@ -12,13 +12,7 @@ class Fundicao : public Edificio{
 public:
     Fundicao(ilha* i, int x, int y);
 
-    string obtemTipo() override;
-    void vende() override;
-    int obtemCusto() override;
     void produz() override;
-private:
-    string tipo;
-    int custoConst, x, y;
 };
 
 

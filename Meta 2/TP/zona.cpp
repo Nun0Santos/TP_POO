@@ -75,7 +75,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
     if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
         if(s == "mnF"){
             MinaFerro m(i);
-            int custo = m.obtemCusto();
+            int custo = m.obtemCustoSubs();
             if(i->gastaRecursos("Madeira", custo)){
                 ed = new MinaFerro(i);
                 ++quant_edificio;
@@ -91,7 +91,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "mnC"){
             MinaCarvao m(i, posL, posC);
-            if(i->gastaRecursos("Madeira", m.obtemCusto()) || i->gastaRecursos("Dinheiro", m.obtemCustoSubs())){
+            if(i->gastaRecursos("Madeira", m.obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m.obtemCustoSubs())){
                 ed = new MinaCarvao(i, posL, posC);
                 ++quant_edificio;
                 return;
@@ -99,7 +99,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "fun"){
             Fundicao m(i, posL, posC);
-            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
                 ed = new Fundicao(i, posL, posC);
                 ++quant_edificio;
                 return;
@@ -107,7 +107,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "elec"){
             CentralEletrica m(i, posL, posC);
-            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
                 ed = new CentralEletrica(i, posL, posC);
                 ++quant_edificio;
                 return;
@@ -115,7 +115,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "bat"){
             Bateria m(i);
-            if(i->gastaRecursos("Dinheiro", m.obtemCusto())){
+            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
                 ed = new Bateria(i);
                 ++quant_edificio;
                 return;

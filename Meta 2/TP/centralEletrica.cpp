@@ -4,19 +4,11 @@
 
 #include "centralEletrica.h"
 
-CentralEletrica::CentralEletrica(ilha* i, int x, int y) : Edificio(i), custoConst(15), quantCarvao(0), tipo("elec"), x(x), y(y){}
-
-string CentralEletrica::obtemTipo() {
-    return tipo;
-}
-
-void CentralEletrica::vende() {
-    Edificio::vende("Dinheiro", custoConst);
-}
+CentralEletrica::CentralEletrica(ilha* i, int x, int y) : Edificio(i, "elec", 15, x, y), quantCarvao(0){}
 
 void CentralEletrica::produz() {
-    if(!Edificio::procuraTrabalhador(x, y, "O")) return;
-    if(Edificio::verificaLaterais(x, y, "elec")){
+    if(!Edificio::procuraTrabalhador("O")) return;
+    if(Edificio::verificaLaterais("elec")){
         if(Edificio::gastaRecursos("Madeira", 1)){
             Edificio::aumentaRecursos("Eletricidade", 1);
             if(quantCarvao<100){
@@ -25,8 +17,4 @@ void CentralEletrica::produz() {
             }
         }
     }
-}
-
-int CentralEletrica::obtemCusto() {
-    return custoConst;
 }

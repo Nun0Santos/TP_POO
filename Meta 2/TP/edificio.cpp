@@ -6,7 +6,7 @@
 #include "ilha.h"
 
 
-Edificio::Edificio(ilha* i) : onoff(0), i(i), tipo(""){}
+Edificio::Edificio(ilha* i, string t, int c, int x, int y) : onoff(0), i(i), tipo(move(t)), custoDinheiro(c), x(x), y(y), nivel(1){}
 
 void Edificio::ligaDesliga() {
     if(onoff == 0){
@@ -16,7 +16,7 @@ void Edificio::ligaDesliga() {
     onoff = 0;
 }
 
-bool Edificio::procuraTrabalhador(int x, int y, string str) const {
+bool Edificio::procuraTrabalhador(string str) const {
     return i->procuraTrabalhador(x, y, move(str));
 }
 
@@ -28,8 +28,8 @@ string Edificio::obtemTipo(){
     return tipo;
 }
 
-void Edificio::vende(string t, int quant) {
-    i->aumentaRecursos(move(t), quant);
+void Edificio::vende() {
+    i->aumentaRecursos("Dinheiro", custoDinheiro);
 }
 
 void Edificio::produz() {
@@ -44,20 +44,28 @@ void Edificio::aumentaRecursos(string t, double quant) {
     i->aumentaRecursos(move(t), quant);
 }
 
-void Edificio::vende() {
-
-}
-
-int Edificio::obtemCusto() {
-    return 0;
+int Edificio::obtemCustoDinheiro() const{
+    return custoDinheiro;
 }
 
 int Edificio::obtemCustoSubs() {
     return 0;
 }
 
-bool Edificio::verificaLaterais(int x, int y, string t) {
+bool Edificio::verificaLaterais(string t) {
     return i->verificaLaterais(x, y, move(t));
+}
+
+int Edificio::getNivel() const {
+    return nivel;
+}
+
+void Edificio::incrementaNivel() {
+    ++nivel;
+}
+
+void Edificio::melhora() {
+
 }
 
 

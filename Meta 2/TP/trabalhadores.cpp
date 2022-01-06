@@ -4,14 +4,15 @@
 
 #include "trabalhadores.h"
 #include <sstream>
+#include "zona.h"
 
 int Trabalhador::id = 0;
 
-Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona* z) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(id){
+Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona* z) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(id), movim(0){
     ++id;
 }
 
-Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona *z, int i) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(i){
+Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona *z, int i, int m) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(i), movim(m){
 
 }
 
@@ -29,7 +30,7 @@ string Trabalhador::obtemID() const {
     return oss.str();
 }
 
-int Trabalhador::pedeDemissao() const {
+int Trabalhador::pedeDemissao() {
     if(probEmbora == 0)
         return 0;
 
@@ -88,7 +89,21 @@ int Trabalhador::obtemDID() {
     return d;
 }
 
+bool Trabalhador::previneDesp() {
+    return z->previneDespedimento();
+}
 
+void Trabalhador::movimenta() {
+    if(movim == 1){
+        movim = 0;
+    }else{
+        movim = 1;
+    }
+}
+
+int Trabalhador::obtemMovim() const{
+    return movim;
+}
 
 
 

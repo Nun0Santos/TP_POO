@@ -58,6 +58,8 @@ public:
     void apagaTodosTrab();
     virtual int getNArvores() const;
     virtual double obtemRedProd();
+    bool previneDespedimento();
+    int obtemMovTrab(string t);
 private:
     string tipo;
     Edificio* ed;

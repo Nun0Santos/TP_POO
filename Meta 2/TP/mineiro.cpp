@@ -9,9 +9,13 @@
 
 Mineiro::Mineiro(int dia, Zona* z) : Trabalhador("M", 10, 0.1, 0, dia, z){}
 
-Mineiro::Mineiro(int a, int c, double d, int e, int f, Zona *z) : Trabalhador("O", c, d, e, f, z, a){}
+Mineiro::Mineiro(int a, int c, double d, int e, int f, Zona *z, int m) : Trabalhador("O", c, d, e, f, z, a, m){}
 
-int Mineiro::pedeDemissao() const {
+int Mineiro::pedeDemissao() {
+    if(Trabalhador::previneDesp()){
+        return 0;
+    }
+
     double val = (double)rand() / RAND_MAX;
 
     if(val < Trabalhador::obtemProb()){

@@ -157,6 +157,7 @@ void ilha::criaIlha() {
             mt19937 rng(dev());
             uniform_int_distribution<mt19937::result_type> dist6(0,4);
             t = dist6(rng);
+
             if(tipos[t] == "pastagem"){
                 tabuleiro[i][j] = new Pastagem("pas", i, j);
                 continue;
@@ -882,17 +883,19 @@ bool ilha::moveTrabalhador(int x, int y, string t) {
         for (int j = 0; j < col; ++j) {
             if(tabuleiro[i][j]->obtemQuant_Trab() > 0){
                 if(tabuleiro[i][j]->procuraTrab(t, 0)){
-                    if(tabuleiro[i][j]->obtemTipo(t) == "L"){
-                        tabuleiro[x][y]->definetrab("L", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), tabuleiro[i][j]->obtemDescanso(t));
-                    }
-                    if(tabuleiro[i][j]->obtemTipo(t) == "M"){
-                        tabuleiro[x][y]->definetrab("M", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
-                    }
-                    if(tabuleiro[i][j]->obtemTipo(t) == "O"){
-                        tabuleiro[x][y]->definetrab("O", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
-                    }
+                    if(tabuleiro[i][j]->obtemMovTrab(t) == 0){
+                        if(tabuleiro[i][j]->obtemTipo(t) == "L"){
+                            tabuleiro[x][y]->definetrab("L", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), tabuleiro[i][j]->obtemDescanso(t));
+                        }
+                        if(tabuleiro[i][j]->obtemTipo(t) == "M"){
+                            tabuleiro[x][y]->definetrab("M", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
+                        }
+                        if(tabuleiro[i][j]->obtemTipo(t) == "O"){
+                            tabuleiro[x][y]->definetrab("O", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
+                        }
 
-                    tabuleiro[i][j]->apagaTrabID(t);
+                        tabuleiro[i][j]->apagaTrabID(t);
+                    }
 
                     return true;
                 }

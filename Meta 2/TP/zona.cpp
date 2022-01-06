@@ -231,6 +231,7 @@ void Zona::trataTrabalhadores() {
     auto it = workers.begin();
     while(it != workers.end()){
         (*it)->aumentaDias();
+        (*it)->movimenta();
 
         if((*it)->obtemTipo() == "L"){
             (*it)->vidaBoa();
@@ -384,7 +385,7 @@ int Zona::obtemDID(string t) {
 
 void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int g) {
     if(t == "L"){
-        workers.push_back(new Lenhador(a, c, d, e, f,g, this));
+        workers.push_back(new Lenhador(a, c, d, e, f,g, this, 1));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -405,7 +406,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
         return;
     }
     if(t == "O"){
-        workers.push_back(new Operario(a, c, d, e, f, this));
+        workers.push_back(new Operario(a, c, d, e, f, this, 1));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -426,7 +427,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
         return;
     }
     if(t == "M"){
-        workers.push_back(new Mineiro(a, c, d, e, f, this));
+        workers.push_back(new Mineiro(a, c, d, e, f, this, 1));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -490,4 +491,22 @@ int Zona::getNArvores() const {
 
 double Zona::obtemRedProd() {
     return 0;
+}
+
+bool Zona::previneDespedimento() {
+    if(tipo == "pas"){
+        return true;
+    }
+    return false;
+}
+
+int Zona::obtemMovTrab(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            return (*it)->obtemMovim();
+        }
+        ++it;
+    }
+    return -1;
 }

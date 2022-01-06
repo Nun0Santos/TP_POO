@@ -15,22 +15,26 @@ class Zona;
 class Trabalhador{
 public:
     Trabalhador(string t, int c, double p, int dias, int d, Zona* z);
-    Trabalhador(string t, int c, double p, int dias, int d, Zona* z, int i);
+    Trabalhador(string t, int c, double p, int dias, int d, Zona* z, int i, int m);
     Trabalhador(const Trabalhador& outro);
 
 
-    int ID() const;
+    int ID() const;//obtem id_trab
     string obtemTipo();
     string obtemID() const;
-    int obtemDiasSim() const;
-    virtual int pedeDemissao() const;
-    void aumentaDias();
-    virtual int vidaBoa();
+    int obtemDiasSim() const;//obtem dias
+    virtual int pedeDemissao() ;//ver se pede demissao
+    void aumentaDias();//incrementa dias
+    virtual int vidaBoa();//ver se o lenhador está no dia de descanso
     int obtemCusto() const;
     double obtemProb() const;
-    virtual int obtemDescanso();
-    int obtemDID();
+    virtual int obtemDescanso();//obtem descanso do lenhador
+    int obtemDID();//obtem d
     Trabalhador& operator=(const Trabalhador& outro);
+    bool previneDesp();//verificar se impede o despedimento devido a estar numa pastagem
+    void movimenta();
+    int obtemMovim() const;
+
 private:
     string tipo;
     int custo; //Custo do trabalhador
@@ -39,6 +43,7 @@ private:
     int id_trab; //id do trabalhador
     static int id;
     Zona* z;
+    int movim;//0 = não se movimentou; 1 = movimentou
 };
 
 #endif //TP_POO_TRABALHADORES_H

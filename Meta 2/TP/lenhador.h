@@ -9,12 +9,12 @@
 class Lenhador: public Trabalhador{
 public:
     Lenhador(int dia, Zona* z);
-    Lenhador(int a, int c, double d, int e, int f, int g, Zona *z);
+    Lenhador(int a, int c, double d, int e, int f, int g, Zona *z, int m);
     Lenhador(const Lenhador& outro);
 
     int vidaBoa() override;
     int obtemDescanso() override;
-    int pedeDemissao() const override;
+    int pedeDemissao() override;
 
     Lenhador& operator=(const Lenhador& outro);
 private:

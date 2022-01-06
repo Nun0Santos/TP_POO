@@ -6,17 +6,145 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
+geral.h
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 iostream
 -
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.cpp
-minaFerro.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+iostream
+-
+string
+-
+vector
+-
+jogo.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
+ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+UI.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.cpp
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+montanha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h
+pastagem.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h
+pantano.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pantano.h
+floresta.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h
+deserto.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h
+sstream
+-
+fstream
+-
+algorithm
+-
 random
 -
+chrono
+-
+dinheiro.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.h
+barraAco.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.h
+ferro.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h
+vigasMadeira.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h
+madeira.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.h
+eletricidade.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h
+carvao.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.h
+ilha.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
+geral.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pantano.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+iostream
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
+iostream
+-
+sstream
+-
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h
+recursos.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+iostream
+-
+vector
+-
 edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
+trabalhadores.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
 

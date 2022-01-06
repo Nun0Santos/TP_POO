@@ -9,7 +9,7 @@
 
 Lenhador::Lenhador(int dia, Zona* z) : Trabalhador("L", 20, 0.05, 0, dia, z), descanso(0){}
 
-Lenhador::Lenhador(int a, int c, double d, int e, int f, int g, Zona *z) : Trabalhador("L", c, d, e, f, z, a), descanso(g){}
+Lenhador::Lenhador(int a, int c, double d, int e, int f, int g, Zona *z, int m) : Trabalhador("L", c, d, e, f, z, a, m), descanso(g){}
 
 int Lenhador::vidaBoa() {
     if(descanso == -1){
@@ -32,7 +32,7 @@ int Lenhador::obtemDescanso() {
     return descanso;
 }
 
-int Lenhador::pedeDemissao() const {
+int Lenhador::pedeDemissao() {
     if(Trabalhador::obtemProb() == 0)
         return 0;
 

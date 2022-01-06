@@ -196,8 +196,10 @@ CMakeFiles/TP_POO.dir/TP/recursos.cpp.obj: \
  ../TP/recursos.cpp \
  ../TP/recursos.h
 CMakeFiles/TP_POO.dir/TP/trabalhadores.cpp.obj: \
+ ../TP/edificio.h \
  ../TP/trabalhadores.cpp \
- ../TP/trabalhadores.h
+ ../TP/trabalhadores.h \
+ ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/vigasMadeira.cpp.obj: \
  ../TP/recursos.h \
  ../TP/vigasMadeira.cpp \

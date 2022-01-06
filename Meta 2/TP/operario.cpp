@@ -9,10 +9,14 @@
 
 Operario::Operario(int dia, Zona* z) : Trabalhador("O", 15, 0.05, 0, dia, z){}
 
-Operario::Operario(int a, int c, double d, int e, int f, Zona *z) : Trabalhador("O", c, d, e, f, z, a){}
+Operario::Operario(int a, int c, double d, int e, int f, Zona *z, int m) : Trabalhador("O", c, d, e, f, z, a, m){}
 
 
-int Operario::pedeDemissao() const {
+int Operario::pedeDemissao() {
+    if(Trabalhador::previneDesp()){
+        return 0;
+    }
+
     double val = (double)rand() / RAND_MAX;
 
     if(val < Trabalhador::obtemProb()){

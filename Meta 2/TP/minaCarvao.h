@@ -17,6 +17,7 @@ public:
     void vende() override;
     int obtemCusto() override;
     int obtemCustoSubs() override;
+    void produz() override;
 private:
     string tipo;
     int custoConst, custoSubs, nivel, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;

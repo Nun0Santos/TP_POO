@@ -158,27 +158,27 @@ void ilha::criaIlha() {
             uniform_int_distribution<mt19937::result_type> dist6(0,4);
             t = dist6(rng);
             if(tipos[t] == "pastagem"){
-                tabuleiro[i][j] = new Pastagem("pastagem", i, j);
+                tabuleiro[i][j] = new Pastagem("pas", i, j);
                 continue;
             }
             if(tipos[t] == "floresta"){
-                tabuleiro[i][j] = new Floresta("floresta", i, j);
+                tabuleiro[i][j] = new Floresta("flr", i, j);
                 continue;
             }
             if(tipos[t] == "deserto"){
-                tabuleiro[i][j] = new Deserto("deserto", i, j);
+                tabuleiro[i][j] = new Deserto("dsr", i, j);
                 continue;
             }
             if(tipos[t] == "montanha"){
-                tabuleiro[i][j] = new Montanha("montanha", i, j);
+                tabuleiro[i][j] = new Montanha("mnt", i, j);
                 continue;
             }
             if(tipos[t] == "pantano"){
-                tabuleiro[i][j] = new Pantano("pantano", i, j);
+                tabuleiro[i][j] = new Pantano("pnt", i, j);
                 continue;
             }
             if(tipos[t] == "zona-x"){
-                tabuleiro[i][j] = new Pastagem("pastagem", i, j);
+                tabuleiro[i][j] = new Pastagem("pas", i, j);
                 continue;
             }
         }
@@ -191,10 +191,6 @@ string ilha::mostraIlha() {
     oss << "Dia " << dias << endl;
 
     for(auto & it : recursos){
-        if (it->obtemTipo() == "Ferro" || it->obtemTipo() == "Carvao"){
-            oss << it->obtemTipo() << ": " << it->obtemQuantidadeD() << "| ";
-            continue;
-        }
         oss << it->obtemTipo() << ": " << it->obtemQuantidade() << "| ";
     }
 
@@ -381,6 +377,22 @@ string ilha::executa(string s1) {
             if(verificaRecursos(v[1])){
                 //verificar se a quantidade introduzida é valida
                 //se for, vender os recursos, senao fazer o return
+                double yD;
+                istringstream ossY(v[2]);//transforma string em int
+                ossY >> yD;
+                if(gastaRecursos(v[1], yD)){
+                    auto it = recursos.begin();
+                    while(it != recursos.end()){
+                        if((*it)->obtemTipo() == v[1]){
+                            aumentaRecursos("Dinheiro", (*it)->vende(yD));
+                            break;
+                        }
+                        ++it;
+                    }
+                    return oss.str();
+                }else{
+                    return "Nao tem essa quantidade de recurso";
+                }
             }
             istringstream ossX(v[1]);//transforma string em int
             ossX >> x;//atribui valor transformado à variavel x
@@ -849,20 +861,7 @@ bool ilha::apagaTrabID(string id) {
 void ilha::trataZonas() {
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            if(tabuleiro[i][j]->obtemTipo() == "flr"){
-                aumentaRecursos("Madeira", tabuleiro[i][j]->produz());
-            }
-            if(tabuleiro[i][j]->obtemTipo() == "mnt"){
-                aumentaRecursos("Ferro", tabuleiro[i][j]->produzD());
-            }
-            if(tabuleiro[i][j]->obtemTipo() == "pnt"){
-                if(tabuleiro[i][j]->getEd() != nullptr){
-                    if(tabuleiro[i][j]->aumentaDestroi()){
-                        tabuleiro[i][j]->destroiED();
-                        tabuleiro[i][j]->apagaTodosTrab();
-                    }
-                }
-            }
+            tabuleiro[i][j]->trata(*this);
         }
     }
 }

@@ -76,9 +76,14 @@ CMakeFiles/TP_POO.dir/TP/ferro.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
 CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/fundicao.cpp.obj
@@ -159,9 +164,14 @@ CMakeFiles/TP_POO.dir/TP/mineiro.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 CMakeFiles/TP_POO.dir/TP/operario.cpp.obj

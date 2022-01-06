@@ -9,12 +9,10 @@
 
 class Pastagem : public Zona{
 public:
-    Pastagem(string t, int x, int y) : Zona(t, x , y), tipo("pas"){}
+    Pastagem(string t, int x, int y) : Zona(t, x , y){}
 
-    string obtemTipo() override;
-    int produz() override;
 private:
-    string tipo;
+
 
 };
 

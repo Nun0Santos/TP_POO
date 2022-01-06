@@ -42,7 +42,7 @@ bool verificaTrabalhador(const string& t){
 }
 
 bool verificaRecursos(const string& t){
-    vector<string> recursos = {"ferro", "aco", "carvao", "madeira", "vigamadeira", "eletricidade"};
+    vector<string> recursos = {"Ferro", "Aco", "Carvao", "Madeira", "Vigamadeira", "Eletricidade"};
 
     if(find(recursos.begin(), recursos.end(), t) != recursos.end()){
         return true;

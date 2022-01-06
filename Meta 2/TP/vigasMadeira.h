@@ -10,15 +10,10 @@ class VigasMadeira: public Recursos{
 public:
     VigasMadeira();
 
-    int vende(int quant) override;
+    double vende(double quant) override;
     int producao() override;
-    void aumenta(double quant) override;
-    int obtemQuantidade() override;
-    string obtemTipo() override;
-    bool gasta(int quant) override;
+
 private:
-    string tipo;
-    int quantidade;
     int custoProducao, custoVenda;
 };
 

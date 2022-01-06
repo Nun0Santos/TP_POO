@@ -16,10 +16,6 @@
 #include "mineiro.h"
 
 
-void Zona::defineTipo(string str) {
-    tipo = move(str);
-}
-
 void Zona::definePosC(int c) {
     posC = c;
 }
@@ -35,6 +31,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
             return;
 
         workers.push_back(new Operario(dia, this));
+        //workers.push_back(new Operario(o));//maneira correta
         ++quant_trab;
     }
     if(s == "L"){
@@ -43,6 +40,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
             return;
 
         workers.push_back(new Lenhador(dia, this));
+        //workers.push_back(new Lenhador(o));//maneira correta
         ++quant_trab;
     }
     if(s == "M"){
@@ -51,6 +49,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
             return;
 
         workers.push_back(new Mineiro(dia, this));
+        //workers.push_back(new Mineiro(o));//maneira correta
         ++quant_trab;
     }
 
@@ -150,10 +149,6 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
     }
 
-}
-
-void Zona::defineQuantTrab() {
-    quant_trab = quant_trab + 1;
 }
 
 int Zona::obtemC() const {
@@ -282,14 +277,6 @@ bool Zona::apagaTrabID(string id) {
     return false;
 }
 
-void Zona::trataZonas() {
-
-}
-
-int Zona::produz() {
-    return 0;
-}
-
 int Zona::contaTrab(string t) {
     int i = 0;
     auto it = workers.begin();
@@ -302,8 +289,8 @@ int Zona::contaTrab(string t) {
     return i;
 }
 
-double Zona::produzD() {
-    return 0;
+void Zona::trata(ilha& i) {
+
 }
 
 string Zona::obtemTipo(string t) {
@@ -366,7 +353,7 @@ int Zona::obtemIDT(string t) {
     auto it = workers.begin();
     while (it != workers.end()){
         if((*it)->obtemID() == t){
-            return (*it)->obtemIDT();
+            return (*it)->ID();
         }
         ++it;
     }
@@ -397,7 +384,7 @@ int Zona::obtemDID(string t) {
 
 void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int g) {
     if(t == "L"){
-        workers.push_back(new Lenhador(a, b, c, d, e, f,g, this));
+        workers.push_back(new Lenhador(a, c, d, e, f,g, this));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -418,7 +405,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
         return;
     }
     if(t == "O"){
-        workers.push_back(new Operario(a, b, c, d, e, f, this));
+        workers.push_back(new Operario(a, c, d, e, f, this));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -439,7 +426,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
         return;
     }
     if(t == "M"){
-        workers.push_back(new Mineiro(a, b, c, d, e, f, this));
+        workers.push_back(new Mineiro(a, c, d, e, f, this));
         int i, flag = 0;
         vector<string> aux;
         for(i = 0; i < 5; ++i){
@@ -473,10 +460,6 @@ bool Zona::procuraTrab(string t, int a) {
     return false;
 }
 
-bool Zona::aumentaDestroi() {
-    return false;
-}
-
 void Zona::destroiED() {
     delete ed;
     ed = nullptr;
@@ -484,6 +467,7 @@ void Zona::destroiED() {
 }
 
 void Zona::apagaTodosTrab() {
+    if(workers.empty()) return;
     auto it = workers.begin();
     while (it != workers.end()){
         delete *it;
@@ -498,4 +482,12 @@ void Zona::apagaTodosTrab() {
         trab.emplace_back("-");
     }
     quant_trab = 0;
+}
+
+int Zona::getNArvores() const {
+    return -1;
+}
+
+double Zona::obtemRedProd() {
+    return 0;
 }

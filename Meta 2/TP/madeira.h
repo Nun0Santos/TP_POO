@@ -10,14 +10,10 @@ class Madeira: public Recursos{
 public:
     Madeira();
 
-    int vende(int quant) override;
-    string obtemTipo() override;
-    int obtemQuantidade() override;
-    bool gasta(int quant) override;
-    void aumenta(double quant) override;
+    double vende(double quant) override;
+
 private:
-    string tipo;
-    int custoVenda, quantidade;
+    int custoVenda;
 };
 
 

@@ -21,18 +21,16 @@ public:
         }
     };
 
-    void defineTipo(string str);
     void definePosL(int l);
     void definePosC(int c);
     void defineTrab(string s, int dia, ilha* il);
     void definetrab(string t, int a, int b, int c, double d, int e, int f, int g);
     void defineEdificio(const string& s, ilha* i, int dev);
-    void defineQuantTrab();
     int obtemL() const;
     int obtemC() const;
     string obtemTrab() const;
     string obtemWorkers() const;
-    virtual string obtemTipo();
+    string obtemTipo();
     int obtemQuant_Trab() const;
     string obtemEdificio() const;
     int obtemQuant_Edificios() const;
@@ -43,9 +41,7 @@ public:
     void verificaDespedimento();
     void trataTrabalhadores();
     void trataEdificios();
-    void trataZonas();
-    virtual int produz();
-    virtual double produzD();
+    virtual void trata(ilha& i);
     bool procuraTrab(string t);
     bool apagaTrabID(string id);
     int contaTrab(string t);
@@ -58,9 +54,10 @@ public:
     int obtemDescanso(string t);
     int obtemDID(string t);
     bool procuraTrab(string t, int a);
-    virtual bool aumentaDestroi();
     void destroiED();
     void apagaTodosTrab();
+    virtual int getNArvores() const;
+    virtual double obtemRedProd();
 private:
     string tipo;
     Edificio* ed;

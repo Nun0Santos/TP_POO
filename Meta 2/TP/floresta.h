@@ -9,14 +9,12 @@
 
 class Floresta : public Zona{
 public:
-    Floresta(string t, int x, int y) : Zona(t, x , y), nArvores(defineArvores()), tipo("flr"), nArvores_max(100), prod_kg(1), dias(0){}
+    Floresta(string t, int x, int y) : Zona(t, x , y), nArvores(defineArvores()),  nArvores_max(100), prod_kg(1), dias(0){}
 
     int defineArvores();
-    int getNArvores() const;
-    string obtemTipo() override;
-    int produz() override;
+    int getNArvores() const override;
+    void trata(ilha& i) override;
 private:
-    string tipo;
     int nArvores, nArvores_max , prod_kg, dias;
 };
 

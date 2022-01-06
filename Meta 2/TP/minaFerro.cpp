@@ -44,7 +44,7 @@ int MinaFerro::obtemCustoSubs() {
 }
 
 void MinaFerro::produz() {
-    Edificio::produz();
+
 }
 
 

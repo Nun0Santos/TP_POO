@@ -14,27 +14,31 @@ class Zona;
 
 class Trabalhador{
 public:
-    Trabalhador(int i) : id_trab(i){};
+    Trabalhador(string t, int c, double p, int dias, int d, Zona* z);
+    Trabalhador(string t, int c, double p, int dias, int d, Zona* z, int i);
     Trabalhador(const Trabalhador& outro);
 
 
     int ID() const;
-    virtual string obtemTipo();
-    virtual string obtemID();
-    virtual int obtemDiasSim();
-    virtual int pedeDemissao();
-    virtual void aumentaDias();
+    string obtemTipo();
+    string obtemID() const;
+    int obtemDiasSim() const;
+    virtual int pedeDemissao() const;
+    void aumentaDias();
     virtual int vidaBoa();
-    virtual int obtemIDT();
-    virtual int obtemCusto();
-    virtual double obtemProb();
+    int obtemCusto() const;
+    double obtemProb() const;
     virtual int obtemDescanso();
-    virtual int obtemDID();
+    int obtemDID();
     Trabalhador& operator=(const Trabalhador& outro);
-    static int setID();
 private:
+    string tipo;
+    int custo; //Custo do trabalhador
+    double probEmbora; //Probabilidade do trabalhador ir embora
+    int dias, d; //Dias da simulacao / dia do jogo em que o trabalhador foi contratado
     int id_trab; //id do trabalhador
     static int id;
+    Zona* z;
 };
 
 #endif //TP_POO_TRABALHADORES_H

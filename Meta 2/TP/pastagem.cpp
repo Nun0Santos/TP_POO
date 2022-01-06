@@ -4,10 +4,3 @@
 
 #include "pastagem.h"
 
-string Pastagem::obtemTipo() {
-    return tipo;
-}
-
-int Pastagem::produz() {
-    return Zona::contaTrab("L");
-}

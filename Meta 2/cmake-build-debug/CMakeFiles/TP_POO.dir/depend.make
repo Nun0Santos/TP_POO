@@ -76,9 +76,14 @@ CMakeFiles/TP_POO.dir/TP/ferro.cpp.obj: \
  ../TP/ferro.h \
  ../TP/recursos.h
 CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj: \
+ ../TP/UI.h \
  ../TP/edificio.h \
  ../TP/floresta.cpp \
  ../TP/floresta.h \
+ ../TP/geral.h \
+ ../TP/ilha.h \
+ ../TP/jogo.h \
+ ../TP/recursos.h \
  ../TP/trabalhadores.h \
  ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/fundicao.cpp.obj: \
@@ -159,9 +164,14 @@ CMakeFiles/TP_POO.dir/TP/mineiro.cpp.obj: \
  ../TP/trabalhadores.h \
  ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/montanha.cpp.obj: \
+ ../TP/UI.h \
  ../TP/edificio.h \
+ ../TP/geral.h \
+ ../TP/ilha.h \
+ ../TP/jogo.h \
  ../TP/montanha.cpp \
  ../TP/montanha.h \
+ ../TP/recursos.h \
  ../TP/trabalhadores.h \
  ../TP/zona.h
 CMakeFiles/TP_POO.dir/TP/operario.cpp.obj: \

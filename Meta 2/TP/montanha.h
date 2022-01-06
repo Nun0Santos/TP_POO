@@ -12,12 +12,9 @@ public:
     Montanha(string t, int x, int y);
 
     void duplicaPrecoConstrucao();
-    void produzFerro();
     void aumentaProbDemissao();
-    string obtemTipo() override;
-    double produzD() override;
+    void trata(ilha& i) override;
 private:
-    string tipo;
     float probDemissao, aumentoProd, quantFerro;
 };
 

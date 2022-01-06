@@ -11,18 +11,19 @@ using namespace std;
 
 class Recursos {
 public:
-    virtual int vende(int quant);
-    virtual double vendeE(int quant);
+    Recursos(string t);
+
+    virtual double vende(double quant);
     virtual int producao();
     virtual double producaoBAF();
     virtual double producaoBAC();
-    virtual void aumenta(double quant);
-    virtual bool gasta(int quant);
-    virtual string obtemTipo();
-    virtual int obtemQuantidade();
-    virtual double obtemQuantidadeD();
+    void aumenta(double quant);
+    bool gasta(int quant);
+    string obtemTipo();
+    double obtemQuantidade() const;
 private:
-
+    string tipo;
+    double quantidade;
 };
 
 

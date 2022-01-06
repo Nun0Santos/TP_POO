@@ -10,15 +10,10 @@ class Ferro: public Recursos{
 public:
     Ferro();
 
-    int vende(int quant) override;
-    void aumenta(double quant) override;
-    double obtemQuantidadeD() override;
-    string obtemTipo() override;
-    bool gasta(int quant) override;
+    double vende(double quant) override;
+
 private:
-    string tipo;
     int custoVenda;
-    double quantidade;
 };
 
 

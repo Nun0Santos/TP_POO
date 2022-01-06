@@ -10,18 +10,13 @@ class BarraAco: public Recursos{
 public:
     BarraAco();
 
-    int vende(int quant) override;
+    double vende(double quant) override;
     double producaoBAC() override;
     double producaoBAF() override;
-    void aumenta(double quant) override;
-    string obtemTipo() override;
-    int obtemQuantidade() override;
-    bool gasta(int quant) override;
+
 private:
-    string  tipo;
     double custoFerro, custoCarvao;
     int custoVenda;
-    double quantidade;
 };
 
 

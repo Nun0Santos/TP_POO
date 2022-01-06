@@ -4,16 +4,9 @@
 
 #include "recursos.h"
 
-
-int Recursos::vende(int quant) {
-    return 0;
-}
+Recursos::Recursos(string t) : tipo(move(t)), quantidade(0){}
 
 int Recursos::producao() {
-    return 0;
-}
-
-double Recursos::vendeE(int quant) {
     return 0;
 }
 
@@ -26,21 +19,28 @@ double Recursos::producaoBAC() {
 }
 
 bool Recursos::gasta(int quant) {
-    return false;
+    if(quant > quantidade){
+        return false;
+    }
+
+    quantidade -= quant;
+    return true;
 }
 
 string Recursos::obtemTipo() {
-    return "-";
+    return tipo;
 }
 
-int Recursos::obtemQuantidade() {
-    return 0;
-}
+
 
 void Recursos::aumenta(double quant) {
-
+    quantidade += quant;
 }
 
-double Recursos::obtemQuantidadeD() {
+double Recursos::vende(double quant) {
     return 0;
+}
+
+double Recursos::obtemQuantidade() const {
+    return quantidade;
 }

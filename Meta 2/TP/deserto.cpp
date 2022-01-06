@@ -4,6 +4,6 @@
 
 #include "deserto.h"
 
-string Deserto::obtemTipo() {
-    return tipo;
+double Deserto::obtemRedProd() {
+    return prod;
 }

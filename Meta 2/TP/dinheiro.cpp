@@ -4,27 +4,4 @@
 
 #include "dinheiro.h"
 
-Dinheiro::Dinheiro() : quantidade(0), tipo("Dinheiro"){}
-
-void Dinheiro::aumenta(double quant) {
-    quantidade += quant;
-}
-
-bool Dinheiro::gasta(int quant) {
-    if(quant > quantidade){
-        return false;
-    }
-
-    quantidade -= quant;
-    return true;
-}
-
-string Dinheiro::obtemTipo() {
-    return tipo;
-}
-
-int Dinheiro::obtemQuantidade() {
-    return quantidade;
-}
-
-
+Dinheiro::Dinheiro() : Recursos("Dinheiro"){}

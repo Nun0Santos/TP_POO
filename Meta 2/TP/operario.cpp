@@ -7,64 +7,29 @@
 #include <random>
 
 
-Operario::Operario(int dia, Zona* z) : Trabalhador(setID()), desp(0), custo(15), probEmbora(0.05), dias(0), d(dia), tipo("O"), z(z){}
+Operario::Operario(int dia, Zona* z) : Trabalhador("O", 15, 0.05, 0, dia, z){}
 
-Operario::Operario(int a, int b, int c, double d, int e, int f, Zona *z) : Trabalhador(a), desp(b), custo(c), probEmbora(d), dias(e), d(f), tipo("O"), z(z){}
+Operario::Operario(int a, int c, double d, int e, int f, Zona *z) : Trabalhador("O", c, d, e, f, z, a){}
 
 
-void Operario::despedimento() {
-    if(dias < 10)
-        return;
-
+int Operario::pedeDemissao() const {
     double val = (double)rand() / RAND_MAX;
 
-    if(val < probEmbora){
-        desp = 1;
+    if(val < Trabalhador::obtemProb()){
+        if(Trabalhador::obtemDiasSim() > 10){
+            return 1;
+        }
     }
-}
 
-int Operario::obtemCusto(){return custo;}
-
-double Operario::obtemProb(){return probEmbora;}
-
-void Operario::aumentaDias() {
-    ++dias;
-}
-
-string Operario::obtemID() {
-    ostringstream oss;
-    oss << Trabalhador::ID() << "." << d;
-    return oss.str();
-}
-
-int Operario::obtemDiasSim() {
-    return dias;
-}
-
-int Operario::pedeDemissao(){
-    return desp;
-}
-
-string Operario::obtemTipo() {
-    return tipo;
+    return 0;
 }
 
 Operario &Operario::operator=(const Operario &outro) {
-    if(this == &outro){return *this;}
+    if(this == &outro) return *this;
 
-    desp = outro.desp;
-    dias = outro.dias;
-    d = outro.d;
-    z = outro.z;
+    Trabalhador::operator=(outro);
 
     return *this;
 }
 
-int Operario::obtemIDT() {
-    return Trabalhador::ID();
-}
-
-int Operario::obtemDID() {
-    return d;
-}
 

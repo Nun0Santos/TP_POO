@@ -29,3 +29,8 @@ int MinaCarvao::obtemCusto() {
 int MinaCarvao::obtemCustoSubs() {
     return custoSubs;
 }
+
+void MinaCarvao::produz() {
+    if(!Edificio::procuraTrabalhador(x, y, "O")) return;
+
+}

@@ -4,6 +4,7 @@
 
 #include "floresta.h"
 #include <random>
+#include "ilha.h"
 
 int Floresta::defineArvores() {
     random_device dev;
@@ -17,19 +18,18 @@ int Floresta::getNArvores() const {
     return nArvores;
 }
 
-string Floresta::obtemTipo() {
-    return tipo;
-}
-
-int Floresta::produz() {
+void Floresta::trata(ilha& i){
     if(Zona::obtemQuant_Edificios() == 0){
         if(dias == 2){
             ++nArvores;
             dias = 0;
         }
+        ++dias;
     }else{
         ++dias;
         --nArvores;
     }
-    return Zona::contaTrab("L");
+    if(nArvores > 0){
+        i.aumentaRecursos("Madeira", Zona::contaTrab("L"));
+    }
 }

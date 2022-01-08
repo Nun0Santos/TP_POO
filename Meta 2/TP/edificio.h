@@ -14,6 +14,7 @@ class ilha;
 class Edificio {
 public:
     Edificio(ilha* i, string t, int c, int x, int y);
+    virtual ~Edificio() = default;
 
     void ligaDesliga();
     bool procuraTrabalhador(string str) const;
@@ -29,6 +30,9 @@ public:
     int getNivel() const;
     void incrementaNivel();
     virtual void melhora();
+    virtual Edificio* duplica() const;
+
+    Edificio& operator=(const Edificio& outro);
 private:
     string tipo;
     int onoff, custoDinheiro, nivel;

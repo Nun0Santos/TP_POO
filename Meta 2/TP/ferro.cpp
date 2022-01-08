@@ -10,3 +10,7 @@ double Ferro::vende(double quant) {
     return custoVenda*quant;
 }
 
+Recursos *Ferro::duplica() {
+    return new Ferro(*this);
+}
+

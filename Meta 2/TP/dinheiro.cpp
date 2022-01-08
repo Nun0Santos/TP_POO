@@ -5,3 +5,7 @@
 #include "dinheiro.h"
 
 Dinheiro::Dinheiro() : Recursos("Dinheiro"){}
+
+Recursos *Dinheiro::duplica() {
+    return new Dinheiro(*this);
+}

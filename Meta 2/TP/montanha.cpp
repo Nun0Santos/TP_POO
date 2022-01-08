@@ -19,3 +19,25 @@ void Montanha::trata(ilha& i){
         i.aumentaRecursos("Ferro", 0.1*Zona::obtemQuant_Trab());
     }
 }
+
+Montanha &Montanha::operator=(const Zona &outro) {
+    if(this == &outro) return *this;
+
+    Zona::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const Montanha*>(&outro);
+        probDemissao = aux->probDemissao;
+        aumentoProd = aux->aumentoProd;
+        quantFerro = aux->quantFerro;
+    }
+    return *this;
+}
+
+Zona *Montanha::duplica() const {
+    return new Montanha(*this);
+}
+
+Montanha::Montanha(const Montanha &outro) : Zona(outro),probDemissao(0), aumentoProd(0), quantFerro(0){
+    *this = outro;
+}

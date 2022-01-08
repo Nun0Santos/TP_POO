@@ -26,30 +26,27 @@ void Zona::definePosL(int l) {
 
 void Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "O"){
-        Operario o(dia, this);
-        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+        Trabalhador *o = new Operario(dia, this);
+        if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
-        workers.push_back(new Operario(dia, this));
-        //workers.push_back(new Operario(o));//maneira correta
+        workers.push_back(o);
         ++quant_trab;
     }
     if(s == "L"){
-        Lenhador o(dia, this);
-        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+        Trabalhador *o = new Lenhador(dia, this);
+        if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
-        workers.push_back(new Lenhador(dia, this));
-        //workers.push_back(new Lenhador(o));//maneira correta
+        workers.push_back(o);
         ++quant_trab;
     }
     if(s == "M"){
-        Mineiro o(dia, this);
-        if(!il->gastaRecursos("Dinheiro", o.obtemCusto()))
+        Trabalhador *o = new Mineiro(dia, this);
+        if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
-        workers.push_back(new Mineiro(dia, this));
-        //workers.push_back(new Mineiro(o));//maneira correta
+        workers.push_back(o);
         ++quant_trab;
     }
 
@@ -509,4 +506,96 @@ int Zona::obtemMovTrab(string t) {
         ++it;
     }
     return -1;
+}
+
+Trabalhador *Zona::moveTrab(string t) {
+    auto it = workers.begin();
+    while (it != workers.end()){
+        if((*it)->obtemID() == t){
+            vector<string>::reverse_iterator it_t;
+            it_t = trab.rbegin();
+            while (it_t != trab.rend()){
+                if((*it_t) == (*it)->obtemTipo()){
+                    trab.erase((it_t+1).base());
+                    trab.emplace_back("-");
+                    break;
+                }
+                ++it_t;
+            }
+
+            --quant_trab;
+            workers.erase(it);
+            return *it;
+        }
+        ++it;
+    }
+    return nullptr;
+}
+
+void Zona::recebeTrab(Trabalhador* auxt) {
+    auxt->redefineZona(this);
+    workers.push_back(auxt);
+
+    int i, flag = 0;
+    vector<string> aux;
+    for(i = 0; i < 5; ++i){
+        if(trab[i] == "-"){
+            if(flag == 0){
+                flag = 1;
+                aux.push_back(auxt->obtemTipo());
+                ++i;
+            }
+
+        }
+        aux.push_back(trab[i]);
+    }
+
+    trab.clear();
+    trab = aux;
+    ++quant_trab;
+
+}
+
+Zona &Zona::operator=(const Zona &outro) {
+    if(this == &outro) return *this;
+
+    auto it1 = workers.begin();
+    while (it1 != workers.end()){
+        delete (*it1);
+        ++it1;
+    }
+    workers.clear();
+
+    trab.clear();
+    ed = nullptr;
+
+    auto it2 = outro.workers.begin();
+    while(it2 != outro.workers.end()){
+        workers.push_back((*it2)->duplica());
+        ++it2;
+    }
+
+    auto it3 = outro.trab.begin();
+    while (it3 != outro.trab.end()){
+        trab.push_back((*it3));
+        ++it3;
+    }
+
+    auto aux = const_cast<Zona&>(outro);
+    if(aux.getEd() == nullptr){
+        ed = nullptr;
+    }else{
+        ed = outro.ed->duplica();
+    }
+
+    quant_edificio = outro.quant_edificio;
+    quant_trab = outro.quant_edificio;
+    posC = outro.posC;
+    posL = outro.posL;
+
+    return *this;
+}
+
+Zona *Zona::duplica() const {
+    return nullptr;
 }

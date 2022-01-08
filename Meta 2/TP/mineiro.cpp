@@ -9,7 +9,7 @@
 
 Mineiro::Mineiro(int dia, Zona* z) : Trabalhador("M", 10, 0.1, 0, dia, z){}
 
-Mineiro::Mineiro(int a, int c, double d, int e, int f, Zona *z, int m) : Trabalhador("O", c, d, e, f, z, a, m){}
+Mineiro::Mineiro(int a, int c, double d, int e, int f, Zona *z, int m) : Trabalhador("M", c, d, e, f, z, a, m){}
 
 int Mineiro::pedeDemissao() {
     if(Trabalhador::previneDesp()){
@@ -27,10 +27,7 @@ int Mineiro::pedeDemissao() {
     return 0;
 }
 
-Mineiro &Mineiro::operator=(const Mineiro &outro) {
-    if(this == &outro) return *this;
-
-    Trabalhador::operator=(outro);
-
-    return *this;
+Trabalhador *Mineiro::duplica() const {
+    return new Mineiro(*this);
 }
+

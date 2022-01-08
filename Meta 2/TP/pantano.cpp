@@ -17,4 +17,25 @@ void Pantano::trata(ilha& i) {
     ++dias;
 }
 
+Pantano &Pantano::operator=(const Zona &outro) {
+    if(this == & outro) return *this;
+
+    Zona::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const Pantano*>(&outro);
+        dias = aux->dias;
+    }
+
+    return *this;
+}
+
+Zona *Pantano::duplica() const {
+    return new Pantano(*this);
+}
+
+Pantano::Pantano(const Pantano &outro) : Zona(outro), dias(0){
+    *this = outro;
+}
+
 

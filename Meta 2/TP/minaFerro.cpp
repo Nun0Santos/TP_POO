@@ -41,4 +41,25 @@ void MinaFerro::produz() {
 
 }
 
+MinaFerro &MinaFerro::operator=(const Edificio &outro) {
+    if(this == &outro) return *this;
+
+    Edificio::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const MinaFerro*>(&outro);
+        custoSubs = aux->custoSubs;
+        quantProd = aux->quantProd;
+        upgradeDinheiro = aux->upgradeDinheiro;
+        upgradeRecurso = aux->upgradeRecurso;
+        probDesabar = aux->probDesabar;
+        quantArmazenamento = aux->quantArmazenamento;
+    }
+    return *this;
+}
+
+Edificio* MinaFerro::duplica() const{
+    return new MinaFerro(*this);
+}
+
 

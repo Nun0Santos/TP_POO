@@ -44,3 +44,7 @@ double Recursos::vende(double quant) {
 double Recursos::obtemQuantidade() const {
     return quantidade;
 }
+
+Recursos *Recursos::duplica() {
+    return nullptr;
+}

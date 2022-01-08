@@ -15,11 +15,20 @@ using namespace std;
 
 class Zona{
 public:
-    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), onoff(0), ed(nullptr){
+    Zona(string t= "-", int l = 0, int c = 0) : tipo(move(t)), quant_trab(0), posL(l), posC(c), quant_edificio(0), ed(nullptr){
         for(int i = 0; i < 5; ++i){
             trab.emplace_back("-");
         }
     };
+    virtual ~Zona(){
+        delete ed;
+
+        auto it = workers.begin();
+        while (it != workers.end()){
+            delete (*it);
+            ++it;
+        }
+    }
 
     void definePosL(int l);
     void definePosC(int c);
@@ -60,12 +69,17 @@ public:
     virtual double obtemRedProd();
     bool previneDespedimento();
     int obtemMovTrab(string t);
+    Trabalhador* moveTrab(string t);
+    void recebeTrab(Trabalhador* auxt);
+    Zona& operator=(const Zona& outro);
+    virtual Zona* duplica() const;
+
 private:
     string tipo;
     Edificio* ed;
     vector<string> trab;
     vector<Trabalhador*> workers;
-    int quant_trab, quant_edificio, onoff;
+    int quant_trab, quant_edificio;
     int posL, posC;
 };
 

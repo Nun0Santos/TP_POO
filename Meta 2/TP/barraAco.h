@@ -13,7 +13,7 @@ public:
     double vende(double quant) override;
     double producaoBAC() override;
     double producaoBAF() override;
-
+    Recursos * duplica() override;
 private:
     double custoFerro, custoCarvao;
     int custoVenda;

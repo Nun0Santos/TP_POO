@@ -7,7 +7,7 @@
 #include <random>
 
 
-Lenhador::Lenhador(int dia, Zona* z) : Trabalhador("L", 20, 0.05, 0, dia, z), descanso(0){}
+Lenhador::Lenhador(int dia, Zona* z) : Trabalhador("L", 20, 0, 0, dia, z), descanso(0){}
 
 Lenhador::Lenhador(int a, int c, double d, int e, int f, int g, Zona *z, int m) : Trabalhador("L", c, d, e, f, z, a, m), descanso(g){}
 
@@ -23,7 +23,6 @@ int Lenhador::vidaBoa() {
             return 0;
         }
         ++descanso;
-        return 0;
     }
     return 0;
 }
@@ -45,12 +44,23 @@ int Lenhador::pedeDemissao() {
     return 0;
 }
 
-Lenhador &Lenhador::operator=(const Lenhador &outro) {
+Lenhador &Lenhador::operator=(const Trabalhador &outro) {
     if(this == &outro) return *this;
+    if(typeid(*this) == typeid(outro)){
+        Trabalhador::operator=(outro);
 
-    Trabalhador::operator=(outro);
+        const auto* aux = dynamic_cast<const Lenhador*> (&outro);
 
-    descanso = outro.descanso;
+        descanso = aux->descanso;
+    }
 
     return *this;
+}
+
+Lenhador::Lenhador(const Lenhador &outro) : Trabalhador(outro), descanso(0){
+    *this = outro;
+}
+
+Trabalhador *Lenhador::duplica() const {
+    return new Lenhador(*this);
 }

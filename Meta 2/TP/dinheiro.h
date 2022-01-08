@@ -10,6 +10,8 @@
 class Dinheiro : public Recursos{
 public:
     Dinheiro();
+
+    Recursos * duplica() override;
 };
 
 

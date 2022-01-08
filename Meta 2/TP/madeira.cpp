@@ -9,3 +9,7 @@ Madeira::Madeira() : Recursos("Madeira"), custoVenda(1){}
 double Madeira::vende(double quant) {
     return custoVenda*quant;
 }
+
+Recursos *Madeira::duplica() {
+    return new Madeira(*this);
+}

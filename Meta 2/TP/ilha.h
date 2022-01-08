@@ -13,13 +13,22 @@ using namespace std;
 
 class ilha{
 public:
-    ilha() : dias(1){};
+    ilha() : dias(1), lin(0), col(0), tabuleiro(nullptr){};
     ~ilha(){       //Destrutor
         for(int i = 0; i<col; ++i){
             delete tabuleiro[i];
         }
         delete [] tabuleiro;
+
+        auto it = recursos.begin();
+        while (it != recursos.end()){
+            delete (*it);
+            ++it;
+        }
     }
+
+    ilha(const ilha& outro);
+
     void defineCol(int a);//pedir quantas colunas quer
     void defineLin(int a);//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
@@ -46,6 +55,8 @@ public:
     bool procuraTrabalhador(int x, int y, string t);
     bool moveTrabalhador(int x, int y, string t);
     bool apagaTrabID(string id);
+
+    ilha& operator=(const ilha& outro);
 private:
     int lin , col, dias;
     Zona ***tabuleiro;

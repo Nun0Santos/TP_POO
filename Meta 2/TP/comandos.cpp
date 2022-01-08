@@ -13,7 +13,7 @@ using namespace std;
 
 bool verificaComandos(const string& com){
 
-    vector<string> comandos = {"exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debkill"};
+    vector<string> comandos = {"exec","cons","liga","des","move","vende","cont","list","next","save","load","apaga","config","debcash","debed","debkill", "upgrade"};
 
     if(find(comandos.begin(), comandos.end(), com) != comandos.end())
     {

@@ -10,10 +10,10 @@ class Operario: public Trabalhador{
 public:
     Operario(int dia, Zona* z);
     Operario(int a, int c, double d, int e, int f, Zona *z, int m);
-    Operario(const Operario& outro);
 
     Operario& operator=(const Operario& outro);
     int pedeDemissao() override;
+    Trabalhador * duplica() const override;
 };
 
 

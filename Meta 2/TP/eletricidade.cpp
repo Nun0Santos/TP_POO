@@ -13,3 +13,7 @@ double Eletricidade::vende(double quant) {
 int Eletricidade::producao() {
     return custoProducao;
 }
+
+Recursos *Eletricidade::duplica() {
+    return new Eletricidade(*this);
+}

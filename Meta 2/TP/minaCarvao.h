@@ -10,12 +10,15 @@
 class MinaCarvao : public Edificio{
 public:
     MinaCarvao(ilha* i, int x, int y);
+    MinaCarvao(const MinaCarvao& outro);
 
     void melhora() override;
     void desaba();
     int obtemCustoSubs() override;
     void produz() override;
+    Edificio * duplica() const override;
 
+    MinaCarvao& operator=(const Edificio& outro);
 private:
     int custoSubs, quantProd, upgradeDinheiro, upgradeRecurso, probDesabar, quantArmazenamento;
 };

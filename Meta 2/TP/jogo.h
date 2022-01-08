@@ -17,9 +17,11 @@ public:
     string gereIsland(const string& str);
     string gereDias(const string& str);
     string mostraIsland();
+    void save(string t);
 
 private:
-    ilha* island;
+    vector<ilha*> island;
+    vector<string> nomes;
 };
 
 

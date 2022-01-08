@@ -10,8 +10,11 @@
 class Bateria : public Edificio{
 public:
     Bateria(ilha* i);
+    Bateria(const Bateria& outro);
 
     void melhora() override;
+    Bateria& operator=(const Edificio& outro);
+    Edificio * duplica() const override;
 
 private:
     int quantEletricidade, upgradeDinheiro;

@@ -12,6 +12,7 @@ public:
 
     double vende(double quant) override;
     int producao() override;
+    Recursos * duplica() override;
 private:
     int custoVenda, custoProducao;
 };

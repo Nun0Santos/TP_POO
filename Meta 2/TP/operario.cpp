@@ -36,4 +36,8 @@ Operario &Operario::operator=(const Operario &outro) {
     return *this;
 }
 
+Trabalhador *Operario::duplica() const {
+    return new Operario(*this);
+}
+
 

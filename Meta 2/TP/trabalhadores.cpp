@@ -8,9 +8,7 @@
 
 int Trabalhador::id = 0;
 
-Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona* z) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(id), movim(0){
-    ++id;
-}
+Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona* z) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(++id), movim(0){}
 
 Trabalhador::Trabalhador(string t, int c, double p, int dias, int d, Zona *z, int i, int m) : tipo(move(t)), custo(c), probEmbora(p), dias(dias), d(d), z(z), id_trab(i), movim(m){
 
@@ -26,7 +24,7 @@ string Trabalhador::obtemTipo(){
 
 string Trabalhador::obtemID() const {
     ostringstream oss;
-    oss << id << "." << d;
+    oss << id_trab << "." << d;
     return oss.str();
 }
 
@@ -52,6 +50,13 @@ int Trabalhador::vidaBoa() {
 }
 
 Trabalhador::Trabalhador(const Trabalhador &outro) {
+    custo = 0;
+    probEmbora = 0;
+    dias = 0;
+    d = 0;
+    id_trab = 0;
+    z = nullptr;
+    movim = 0;
     *this = outro;
 }
 
@@ -96,8 +101,6 @@ bool Trabalhador::previneDesp() {
 void Trabalhador::movimenta() {
     if(movim == 1){
         movim = 0;
-    }else{
-        movim = 1;
     }
 }
 
@@ -106,6 +109,12 @@ int Trabalhador::obtemMovim() const{
 }
 
 
+void Trabalhador::redefineZona(Zona *z_a) {
+    z = z_a;
+}
 
+Trabalhador *Trabalhador::duplica() const {
+    return nullptr;
+}
 
 

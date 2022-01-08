@@ -68,4 +68,22 @@ void Edificio::melhora() {
 
 }
 
+Edificio &Edificio::operator=(const Edificio &outro) {
+    if(this == &outro) return *this;
+
+    tipo = outro.tipo;
+    onoff = outro.onoff;
+    custoDinheiro = outro.custoDinheiro;
+    nivel = outro.nivel;
+    x = outro.x;
+    y = outro.y;
+    i = outro.i;
+
+    return * this;
+
+}
+
+Edificio *Edificio::duplica() const {
+    return nullptr;
+}
 

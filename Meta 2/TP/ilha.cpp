@@ -881,20 +881,11 @@ void ilha::aumentaRecursos(string str, double quant) {
 bool ilha::moveTrabalhador(int x, int y, string t) {
     for(int i = 0; i < lin; ++i){
         for (int j = 0; j < col; ++j) {
-            if(tabuleiro[i][j]->obtemQuant_Trab() > 0){
+            if(tabuleiro[i][j]->obtemQuant_Trab() > 0){//verifica se tem trabalhadores
                 if(tabuleiro[i][j]->procuraTrab(t, 0)){
                     if(tabuleiro[i][j]->obtemMovTrab(t) == 0){
-                        if(tabuleiro[i][j]->obtemTipo(t) == "L"){
-                            tabuleiro[x][y]->definetrab("L", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), tabuleiro[i][j]->obtemDescanso(t));
-                        }
-                        if(tabuleiro[i][j]->obtemTipo(t) == "M"){
-                            tabuleiro[x][y]->definetrab("M", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
-                        }
-                        if(tabuleiro[i][j]->obtemTipo(t) == "O"){
-                            tabuleiro[x][y]->definetrab("O", tabuleiro[i][j]->obtemIDT(t), tabuleiro[i][j]->pedeDemissao(t), tabuleiro[i][j]->obtemCusto(t), tabuleiro[i][j]->obtemProb(t), tabuleiro[i][j]->obtemDiasSim(t), tabuleiro[i][j]->obtemDID(t), 0);
-                        }
-
-                        tabuleiro[i][j]->apagaTrabID(t);
+                        Trabalhador* aux = tabuleiro[i][j]->moveTrab(t);
+                        tabuleiro[x][y]->recebeTrab(aux);
                     }
 
                     return true;
@@ -905,5 +896,48 @@ bool ilha::moveTrabalhador(int x, int y, string t) {
     }
 
     return false;
+}
+
+ilha &ilha::operator=(const ilha &outro) {
+    if(this == &outro) return *this;
+
+    for(int i = 0; i<col; ++i){
+        delete tabuleiro[i];
+    }
+    delete [] tabuleiro;
+
+    auto it = recursos.begin();
+    while (it != recursos.end()){
+        delete (*it);
+        ++it;
+    }
+    recursos.clear();
+
+    lin = outro.lin;
+    col = outro.col;
+    dias = outro.dias;
+
+    tabuleiro = new Zona**[outro.lin];
+    for (int i = 0; i < outro.lin; ++i) {
+        tabuleiro[i] = new Zona*[outro.col];
+    }
+
+    for (int i = 0; i < outro.lin; ++i) {
+        for (int j = 0; j < outro.col; ++j) {
+            tabuleiro[i][j] = outro.tabuleiro[i][j]->duplica();
+        }
+    }
+
+    auto it1 = outro.recursos.begin();
+    while(it1 != outro.recursos.end()){
+        recursos.push_back((*it1)->duplica());
+        ++it1;
+    }
+
+    return *this;
+}
+
+ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr){
+    *this = outro;
 }
 

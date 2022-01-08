@@ -15,8 +15,9 @@ public:
     int vidaBoa() override;
     int obtemDescanso() override;
     int pedeDemissao() override;
+    Trabalhador * duplica() const override;
 
-    Lenhador& operator=(const Lenhador& outro);
+    Lenhador& operator=(const Trabalhador& outro);
 private:
     int descanso;
 

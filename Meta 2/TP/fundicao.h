@@ -13,6 +13,7 @@ public:
     Fundicao(ilha* i, int x, int y);
 
     void produz() override;
+    Edificio * duplica() const override;
 };
 
 

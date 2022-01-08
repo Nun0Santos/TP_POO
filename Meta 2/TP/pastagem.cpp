@@ -4,3 +4,6 @@
 
 #include "pastagem.h"
 
+Zona *Pastagem::duplica() const {
+    return new Pastagem(*this);
+}

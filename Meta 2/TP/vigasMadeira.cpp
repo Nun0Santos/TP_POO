@@ -13,3 +13,7 @@ double VigasMadeira::vende(double quant) {
 int VigasMadeira::producao() {
     return custoProducao;
 }
+
+Recursos *VigasMadeira::duplica() {
+    return new VigasMadeira(*this);
+}

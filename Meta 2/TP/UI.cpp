@@ -8,9 +8,7 @@
 void UI::start() {
 
     int l = defineL() , c = defineC();
-    string str, s2;
-    vector<string> v;
-    ostringstream oss;
+    string str;
 
     j.criaIsland(l, c);
     cout << j.mostraIsland();
@@ -21,6 +19,15 @@ void UI::start() {
         cout << "\nFase do dia : " <<j.gereDias("Manha") << endl;
         while(str != "next"){
             str = defineComando();
+
+            if(str == "save"){
+                string s2;
+                cout << "Nome da instancia: ";
+                cin >> s2;
+                j.save(s2);
+                continue;
+            }
+
             if(str  == "fim")
                 break;
             cout << j.gereIsland(str);

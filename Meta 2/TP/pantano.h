@@ -10,8 +10,11 @@
 class Pantano : public Zona{
 public:
     Pantano(string t, int x, int y);
+    Pantano(const Pantano& outro);
 
     void trata(ilha& i) override;
+    Pantano& operator=(const Zona& outro);
+    Zona * duplica() const override;
 private:
     int dias;
 };

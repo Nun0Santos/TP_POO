@@ -18,3 +18,19 @@ void CentralEletrica::produz() {
         }
     }
 }
+
+CentralEletrica &CentralEletrica::operator=(const CentralEletrica &outro) {
+    if(this == &outro) return  *this;
+
+    Edificio::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const CentralEletrica*>(&outro);
+        quantCarvao = aux->quantCarvao;
+    }
+    return *this;
+}
+
+Edificio *CentralEletrica::duplica() const {
+    return new CentralEletrica(*this);
+}

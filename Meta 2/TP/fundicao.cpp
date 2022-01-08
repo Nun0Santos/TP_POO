@@ -19,3 +19,7 @@ void Fundicao::produz() {
     }
 }
 
+Edificio *Fundicao::duplica() const {
+    return new Fundicao(*this);
+}
+

@@ -11,9 +11,7 @@ class Pastagem : public Zona{
 public:
     Pastagem(string t, int x, int y) : Zona(t, x , y){}
 
-private:
-
-
+    Zona * duplica() const override;
 };
 
 

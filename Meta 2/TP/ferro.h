@@ -11,6 +11,7 @@ public:
     Ferro();
 
     double vende(double quant) override;
+    Recursos * duplica() override;
 
 private:
     int custoVenda;

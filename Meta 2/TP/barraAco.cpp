@@ -17,3 +17,7 @@ double BarraAco::producaoBAC() {
 double BarraAco::producaoBAF() {
     return custoFerro;
 }
+
+Recursos *BarraAco::duplica() {
+    return new BarraAco(*this);
+}

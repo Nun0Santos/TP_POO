@@ -13,3 +13,7 @@ double Carvao::vende(double quant) {
 int Carvao::producao() {
     return custoProducao;
 }
+
+Recursos *Carvao::duplica() {
+    return new Carvao(*this);
+}

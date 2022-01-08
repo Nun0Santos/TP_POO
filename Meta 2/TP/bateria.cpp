@@ -14,3 +14,25 @@ void Bateria::melhora() {
         }
     }
 }
+
+Bateria &Bateria::operator=(const Edificio &outro) {
+    if(this == &outro) return *this;
+
+    Edificio::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const Bateria*> (&outro);
+        quantEletricidade = aux->quantEletricidade;
+        upgradeDinheiro = aux->upgradeDinheiro;
+    }
+
+    return *this;
+}
+
+Bateria::Bateria(const Bateria &outro) : Edificio(outro), quantEletricidade(0), upgradeDinheiro(0){
+    *this = outro;
+}
+
+Edificio *Bateria::duplica() const {
+    return new Bateria(*this);
+}

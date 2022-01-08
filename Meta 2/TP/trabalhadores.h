@@ -17,13 +17,14 @@ public:
     Trabalhador(string t, int c, double p, int dias, int d, Zona* z);
     Trabalhador(string t, int c, double p, int dias, int d, Zona* z, int i, int m);
     Trabalhador(const Trabalhador& outro);
+    virtual ~Trabalhador() = default;
 
 
     int ID() const;//obtem id_trab
     string obtemTipo();
     string obtemID() const;
     int obtemDiasSim() const;//obtem dias
-    virtual int pedeDemissao() ;//ver se pede demissao
+    virtual int pedeDemissao();//ver se pede demissao
     void aumentaDias();//incrementa dias
     virtual int vidaBoa();//ver se o lenhador está no dia de descanso
     int obtemCusto() const;
@@ -34,6 +35,8 @@ public:
     bool previneDesp();//verificar se impede o despedimento devido a estar numa pastagem
     void movimenta();
     int obtemMovim() const;
+    void redefineZona(Zona* z_a);
+    virtual Trabalhador* duplica() const;
 
 private:
     string tipo;

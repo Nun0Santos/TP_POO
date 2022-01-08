@@ -28,3 +28,29 @@ void MinaCarvao::produz() {
     if(!Edificio::procuraTrabalhador("O")) return;
 
 }
+
+MinaCarvao &MinaCarvao::operator=(const Edificio &outro) {
+    if(this == &outro) return *this;
+
+    Edificio::operator=(outro);
+
+    if(typeid(this) == typeid(outro)){
+        const auto* aux = dynamic_cast<const MinaCarvao*>(&outro);
+        custoSubs = aux->custoSubs;
+        quantProd = aux->quantProd;
+        upgradeDinheiro = aux->upgradeDinheiro;
+        upgradeRecurso = aux->upgradeRecurso;
+        probDesabar = aux->probDesabar;
+        quantArmazenamento = aux->quantArmazenamento;
+    }
+
+    return *this;
+}
+
+MinaCarvao::MinaCarvao(const MinaCarvao &outro) : Edificio(outro), custoSubs(0), quantProd(0), quantArmazenamento(0), upgradeDinheiro(0), upgradeRecurso(0), probDesabar(0){
+    *this = outro;
+}
+
+Edificio *MinaCarvao::duplica() const {
+    return new MinaCarvao(*this);
+}

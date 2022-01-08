@@ -15,6 +15,8 @@ public:
     void desaba();
     int obtemCustoSubs() override;
     void produz() override;
+    MinaFerro& operator=(const Edificio& outro);
+    Edificio * duplica() const override;
 private:
     int custoSubs, quantProd, upgradeDinheiro, upgradeRecurso, quantArmazenamento, probDesabar;
 

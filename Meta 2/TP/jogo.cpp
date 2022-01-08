@@ -5,9 +5,11 @@
 #include "geral.h"
 #include "sstream"
 #include "ilha.h"
+#include "jogo.h"
+
 
 string Jogo::gereIsland(const string& str) {
-    return island->executa(str);
+    return island[0]->executa(str);
 }
 
 string Jogo::gereDias(const string& str) {
@@ -30,13 +32,21 @@ string Jogo::gereDias(const string& str) {
 }
 
 void Jogo::criaIsland(int a, int b) {
-    island = new ilha();
-    island->defineLin(a);
-    island->defineCol(b);
-    island->criaIlha();
-    island->iniciaRecursos();
+    island.push_back(new ilha());
+    nomes.emplace_back("original");
+
+    island[0]->defineCol(b);
+    island[0]->defineLin(a);
+
+    island[0]->criaIlha();
+    island[0]->iniciaRecursos();
 }
 
 string Jogo::mostraIsland() {
-    return island->mostraIlha();
+    return island[0]->mostraIlha();
+}
+
+void Jogo::save(string t) {
+    island.push_back(new ilha(*island[0]));
+    nomes.push_back(t);
 }

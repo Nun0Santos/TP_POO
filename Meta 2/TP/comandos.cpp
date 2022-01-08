@@ -23,7 +23,7 @@ bool verificaComandos(const string& com){
 }
 
 bool verificaTipo(const string& t){
-    vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edificio-x"};
+    vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edx", "ser"};
 
     if(find(tipos.begin(), tipos.end(), t) != tipos.end())
     {
@@ -42,7 +42,7 @@ bool verificaTrabalhador(const string& t){
 }
 
 bool verificaRecursos(const string& t){
-    vector<string> recursos = {"Ferro", "Aco", "Carvao", "Madeira", "Vigamadeira", "Eletricidade"};
+    vector<string> recursos = {"Ferro", "Aco", "Carvao", "Madeira", "VigasMadeira", "Eletricidade"};
 
     if(find(recursos.begin(), recursos.end(), t) != recursos.end()){
         return true;

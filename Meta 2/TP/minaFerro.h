@@ -9,7 +9,7 @@
 
 class MinaFerro: public Edificio{
 public:
-    MinaFerro(ilha* i);
+    MinaFerro(ilha* i, int x, int y);
 
     void melhora();
     void desaba();

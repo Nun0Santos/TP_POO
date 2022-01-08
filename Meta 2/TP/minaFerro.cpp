@@ -6,7 +6,7 @@
 #include <random>
 
 
-MinaFerro::MinaFerro(ilha* i) : Edificio(i, "mnF", 10, 0, 0), custoSubs(10), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100){}
+MinaFerro::MinaFerro(ilha* i, int x, int y) : Edificio(i, "mnF", 10, x, y), custoSubs(10), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100){}
 
 void MinaFerro::melhora() {
     if(Edificio::getNivel() <= 5){
@@ -38,7 +38,12 @@ int MinaFerro::obtemCustoSubs() {
 }
 
 void MinaFerro::produz() {
+    if(!Edificio::procuraTrabalhador("M")) return;
+    aumentaRecursos("Ferro", quantProd);
 
+    /*if(quantArmazenamento < 100){
+        aumentaRecursos("Ferro", quantProd);
+    }*/
 }
 
 MinaFerro &MinaFerro::operator=(const Edificio &outro) {

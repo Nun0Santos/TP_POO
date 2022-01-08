@@ -4,7 +4,7 @@
 
 #include "minaCarvao.h"
 
-MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i,"mnC", 10, x, y), custoSubs(10), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(100){}
+MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i,"mnC", 10, x, y), custoSubs(10), upgradeDinheiro(10), upgradeRecurso(1), quantProd(2), probDesabar(10), quantArmazenamento(0){}
 
 void MinaCarvao::melhora() {
     if(Edificio::getNivel() <= 5){
@@ -25,8 +25,10 @@ int MinaCarvao::obtemCustoSubs() {
 }
 
 void MinaCarvao::produz() {
-    if(!Edificio::procuraTrabalhador("O")) return;
-
+    if(!Edificio::procuraTrabalhador("M")) return;
+    if(quantArmazenamento < 100){
+        aumentaRecursos("Carvao", quantProd);
+    }
 }
 
 MinaCarvao &MinaCarvao::operator=(const Edificio &outro) {

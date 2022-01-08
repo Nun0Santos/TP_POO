@@ -10,6 +10,7 @@
 #include "bateria.h"
 #include "fundicao.h"
 #include "centralEletrica.h"
+#include "serracao.h"
 
 #include "operario.h"
 #include "lenhador.h"
@@ -71,56 +72,56 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
 void Zona::defineEdificio(const string& s, ilha* i, int dev) {
     if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
         if(s == "mnF"){
-            MinaFerro m(i);
-            int custo = m.obtemCustoSubs();
-            if(i->gastaRecursos("Madeira", custo)){
-                ed = new MinaFerro(i);
-                ++quant_edificio;
-                return;
-            }
-
-            custo = m.obtemCustoSubs();
-            if(i->gastaRecursos("Dinheiro", custo)){
-                ed = new MinaFerro(i);
+            auto* m = new MinaFerro(i, posL, posC);
+            if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
+                ed = m;
                 ++quant_edificio;
                 return;
             }
         }
         if(s == "mnC"){
-            MinaCarvao m(i, posL, posC);
-            if(i->gastaRecursos("Madeira", m.obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m.obtemCustoSubs())){
-                ed = new MinaCarvao(i, posL, posC);
+            auto* m = new MinaCarvao(i, posL, posC);
+            if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
+                ed = m;
                 ++quant_edificio;
                 return;
             }
         }
         if(s == "fun"){
-            Fundicao m(i, posL, posC);
-            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
-                ed = new Fundicao(i, posL, posC);
+            auto* m = new Fundicao(i, posL, posC);
+            if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
+                ed = m;
                 ++quant_edificio;
                 return;
             }
         }
         if(s == "elec"){
-            CentralEletrica m(i, posL, posC);
-            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
-                ed = new CentralEletrica(i, posL, posC);
+            auto* m = new CentralEletrica(i, posL, posC);
+            if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
+                ed = m;
                 ++quant_edificio;
                 return;
             }
         }
         if(s == "bat"){
-            Bateria m(i);
-            if(i->gastaRecursos("Dinheiro", m.obtemCustoDinheiro())){
-                ed = new Bateria(i);
+            auto* m = new Bateria(i);
+            if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
+                ed = m;
+                ++quant_edificio;
+                return;
+            }
+        }
+        if(s == "ser"){
+            auto* m = new Serracao(i);
+            if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
+                ed = m;
                 ++quant_edificio;
                 return;
             }
         }
     }else{
         if(s == "mnF"){
-            ed = new MinaFerro(i);
+            ed = new MinaFerro(i, posL, posC);
             ++quant_edificio;
             return;
         }
@@ -141,6 +142,11 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "bat"){
             ed = new Bateria(i);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "ser"){
+            ed = new Serracao(i);
             ++quant_edificio;
             return;
         }
@@ -509,27 +515,30 @@ int Zona::obtemMovTrab(string t) {
 }
 
 Trabalhador *Zona::moveTrab(string t) {
+    Trabalhador* aux = nullptr;
     auto it = workers.begin();
     while (it != workers.end()){
         if((*it)->obtemID() == t){
-            vector<string>::reverse_iterator it_t;
-            it_t = trab.rbegin();
-            while (it_t != trab.rend()){
-                if((*it_t) == (*it)->obtemTipo()){
-                    trab.erase((it_t+1).base());
-                    trab.emplace_back("-");
-                    break;
-                }
-                ++it_t;
-            }
-
             --quant_trab;
+            aux = *it;
             workers.erase(it);
-            return *it;
+            break;
         }
         ++it;
     }
-    return nullptr;
+
+    vector<string>::reverse_iterator it_t;
+    it_t = trab.rbegin();
+    while (it_t != trab.rend()){
+        if((*it_t) == aux->obtemTipo()){
+            trab.erase((it_t+1).base());
+            trab.emplace_back("-");
+            break;
+        }
+        ++it_t;
+    }
+
+    return aux;
 }
 
 void Zona::recebeTrab(Trabalhador* auxt) {

@@ -279,8 +279,11 @@ string ilha::executa(string s1) {
                 string aux;
                 o>>aux;
 
-                ilha::mudaValorEdificio(x, y, aux, 0);
-                return oss.str();
+                if(verificaTipo(aux)){
+                    ilha::mudaValorEdificio(x, y, aux, 0);
+                    return oss.str();
+                }
+                return "tipo invalido";
             }else{
                 oss << "fora dos limites" << endl;
                 return oss.str();
@@ -292,8 +295,11 @@ string ilha::executa(string s1) {
             string aux;
             o>>aux;
 
-            ilha::mudaValorTrab(aux);
-            return oss.str();
+            if(verificaTrabalhador(v[1])){
+                ilha::mudaValorTrab(aux);
+                return oss.str();
+            }
+            return "trabalhador invalido";
         }
 
         if(v[0] == "list"){
@@ -339,6 +345,7 @@ string ilha::executa(string s1) {
                 oss << tabuleiro[x][y]->obtemOnOFF();
                 return oss.str();
             }
+            return "fora dos limites";
         }
 
         if(v[0] == "des"){
@@ -357,6 +364,7 @@ string ilha::executa(string s1) {
                 oss << tabuleiro[x][y]->obtemOnOFF();
                 return oss.str();
             }
+            return "fora dos limites";
         }
 
         if(v[0] == "move"){
@@ -369,6 +377,7 @@ string ilha::executa(string s1) {
                 moveTrabalhador(x, y, v[1]);
                 return oss.str();
             }
+            return "fora dos limites";
         }
 
         if(v[0] == "vende"){

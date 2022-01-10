@@ -14,6 +14,7 @@ public:
 
     void start();
     void menu();
+    void help();
     int defineL();
     int defineC();
     string defineComando();

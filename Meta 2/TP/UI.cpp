@@ -150,7 +150,7 @@ void UI::help() {
                         start();
                         break;
                     case 2:
-                        help();
+                        menu();
                         return;
                 }
                break;

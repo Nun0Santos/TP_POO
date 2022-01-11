@@ -57,6 +57,7 @@ public:
     bool apagaTrabID(string id);
     bool MNT(int x, int y);
     bool game();
+    int obtemQuantTrab(int x, int y);
 
     ilha& operator=(const ilha& outro);
 private:

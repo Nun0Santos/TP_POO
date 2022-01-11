@@ -987,3 +987,7 @@ bool ilha::game() {
     return true;
 }
 
+int ilha::obtemQuantTrab(int x, int y) {
+    return tabuleiro[x][y]->obtemQuant_Trab();
+}
+

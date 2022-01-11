@@ -195,6 +195,10 @@ CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj: \
 CMakeFiles/TP_POO.dir/TP/recursos.cpp.obj: \
  ../TP/recursos.cpp \
  ../TP/recursos.h
+CMakeFiles/TP_POO.dir/TP/serracao.cpp.obj: \
+ ../TP/edificio.h \
+ ../TP/serracao.cpp \
+ ../TP/serracao.h
 CMakeFiles/TP_POO.dir/TP/trabalhadores.cpp.obj: \
  ../TP/edificio.h \
  ../TP/trabalhadores.cpp \
@@ -219,6 +223,7 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/mineiro.h \
  ../TP/operario.h \
  ../TP/recursos.h \
+ ../TP/serracao.h \
  ../TP/trabalhadores.h \
  ../TP/zona.cpp \
  ../TP/zona.h

@@ -240,6 +240,12 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h">
 			<Option target="TP_POO"/>
 		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/serracao.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/serracao.h">
+			<Option target="TP_POO"/>
+		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.cpp">
 			<Option target="TP_POO"/>
 		</Unit>

@@ -11,7 +11,7 @@ class MinaFerro: public Edificio{
 public:
     MinaFerro(ilha* i, int x, int y);
 
-    void melhora();
+    void melhora() override;
     int desaba() override;
     int obtemCustoSubs() override;
     void produz() override;

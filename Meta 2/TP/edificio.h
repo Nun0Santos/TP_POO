@@ -33,6 +33,7 @@ public:
     virtual Edificio* duplica() const;
     bool MNT();
     virtual int desaba();
+    int obtemQuantTrab();
 
     Edificio& operator=(const Edificio& outro);
 private:

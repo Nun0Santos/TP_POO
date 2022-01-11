@@ -26,6 +26,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TP_POO.dir/TP/pantano.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/pastagem.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/recursos.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/serracao.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/trabalhadores.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/vigasMadeira.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"

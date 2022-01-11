@@ -776,6 +776,30 @@ TP/recursos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/recursos.cpp.s
 .PHONY : TP/recursos.cpp.s
 
+TP/serracao.obj: TP/serracao.cpp.obj
+.PHONY : TP/serracao.obj
+
+# target to build an object file
+TP/serracao.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/serracao.cpp.obj
+.PHONY : TP/serracao.cpp.obj
+
+TP/serracao.i: TP/serracao.cpp.i
+.PHONY : TP/serracao.i
+
+# target to preprocess a source file
+TP/serracao.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/serracao.cpp.i
+.PHONY : TP/serracao.cpp.i
+
+TP/serracao.s: TP/serracao.cpp.s
+.PHONY : TP/serracao.s
+
+# target to generate assembly for a file
+TP/serracao.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/serracao.cpp.s
+.PHONY : TP/serracao.cpp.s
+
 TP/trabalhadores.obj: TP/trabalhadores.cpp.obj
 .PHONY : TP/trabalhadores.obj
 
@@ -938,6 +962,9 @@ help:
 	@echo ... TP/recursos.obj
 	@echo ... TP/recursos.i
 	@echo ... TP/recursos.s
+	@echo ... TP/serracao.obj
+	@echo ... TP/serracao.i
+	@echo ... TP/serracao.s
 	@echo ... TP/trabalhadores.obj
 	@echo ... TP/trabalhadores.i
 	@echo ... TP/trabalhadores.s

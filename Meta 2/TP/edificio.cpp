@@ -94,3 +94,7 @@ bool Edificio::MNT() {
 int Edificio::desaba() {
     return 0;
 }
+
+int Edificio::obtemQuantTrab() {
+    return i->obtemQuantTrab(x, y);
+}

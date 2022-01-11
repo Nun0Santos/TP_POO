@@ -101,7 +101,11 @@ string ilha::mostraZona(int x, int y) {
     for(int i = 0; i < 4; ++i){
         switch (i) {
             case 0:
-                oss << tabuleiro[x][y]->obtemTipo() << endl;
+                if(tabuleiro[x][y]->obtemTipo() == "flr"){
+                    oss << tabuleiro[x][y]->obtemTipo() << " | " << tabuleiro[x][y]->getNArvores() << endl;
+                }else{
+                    oss << tabuleiro[x][y]->obtemTipo() << endl;
+                }
                 break;
                 case 1:
                     if(tabuleiro[x][y]->getEd() == nullptr){
@@ -418,15 +422,6 @@ string ilha::executa(string s1) {
             }
         }
 
-        if(v[0] == "save"){
-            //temos que copiar a nossa ilha atual para uma ilha auxiliar, para usarmos os operadores e construtores por copia
-        }
-        if(v[0] == "load"){
-            //mostrar a ilha auxiliar
-        }
-        if(v[0] == "apaga"){
-            //apagar a ilha auxiliar
-        }
         if(v[0] == "debcash"){
             istringstream ossQ(v[1]);
             ossQ >> x;
@@ -456,6 +451,17 @@ string ilha::executa(string s1) {
             //apagar um trabalhador através do id
             apagaTrabID(v[1]);
             return oss.str();
+        }
+        if(v[0] == "upgrade"){
+            istringstream ossX(v[2]);//transforma string em int
+            ossX >> x;//atribui valor transformado à variavel x
+            istringstream ossY(v[3]);//transforma string em int
+            ossY >> y;//atribui valor transformado à variavel y
+
+            if(verificaLinCol(x,y)){
+                tabuleiro[x][y]->upgradeED();
+                return oss.str();
+            }
         }
     }
     return "Comando invalido\n";
@@ -948,5 +954,36 @@ ilha &ilha::operator=(const ilha &outro) {
 
 ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr){
     *this = outro;
+}
+
+bool ilha::MNT(int x, int y) {
+    if(tabuleiro[x][y]->obtemTipo() == "mnt") return true;
+
+    return false;
+}
+
+bool ilha::game() {
+    double qr = 0;
+
+    auto it = recursos.begin();
+    while (it != recursos.end()){
+        qr += (*it)->obtemQuantidade();
+        ++it;
+    }
+
+    if(qr == 0){
+        int qt = 0;
+        for (int i = 0; i < lin; ++i) {
+            for (int j = 0; j < col; ++j) {
+                qt += tabuleiro[i][j]->obtemQuant_Trab();
+            }
+        }
+
+        if(qt == 0){
+            return false;
+        }
+    }
+
+    return true;
 }
 

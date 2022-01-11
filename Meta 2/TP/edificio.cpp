@@ -87,3 +87,10 @@ Edificio *Edificio::duplica() const {
     return nullptr;
 }
 
+bool Edificio::MNT() {
+    return i->MNT(x, y);
+}
+
+int Edificio::desaba() {
+    return 0;
+}

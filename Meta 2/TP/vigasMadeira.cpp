@@ -4,7 +4,7 @@
 
 #include "vigasMadeira.h"
 
-VigasMadeira::VigasMadeira() : custoProducao(2), custoVenda(2), Recursos("VigasMadeira"){}
+VigasMadeira::VigasMadeira() : custoProducao(2), custoVenda(2), Recursos("VigasMadeira", 0){}
 
 double VigasMadeira::vende(double quant) {
     return custoVenda*quant;

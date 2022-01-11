@@ -55,6 +55,8 @@ public:
     bool procuraTrabalhador(int x, int y, string t);
     bool moveTrabalhador(int x, int y, string t);
     bool apagaTrabID(string id);
+    bool MNT(int x, int y);
+    bool game();
 
     ilha& operator=(const ilha& outro);
 private:

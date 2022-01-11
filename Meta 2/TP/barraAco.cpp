@@ -4,7 +4,7 @@
 
 #include "barraAco.h"
 
-BarraAco::BarraAco() : custoVenda(2), custoCarvao(0.5), custoFerro(1.5), Recursos("BarraAco"){}
+BarraAco::BarraAco() : custoVenda(2), custoCarvao(0.5), custoFerro(1.5), Recursos("BarraAco", 0){}
 
 double BarraAco::vende(double quant) {
     return custoVenda*quant;

@@ -20,6 +20,7 @@ public:
             trab.emplace_back("-");
         }
     };
+
     virtual ~Zona(){
         delete ed;
 
@@ -73,6 +74,7 @@ public:
     void recebeTrab(Trabalhador* auxt);
     Zona& operator=(const Zona& outro);
     virtual Zona* duplica() const;
+    void upgradeED();
 
 private:
     string tipo;

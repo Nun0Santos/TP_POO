@@ -18,6 +18,9 @@ public:
     string gereDias(const string& str);
     string mostraIsland();
     void save(string t);
+    void load(string t);
+    void apaga(string t);
+    bool game();
 
 private:
     vector<ilha*> island;

@@ -13,7 +13,7 @@ public:
     MinaCarvao(const MinaCarvao& outro);
 
     void melhora() override;
-    void desaba();
+    int desaba() override;
     int obtemCustoSubs() override;
     void produz() override;
     Edificio * duplica() const override;

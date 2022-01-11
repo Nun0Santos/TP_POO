@@ -22,15 +22,14 @@ void MinaFerro::melhora() {
     }
 }
 
-void MinaFerro::desaba() {//isto está mal feito
-    random_device dev;
-    mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> dist6(1,probDesabar);
+int MinaFerro::desaba() {
+    double val = (double)rand() / RAND_MAX;
 
-    if(dist6(rng) == 1){
-
+    if(val < probDesabar){
+        return 1;
     }
 
+    return 0;
 }
 
 int MinaFerro::obtemCustoSubs() {

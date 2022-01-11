@@ -4,7 +4,7 @@
 
 #include "eletricidade.h"
 
-Eletricidade::Eletricidade() : custoVenda(1.5), custoProducao(1), Recursos("Electricidade"){}
+Eletricidade::Eletricidade() : custoVenda(1.5), custoProducao(1), Recursos("Electricidade", 0){}
 
 double Eletricidade::vende(double quant) {
     return custoVenda*quant;

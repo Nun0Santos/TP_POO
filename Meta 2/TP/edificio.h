@@ -31,6 +31,8 @@ public:
     void incrementaNivel();
     virtual void melhora();
     virtual Edificio* duplica() const;
+    bool MNT();
+    virtual int desaba();
 
     Edificio& operator=(const Edificio& outro);
 private:

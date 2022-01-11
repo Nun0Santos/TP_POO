@@ -12,7 +12,7 @@ public:
     MinaFerro(ilha* i, int x, int y);
 
     void melhora();
-    void desaba();
+    int desaba() override;
     int obtemCustoSubs() override;
     void produz() override;
     MinaFerro& operator=(const Edificio& outro);

@@ -232,8 +232,18 @@ void Zona::verificaDespedimento() {
                 }
             }
 
+            vector<string>::reverse_iterator i;
+            for(i = trab.rbegin(); i < trab.rend(); ++i){
+                if((*i) == (*it)->obtemTipo()){
+                    trab.erase((i+1).base());
+                    trab.emplace_back("-");
+                }
+            }
+
+            --quant_trab;
             delete (*it);
             it = workers.erase(it);
+            continue;
         }
         ++it;
     }

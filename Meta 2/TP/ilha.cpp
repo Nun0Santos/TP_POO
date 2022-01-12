@@ -160,32 +160,32 @@ void ilha::criaIlha() {
         for (int j = 0; j < col; ++j) {
             shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
 
-            /*random_device dev;
+            random_device dev;
             mt19937 rng(dev());
-            uniform_int_distribution<mt19937::result_type> dist6(0,4);
-            t = dist6(rng);*/
+            uniform_int_distribution<mt19937::result_type> dist6(0,5);
+            t = dist6(rng);
 
-            if(tipos[j] == "pastagem"){
+            if(tipos[t] == "pastagem"){
                 tabuleiro[i][j] = new Pastagem("pas", i, j);
                 continue;
             }
-            if(tipos[j] == "floresta"){
+            if(tipos[t] == "floresta"){
                 tabuleiro[i][j] = new Floresta("flr", i, j);
                 continue;
             }
-            if(tipos[j] == "deserto"){
+            if(tipos[t] == "deserto"){
                 tabuleiro[i][j] = new Deserto("dsr", i, j);
                 continue;
             }
-            if(tipos[j] == "montanha"){
+            if(tipos[t] == "montanha"){
                 tabuleiro[i][j] = new Montanha("mnt", i, j);
                 continue;
             }
-            if(tipos[j] == "pantano"){
+            if(tipos[t] == "pantano"){
                 tabuleiro[i][j] = new Pantano("pnt", i, j);
                 continue;
             }
-            if(tipos[j] == "zona-x"){
+            if(tipos[t] == "zona-x"){
                 tabuleiro[i][j] = new ZonaX("znx", i, j);
                 continue;
             }

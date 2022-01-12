@@ -72,6 +72,7 @@ public:
     int obtemMovTrab(string t);
     Trabalhador* moveTrab(string t);
     void recebeTrab(Trabalhador* auxt);
+    virtual double getAumentoProbDem() const;
 
     Zona& atribui(const Zona& outro);
     virtual Zona* duplica() const;

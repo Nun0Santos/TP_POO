@@ -117,4 +117,13 @@ Trabalhador *Trabalhador::duplica() const {
     return nullptr;
 }
 
+double Trabalhador::aumentoProbDem() {
+    return z->getAumentoProbDem();
+}
+
+bool Trabalhador::isMNT() {
+    if(z->obtemTipo() == "mnt") return true;
+    return false;
+}
+
 

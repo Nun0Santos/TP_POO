@@ -41,3 +41,7 @@ Zona *Montanha::duplica() const {
 Montanha::Montanha(const Montanha &outro) : Zona(outro),probDemissao(0), aumentoProd(0), quantFerro(0){
     this->atribui(outro);
 }
+
+double Montanha::getAumentoProbDem() const {
+    return probDemissao;
+}

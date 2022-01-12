@@ -17,6 +17,7 @@ public:
     void trata(ilha& i) override;
     Montanha& atribui(const Zona& outro);
     Zona * duplica() const override;
+    double getAumentoProbDem() const override;
 private:
     float probDemissao, aumentoProd, quantFerro;
 };

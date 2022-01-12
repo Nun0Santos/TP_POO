@@ -636,3 +636,7 @@ Zona *Zona::duplica() const {
 void Zona::upgradeED() {
     ed->melhora();
 }
+
+double Zona::getAumentoProbDem() const {
+    return 0;
+}

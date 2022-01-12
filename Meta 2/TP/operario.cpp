@@ -19,8 +19,12 @@ int Operario::pedeDemissao() {
 
     double val = (double)rand() / RAND_MAX;
 
-    if(val < Trabalhador::obtemProb()){
-        if(Trabalhador::obtemDiasSim() > 10){
+    if(isMNT()){
+        if(val < Trabalhador::obtemProb()+Trabalhador::aumentoProbDem()){
+            return 1;
+        }
+    }else{
+        if(val < Trabalhador::obtemProb()){
             return 1;
         }
     }

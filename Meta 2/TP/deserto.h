@@ -17,7 +17,6 @@ public:
 
     Zona * duplica() const override;
 private:
-
     double prod;
 };
 

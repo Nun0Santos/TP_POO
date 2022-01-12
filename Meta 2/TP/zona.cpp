@@ -17,14 +17,6 @@
 #include "mineiro.h"
 
 
-void Zona::definePosC(int c) {
-    posC = c;
-}
-
-void Zona::definePosL(int l) {
-    posL = l;
-}
-
 void Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "O"){
         Trabalhador *o = new Operario(dia, this);
@@ -79,7 +71,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
 }
 
 void Zona::defineEdificio(const string& s, ilha* i, int dev) {
-    if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
+    if(dev == 0){
         if(s == "mnF"){
             Edificio* m = new MinaFerro(i, posL, posC);
             if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
@@ -175,14 +167,6 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
     }
 
-}
-
-int Zona::obtemC() const {
-    return posC;
-}
-
-int Zona::obtemL() const {
-    return posL;
 }
 
 string Zona::obtemTipo(){
@@ -424,73 +408,6 @@ int Zona::obtemDID(string t) {
     return 0;
 }
 
-void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int g) {
-    if(t == "L"){
-        workers.push_back(new Lenhador(a, c, d, e, f,g, this, 1));
-        int i, flag = 0;
-        vector<string> aux;
-        for(i = 0; i < 5; ++i){
-            if(trab[i] == "-"){
-                if(flag == 0){
-                    flag = 1;
-                    aux.push_back(t);
-                    continue;
-                }
-
-            }
-            aux.push_back(trab[i]);
-        }
-
-        trab.clear();
-        trab = aux;
-        ++quant_trab;
-        return;
-    }
-    if(t == "O"){
-        workers.push_back(new Operario(a, c, d, e, f, this, 1));
-        int i, flag = 0;
-        vector<string> aux;
-        for(i = 0; i < 5; ++i){
-            if(trab[i] == "-"){
-                if(flag == 0){
-                    flag = 1;
-                    aux.push_back(t);
-                    continue;
-                }
-
-            }
-            aux.push_back(trab[i]);
-        }
-
-        trab.clear();
-        trab = aux;
-        ++quant_trab;
-        return;
-    }
-    if(t == "M"){
-        workers.push_back(new Mineiro(a, c, d, e, f, this, 1));
-        int i, flag = 0;
-        vector<string> aux;
-        for(i = 0; i < 5; ++i){
-            if(trab[i] == "-"){
-                if(flag == 0){
-                    flag = 1;
-                    aux.push_back(t);
-                    continue;
-                }
-
-            }
-            aux.push_back(trab[i]);
-        }
-
-        trab.clear();
-        trab = aux;
-        ++quant_trab;
-        return;
-    }
-
-}
-
 bool Zona::procuraTrab(string t, int a) {
     auto it = workers.begin();
     while (it != workers.end()){
@@ -648,4 +565,8 @@ Zona *Zona::duplica() const {
 
 void Zona::upgradeED() {
     ed->melhora();
+}
+
+double Zona::getAumentoProbDem() const {
+    return 0;
 }

@@ -7,10 +7,6 @@
 
 Montanha::Montanha(string t, int x, int y) : Zona(t, x , y),probDemissao(0.05), aumentoProd(1), quantFerro(0){}
 
-void Montanha::aumentaProbDemissao() {
-    //
-}
-
 
 void Montanha::trata(ilha& i){
     if(Zona::obtemQuant_Trab() == 0){
@@ -40,4 +36,8 @@ Zona *Montanha::duplica() const {
 
 Montanha::Montanha(const Montanha &outro) : Zona(outro),probDemissao(0), aumentoProd(0), quantFerro(0){
     this->atribui(outro);
+}
+
+double Montanha::getAumentoProbDem() const {
+    return probDemissao;
 }

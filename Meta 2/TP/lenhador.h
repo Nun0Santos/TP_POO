@@ -17,6 +17,7 @@ public:
     int pedeDemissao() override;
     Trabalhador * duplica() const override;
 
+
     Lenhador& operator=(const Trabalhador& outro);
 private:
     int descanso;

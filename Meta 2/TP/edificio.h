@@ -31,6 +31,10 @@ public:
     void incrementaNivel();
     virtual void melhora();
     virtual Edificio* duplica() const;
+    bool MNT();
+    virtual int desaba();
+    int obtemQuantTrab();
+    bool ZNX();
 
     Edificio& operator=(const Edificio& outro);
 private:

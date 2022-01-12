@@ -50,3 +50,38 @@ void Jogo::save(string t) {
     island.push_back(new ilha(*island[0]));
     nomes.push_back(t);
 }
+
+void Jogo::load(string t) {
+    int i = 0;
+    auto it = nomes.begin();
+    while(it != nomes.end()){
+        if((*it) == t){
+            break;
+        }
+        ++i;
+        ++it;
+    }
+
+    if(it == nomes.end()) return;
+
+    island[0] = island[i];
+}
+
+void Jogo::apaga(string t) {
+    auto it = nomes.begin();
+    auto it1 = island.begin();
+    while(it != nomes.end()){
+        if((*it) == t){
+            delete *it1;
+            island.erase(it1);
+            nomes.erase(it);
+            break;
+        }
+        ++it1;
+        ++it;
+    }
+}
+
+bool Jogo::game() {
+    return island[0]->game();
+}

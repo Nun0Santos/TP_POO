@@ -11,8 +11,8 @@ class MinaFerro: public Edificio{
 public:
     MinaFerro(ilha* i, int x, int y);
 
-    void melhora();
-    void desaba();
+    void melhora() override;
+    int desaba() override;
     int obtemCustoSubs() override;
     void produz() override;
     MinaFerro& operator=(const Edificio& outro);

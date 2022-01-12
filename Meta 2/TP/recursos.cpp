@@ -4,7 +4,7 @@
 
 #include "recursos.h"
 
-Recursos::Recursos(string t) : tipo(move(t)), quantidade(0){}
+Recursos::Recursos(string t, int q) : tipo(move(t)), quantidade(q){}
 
 int Recursos::producao() {
     return 0;
@@ -48,3 +48,5 @@ double Recursos::obtemQuantidade() const {
 Recursos *Recursos::duplica() {
     return nullptr;
 }
+
+

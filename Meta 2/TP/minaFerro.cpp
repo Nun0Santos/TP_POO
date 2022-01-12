@@ -6,7 +6,7 @@
 #include <random>
 
 
-MinaFerro::MinaFerro(ilha* i, int x, int y) : Edificio(i, "mnF", 10, x, y), custoSubs(10), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(100){}
+MinaFerro::MinaFerro(ilha* i, int x, int y) : Edificio(i, "mnF", 10, x, y), custoSubs(10), upgradeDinheiro(15), upgradeRecurso(1), quantProd(2), probDesabar(15), quantArmazenamento(0){}
 
 void MinaFerro::melhora() {
     if(Edificio::getNivel() <= 5){
@@ -22,15 +22,14 @@ void MinaFerro::melhora() {
     }
 }
 
-void MinaFerro::desaba() {//isto está mal feito
-    random_device dev;
-    mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> dist6(1,probDesabar);
+int MinaFerro::desaba() {
+    double val = (double)rand() / RAND_MAX;
 
-    if(dist6(rng) == 1){
-
+    if(val < probDesabar){
+        return 1;
     }
 
+    return 0;
 }
 
 int MinaFerro::obtemCustoSubs() {
@@ -39,11 +38,25 @@ int MinaFerro::obtemCustoSubs() {
 
 void MinaFerro::produz() {
     if(!Edificio::procuraTrabalhador("M")) return;
-    aumentaRecursos("Ferro", quantProd);
+    if(quantArmazenamento < 100){
 
-    /*if(quantArmazenamento < 100){
+        quantArmazenamento += quantProd;
+
+        if(Edificio::MNT()){
+            if(Edificio::ZNX()){
+                aumentaRecursos("Ferro", quantProd*2+(0.1*(quantProd*2)));
+                return;
+            }
+            aumentaRecursos("Ferro", quantProd*2);
+            return;
+        }
+
+        if(Edificio::ZNX()){
+            aumentaRecursos("Ferro", quantProd+(0.1*quantProd));
+            return;
+        }
         aumentaRecursos("Ferro", quantProd);
-    }*/
+    }
 }
 
 MinaFerro &MinaFerro::operator=(const Edificio &outro) {

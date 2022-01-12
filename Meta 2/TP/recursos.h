@@ -11,7 +11,8 @@ using namespace std;
 
 class Recursos {
 public:
-    Recursos(string t);
+    Recursos(string t, int q = 5);
+    virtual ~Recursos() = default;
 
     virtual double vende(double quant);
     virtual int producao();

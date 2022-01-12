@@ -31,6 +31,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }
@@ -39,6 +42,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }
@@ -47,6 +53,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }
@@ -58,7 +67,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
             if(flag == 0){
                 flag = 1;
                 aux.push_back(s);
-                ++i;
+                continue;
             }
 
         }
@@ -72,7 +81,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
 void Zona::defineEdificio(const string& s, ilha* i, int dev) {
     if(dev == 0){//e preciso meter as condições para gastar os recursos devidos
         if(s == "mnF"){
-            auto* m = new MinaFerro(i, posL, posC);
+            Edificio* m = new MinaFerro(i, posL, posC);
             if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
                 ed = m;
                 ++quant_edificio;
@@ -223,8 +232,18 @@ void Zona::verificaDespedimento() {
                 }
             }
 
+            vector<string>::reverse_iterator i;
+            for(i = trab.rbegin(); i < trab.rend(); ++i){
+                if((*i) == (*it)->obtemTipo()){
+                    trab.erase((i+1).base());
+                    trab.emplace_back("-");
+                }
+            }
+
+            --quant_trab;
             delete (*it);
             it = workers.erase(it);
+            continue;
         }
         ++it;
     }
@@ -246,6 +265,10 @@ void Zona::trataTrabalhadores() {
 
 void Zona::trataEdificios() {
     ed->produz();
+    if(ed->desaba() == 1){
+        delete ed;
+        ed = nullptr;
+    }
 }
 
 bool Zona::procuraTrab(string t) {
@@ -396,7 +419,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
                 if(flag == 0){
                     flag = 1;
                     aux.push_back(t);
-                    ++i;
+                    continue;
                 }
 
             }
@@ -417,7 +440,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
                 if(flag == 0){
                     flag = 1;
                     aux.push_back(t);
-                    ++i;
+                    continue;
                 }
 
             }
@@ -438,7 +461,7 @@ void Zona::definetrab(string t, int a, int b, int c, double d, int e, int f, int
                 if(flag == 0){
                     flag = 1;
                     aux.push_back(t);
-                    ++i;
+                    continue;
                 }
 
             }
@@ -552,7 +575,7 @@ void Zona::recebeTrab(Trabalhador* auxt) {
             if(flag == 0){
                 flag = 1;
                 aux.push_back(auxt->obtemTipo());
-                ++i;
+                continue;
             }
 
         }
@@ -607,4 +630,8 @@ Zona &Zona::operator=(const Zona &outro) {
 
 Zona *Zona::duplica() const {
     return nullptr;
+}
+
+void Zona::upgradeED() {
+    ed->melhora();
 }

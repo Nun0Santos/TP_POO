@@ -27,6 +27,19 @@ int MinaCarvao::obtemCustoSubs() {
 void MinaCarvao::produz() {
     if(!Edificio::procuraTrabalhador("M")) return;
     if(quantArmazenamento < 100){
+
+        quantArmazenamento += quantProd;
+
+        if(Edificio::MNT()){
+            aumentaRecursos("Carvao", quantProd*2);
+            return;
+        }
+
+        if(Edificio::ZNX()){
+            aumentaRecursos("Carvao", quantProd+(0.1*quantProd));
+            return;
+        }
+
         aumentaRecursos("Carvao", quantProd);
     }
 }
@@ -55,4 +68,14 @@ MinaCarvao::MinaCarvao(const MinaCarvao &outro) : Edificio(outro), custoSubs(0),
 
 Edificio *MinaCarvao::duplica() const {
     return new MinaCarvao(*this);
+}
+
+int MinaCarvao::desaba() {
+    double val = (double)rand() / RAND_MAX;
+
+    if(val < probDesabar){
+        return 1;
+    }
+
+    return 0;
 }

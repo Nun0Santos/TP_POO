@@ -87,3 +87,18 @@ Edificio *Edificio::duplica() const {
     return nullptr;
 }
 
+bool Edificio::MNT() {
+    return i->MNT(x, y);
+}
+
+int Edificio::desaba() {
+    return 0;
+}
+
+int Edificio::obtemQuantTrab() {
+    return i->obtemQuantTrab(x, y);
+}
+
+bool Edificio::ZNX() {
+    return i->ZNX(x, y);
+}

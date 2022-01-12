@@ -10,6 +10,13 @@ void CentralEletrica::produz() {
     if(!Edificio::procuraTrabalhador("O")) return;
     if(Edificio::verificaLaterais("elec")){
         if(Edificio::gastaRecursos("Madeira", 1)){
+            if(ZNX()){
+                Edificio::aumentaRecursos("Eletricidade", 1+(0.1*1));
+                if(quantCarvao<100){
+                    Edificio::aumentaRecursos("Carvao", 1+(0.1*1));
+                    ++quantCarvao;
+                }
+            }
             Edificio::aumentaRecursos("Eletricidade", 1);
             if(quantCarvao<100){
                 Edificio::aumentaRecursos("Carvao", 1);

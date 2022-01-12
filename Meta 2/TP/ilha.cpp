@@ -5,12 +5,11 @@
 #include "geral.h"
 
 #include "montanha.h"
-
 #include "pastagem.h"
 #include "pantano.h"
 #include "floresta.h"
 #include "deserto.h"
-
+#include "zonax.h"
 
 
 #include <sstream>
@@ -69,13 +68,16 @@ void ilha::mudaValorTrab(const string& t) {
 
     if(t == "oper"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("O", dias, this);
+
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("L", dias, this);
             return;
         }
@@ -83,6 +85,7 @@ void ilha::mudaValorTrab(const string& t) {
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("M", dias, this);
             return;
         }
@@ -101,7 +104,11 @@ string ilha::mostraZona(int x, int y) {
     for(int i = 0; i < 4; ++i){
         switch (i) {
             case 0:
-                oss << tabuleiro[x][y]->obtemTipo() << endl;
+                if(tabuleiro[x][y]->obtemTipo() == "flr"){
+                    oss << tabuleiro[x][y]->obtemTipo() << " | " << tabuleiro[x][y]->getNArvores() << endl;
+                }else{
+                    oss << tabuleiro[x][y]->obtemTipo() << endl;
+                }
                 break;
                 case 1:
                     if(tabuleiro[x][y]->getEd() == nullptr){
@@ -145,17 +152,17 @@ void ilha::criaIlha() {
         tabuleiro[i] = new Zona*[col];
     }
 
-    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano"};
-    //unsigned num = chrono::system_clock::now().time_since_epoch().count();
+    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano", "zona-x"};
+    unsigned num = chrono::system_clock::now().time_since_epoch().count();
 
 
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            //shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
+            shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
 
             random_device dev;
             mt19937 rng(dev());
-            uniform_int_distribution<mt19937::result_type> dist6(0,4);
+            uniform_int_distribution<mt19937::result_type> dist6(0,5);
             t = dist6(rng);
 
             if(tipos[t] == "pastagem"){
@@ -179,7 +186,7 @@ void ilha::criaIlha() {
                 continue;
             }
             if(tipos[t] == "zona-x"){
-                tabuleiro[i][j] = new Pastagem("pas", i, j);
+                tabuleiro[i][j] = new ZonaX("znx", i, j);
                 continue;
             }
         }
@@ -418,15 +425,6 @@ string ilha::executa(string s1) {
             }
         }
 
-        if(v[0] == "save"){
-            //temos que copiar a nossa ilha atual para uma ilha auxiliar, para usarmos os operadores e construtores por copia
-        }
-        if(v[0] == "load"){
-            //mostrar a ilha auxiliar
-        }
-        if(v[0] == "apaga"){
-            //apagar a ilha auxiliar
-        }
         if(v[0] == "debcash"){
             istringstream ossQ(v[1]);
             ossQ >> x;
@@ -456,6 +454,17 @@ string ilha::executa(string s1) {
             //apagar um trabalhador através do id
             apagaTrabID(v[1]);
             return oss.str();
+        }
+        if(v[0] == "upgrade"){
+            istringstream ossX(v[2]);//transforma string em int
+            ossX >> x;//atribui valor transformado à variavel x
+            istringstream ossY(v[3]);//transforma string em int
+            ossY >> y;//atribui valor transformado à variavel y
+
+            if(verificaLinCol(x,y)){
+                tabuleiro[x][y]->upgradeED();
+                return oss.str();
+            }
         }
     }
     return "Comando invalido\n";
@@ -925,6 +934,7 @@ ilha &ilha::operator=(const ilha &outro) {
     lin = outro.lin;
     col = outro.col;
     dias = outro.dias;
+    contratou = outro.contratou;
 
     tabuleiro = new Zona**[outro.lin];
     for (int i = 0; i < outro.lin; ++i) {
@@ -946,7 +956,62 @@ ilha &ilha::operator=(const ilha &outro) {
     return *this;
 }
 
-ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr){
+ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr), contratou(0){
     *this = outro;
 }
 
+bool ilha::MNT(int x, int y) {
+    if(tabuleiro[x][y]->obtemTipo() == "mnt") return true;
+
+    return false;
+}
+
+bool ilha::game() {
+    double qr = 0;
+
+    auto it = recursos.begin();
+    while (it != recursos.end()){
+        qr += (*it)->obtemQuantidade();
+        ++it;
+    }
+
+    if(qr != 0){
+        if(contratou == 1){//só verifica os trabalhadores apos ter feito alguma contratação
+            int qt = 0;
+            for (int i = 0; i < lin; ++i) {
+                for (int j = 0; j < col; ++j) {
+                    qt += tabuleiro[i][j]->obtemQuant_Trab();
+                }
+            }
+
+            if(qt != 0){
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int ilha::obtemQuantTrab(int x, int y) {
+    return tabuleiro[x][y]->obtemQuant_Trab();
+}
+
+bool ilha::ZNX(int x, int y) {
+    if(tabuleiro[x][y]->obtemTipo() == "znx") return true;
+
+    return false;
+}
+
+
+int ilha::getContratou() const {
+    return contratou;
+}
+
+void ilha::setContratou() {
+    if(contratou == 0){
+        contratou = 1 ;
+    }
+}

@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/dinheiro.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/edificio.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/edificiox.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/eletricidade.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/ferro.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj"

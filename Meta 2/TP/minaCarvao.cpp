@@ -40,6 +40,11 @@ void MinaCarvao::produz() {
             return;
         }
 
+        if(Edificio::DSR()){
+            aumentaRecursos("Carvao", quantProd/2);
+            return;
+        }
+
         aumentaRecursos("Carvao", quantProd);
     }
 }

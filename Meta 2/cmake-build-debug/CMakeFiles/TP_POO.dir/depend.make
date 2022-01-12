@@ -67,6 +67,10 @@ CMakeFiles/TP_POO.dir/TP/edificio.cpp.obj: \
  ../TP/recursos.h \
  ../TP/trabalhadores.h \
  ../TP/zona.h
+CMakeFiles/TP_POO.dir/TP/edificiox.cpp.obj: \
+ ../TP/edificio.h \
+ ../TP/edificiox.cpp \
+ ../TP/edificiox.h
 CMakeFiles/TP_POO.dir/TP/eletricidade.cpp.obj: \
  ../TP/eletricidade.cpp \
  ../TP/eletricidade.h \
@@ -214,6 +218,7 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/bateria.h \
  ../TP/centralEletrica.h \
  ../TP/edificio.h \
+ ../TP/edificiox.h \
  ../TP/fundicao.h \
  ../TP/geral.h \
  ../TP/ilha.h \

@@ -17,11 +17,11 @@
 #include "mineiro.h"
 
 
-void Zona::defineTrab(string s, int dia, ilha* il) {
+string Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "O"){
         Trabalhador *o = new Operario(dia, this);
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
-            return;
+            return "nao tem recursos";
 
         if(il->getContratou() == 0){
             il->setContratou();
@@ -32,7 +32,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "L"){
         Trabalhador *o = new Lenhador(dia, this);
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
-            return;
+            return "nao tem recursos";
 
         if(il->getContratou() == 0){
             il->setContratou();
@@ -43,7 +43,7 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
     if(s == "M"){
         Trabalhador *o = new Mineiro(dia, this);
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
-            return;
+            return "nao tem recursos";
 
         if(il->getContratou() == 0){
             il->setContratou();
@@ -68,24 +68,26 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
 
     trab.clear();
     trab = aux;
+
+    return "contratacao sucedida";
 }
 
-void Zona::defineEdificio(const string& s, ilha* i, int dev) {
+string Zona::defineEdificio(const string& s, ilha* i, int dev) {
     if(dev == 0){
         if(s == "mnF"){
             Edificio* m = new MinaFerro(i, posL, posC);
-            if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
+            if(i->gastaRecursos("VigasMadeira", m->obtemCustoDinheiro()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi uma mina de ferro";
             }
         }
         if(s == "mnC"){
             auto* m = new MinaCarvao(i, posL, posC);
-            if(i->gastaRecursos("VigasMadeira", m->obtemCustoSubs()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
+            if(i->gastaRecursos("VigasMadeira", m->obtemCustoDinheiro()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi uma mina de carvao";
             }
         }
         if(s == "fun"){
@@ -93,7 +95,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi uma fundicao";
             }
         }
         if(s == "elec"){
@@ -101,7 +103,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi uma central eletrica";
             }
         }
         if(s == "bat"){
@@ -110,7 +112,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
                 ed = m;
                 cout << ed->obtemTipo();
                 ++quant_edificio;
-                return;
+                return "construi uma bateria";
             }
         }
         if(s == "ser"){
@@ -118,54 +120,56 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi uma serracao";
             }
         }
         if(s == "edX"){
-            auto* m = new Edificiox(i, 0, 0);
+            auto* m = new Edificiox(i, posC, posL);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
                 ++quant_edificio;
-                return;
+                return "construi um edificio-x";
             }
         }
     }else{
         if(s == "mnF"){
             ed = new MinaFerro(i, posL, posC);
             ++quant_edificio;
-            return;
+            return "construi uma mina de ferro";
         }
         if(s == "mnC"){
             ed = new MinaCarvao(i, posL, posC);
             ++quant_edificio;
-            return;
+            return "construi uma mina de carvao";
         }
         if(s == "fun"){
             ed = new Fundicao(i, posL, posC);
             ++quant_edificio;
-            return;
+            return "construi uma fundicao";
         }
         if(s == "elec"){
             ed = new CentralEletrica(i, posL, posC);
             ++quant_edificio;
-            return;
+            return "construi uma central eletrica";
         }
         if(s == "bat"){
             ed = new Bateria(i);
             ++quant_edificio;
-            return;
+            return "construi uma bateria";
         }
         if(s == "ser"){
             ed = new Serracao(i);
             ++quant_edificio;
-            return;
+            return "construi uma serracao";
         }
         if(s == "edX"){
             ed = new Edificiox(i, posL, posC);
             ++quant_edificio;
-            return;
+            return "construi um edificio-x";
         }
     }
+
+    return "nao tem recursos";
 
 }
 

@@ -35,6 +35,7 @@ public:
     virtual int desaba();
     int obtemQuantTrab();
     bool ZNX();
+    bool DSR();
 
     Edificio& operator=(const Edificio& outro);
 private:

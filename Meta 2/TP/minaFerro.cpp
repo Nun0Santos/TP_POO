@@ -55,6 +55,11 @@ void MinaFerro::produz() {
             aumentaRecursos("Ferro", quantProd+(0.1*quantProd));
             return;
         }
+
+        if(Edificio::DSR()){
+            aumentaRecursos("Ferro", quantProd/2);
+            return;
+        }
         aumentaRecursos("Ferro", quantProd);
     }
 }

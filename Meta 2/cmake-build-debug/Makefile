@@ -368,6 +368,30 @@ TP/edificio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/edificio.cpp.s
 .PHONY : TP/edificio.cpp.s
 
+TP/edificiox.obj: TP/edificiox.cpp.obj
+.PHONY : TP/edificiox.obj
+
+# target to build an object file
+TP/edificiox.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/edificiox.cpp.obj
+.PHONY : TP/edificiox.cpp.obj
+
+TP/edificiox.i: TP/edificiox.cpp.i
+.PHONY : TP/edificiox.i
+
+# target to preprocess a source file
+TP/edificiox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/edificiox.cpp.i
+.PHONY : TP/edificiox.cpp.i
+
+TP/edificiox.s: TP/edificiox.cpp.s
+.PHONY : TP/edificiox.s
+
+# target to generate assembly for a file
+TP/edificiox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/edificiox.cpp.s
+.PHONY : TP/edificiox.cpp.s
+
 TP/eletricidade.obj: TP/eletricidade.cpp.obj
 .PHONY : TP/eletricidade.obj
 
@@ -935,6 +959,9 @@ help:
 	@echo ... TP/edificio.obj
 	@echo ... TP/edificio.i
 	@echo ... TP/edificio.s
+	@echo ... TP/edificiox.obj
+	@echo ... TP/edificiox.i
+	@echo ... TP/edificiox.s
 	@echo ... TP/eletricidade.obj
 	@echo ... TP/eletricidade.i
 	@echo ... TP/eletricidade.s

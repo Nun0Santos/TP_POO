@@ -32,8 +32,8 @@ public:
     }
 
 
-    void defineTrab(string s, int dia, ilha* il);
-    void defineEdificio(const string& s, ilha* i, int dev);
+    string defineTrab(string s, int dia, ilha* il);
+    string defineEdificio(const string& s, ilha* i, int dev);
     string obtemTrab() const;
     string obtemWorkers() const;
     string obtemTipo();

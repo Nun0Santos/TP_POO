@@ -67,6 +67,10 @@ CMakeFiles/TP_POO.dir/TP/edificio.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+CMakeFiles/TP_POO.dir/TP/edificiox.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.cpp
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.h
 CMakeFiles/TP_POO.dir/TP/eletricidade.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h
@@ -214,6 +218,7 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/bateria.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/centralEletrica.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/fundicao.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ilha.h

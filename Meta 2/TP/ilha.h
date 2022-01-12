@@ -33,8 +33,8 @@ public:
     void defineLin(int a);//pedir quantas linhas quer
     void criaIlha();//alocar dinamicamente a ilha
     string mostraIlha();
-    void mudaValorEdificio(int& l, int& c, const string& t, int dev);//muda o valor do edificio "zona" no tabuleiro
-    void mudaValorTrab(const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
+    string mudaValorEdificio(int& l, int& c, const string& t, int dev);//muda o valor do edificio "zona" no tabuleiro
+    string mudaValorTrab(const string& t);//muda o valor dos trabalhadores "zona" no tabuleiro
     int obtemLin() const;//return das linhas
     int obtemCol() const;//return das colunas
     bool verificaLinCol(int x, int y) const;
@@ -61,6 +61,7 @@ public:
     bool ZNX(int x, int y);
     int getContratou() const;
     void setContratou();
+    bool DSR(int x, int y);
 
     ilha& operator=(const ilha& outro);
 private:

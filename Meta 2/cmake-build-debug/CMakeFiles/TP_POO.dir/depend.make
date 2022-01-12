@@ -118,7 +118,8 @@ CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj: \
  ../TP/recursos.h \
  ../TP/trabalhadores.h \
  ../TP/vigasMadeira.h \
- ../TP/zona.h
+ ../TP/zona.h \
+ ../TP/zonax.h
 CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj: \
  ../TP/UI.h \
  ../TP/edificio.h \
@@ -227,3 +228,9 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.obj: \
  ../TP/trabalhadores.h \
  ../TP/zona.cpp \
  ../TP/zona.h
+CMakeFiles/TP_POO.dir/TP/zonax.cpp.obj: \
+ ../TP/edificio.h \
+ ../TP/trabalhadores.h \
+ ../TP/zona.h \
+ ../TP/zonax.cpp \
+ ../TP/zonax.h

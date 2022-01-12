@@ -34,6 +34,7 @@ public:
     bool MNT();
     virtual int desaba();
     int obtemQuantTrab();
+    bool ZNX();
 
     Edificio& operator=(const Edificio& outro);
 private:

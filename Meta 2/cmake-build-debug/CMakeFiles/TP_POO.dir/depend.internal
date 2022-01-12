@@ -119,6 +119,7 @@ CMakeFiles/TP_POO.dir/TP/ilha.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.h
 CMakeFiles/TP_POO.dir/TP/jogo.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
@@ -227,3 +228,9 @@ CMakeFiles/TP_POO.dir/TP/zona.cpp.obj
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.cpp
  C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+CMakeFiles/TP_POO.dir/TP/zonax.cpp.obj
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.cpp
+ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.h

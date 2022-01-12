@@ -31,6 +31,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }
@@ -39,6 +42,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }
@@ -47,6 +53,9 @@ void Zona::defineTrab(string s, int dia, ilha* il) {
         if(!il->gastaRecursos("Dinheiro", o->obtemCusto()))
             return;
 
+        if(il->getContratou() == 0){
+            il->setContratou();
+        }
         workers.push_back(o);
         ++quant_trab;
     }

@@ -66,33 +66,17 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/UI.h
 geral.h
 -
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.cpp
-barraAco.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/barraAco.h
 recursos.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/bateria.cpp
-bateria.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/bateria.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/bateria.h
 edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.cpp
-carvao.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/carvao.h
 recursos.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/centralEletrica.cpp
-centralEletrica.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/centralEletrica.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/centralEletrica.h
 edificio.h
@@ -120,17 +104,9 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 fstream
 -
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp
-deserto.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h
 zona.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.cpp
-dinheiro.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.h
 recursos.h
@@ -146,17 +122,9 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 iostream
 -
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.cpp
-eletricidade.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.h
 recursos.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.cpp
-ferro.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.h
 recursos.h
@@ -211,6 +179,8 @@ floresta.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.h
 deserto.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.h
+zonax.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.h
 sstream
 -
 fstream
@@ -260,21 +230,9 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/jogo.h
 geral.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/lenhador.cpp
-lenhador.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/lenhador.h
-zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-random
--
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/lenhador.h
 trabalhadores.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.cpp
-madeira.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/madeira.h
 recursos.h
@@ -286,31 +244,13 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/geral.h
 random
 -
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaCarvao.cpp
-minaCarvao.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaCarvao.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaCarvao.h
 edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.cpp
-minaFerro.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.h
-random
--
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/minaFerro.h
 edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/mineiro.cpp
-mineiro.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/mineiro.h
-zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-random
--
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/mineiro.h
 trabalhadores.h
@@ -326,67 +266,31 @@ C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/montanha.h
 zona.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/operario.cpp
-operario.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/operario.h
-zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-random
--
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/operario.h
 trabalhadores.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pantano.cpp
-pantano.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pantano.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pantano.h
 zona.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.cpp
-pastagem.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/pastagem.h
 zona.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.cpp
-recursos.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/recursos.h
 iostream
 -
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/serracao.cpp
-serracao.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/serracao.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/serracao.h
 edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.cpp
-trabalhadores.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
-sstream
--
-zona.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
-
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
 iostream
 -
 sstream
 -
-
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.cpp
-vigasMadeira.h
-C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h
 
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.h
 recursos.h
@@ -425,4 +329,8 @@ edificio.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h
 trabalhadores.h
 C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.h
+
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.h
+zona.h
+C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.h
 

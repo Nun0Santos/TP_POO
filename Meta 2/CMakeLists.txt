@@ -63,4 +63,4 @@ add_executable(TP_POO
         TP/centralEletrica.cpp
         TP/centralEletrica.h
         TP/trabalhadores.cpp
-        TP/trabalhadores.h TP/dinheiro.cpp TP/dinheiro.h TP/serracao.cpp TP/serracao.h)
+        TP/trabalhadores.h TP/dinheiro.cpp TP/dinheiro.h TP/serracao.cpp TP/serracao.h TP/zonax.cpp TP/zonax.h)

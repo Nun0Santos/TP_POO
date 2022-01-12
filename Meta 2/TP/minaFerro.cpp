@@ -39,8 +39,23 @@ int MinaFerro::obtemCustoSubs() {
 void MinaFerro::produz() {
     if(!Edificio::procuraTrabalhador("M")) return;
     if(quantArmazenamento < 100){
-        aumentaRecursos("Ferro", quantProd);
+
         quantArmazenamento += quantProd;
+
+        if(Edificio::MNT()){
+            if(Edificio::ZNX()){
+                aumentaRecursos("Ferro", quantProd*2+(0.1*(quantProd*2)));
+                return;
+            }
+            aumentaRecursos("Ferro", quantProd*2);
+            return;
+        }
+
+        if(Edificio::ZNX()){
+            aumentaRecursos("Ferro", quantProd+(0.1*quantProd));
+            return;
+        }
+        aumentaRecursos("Ferro", quantProd);
     }
 }
 

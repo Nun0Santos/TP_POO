@@ -30,6 +30,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TP_POO.dir/TP/trabalhadores.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/vigasMadeira.cpp.obj"
   "CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
+  "CMakeFiles/TP_POO.dir/TP/zonax.cpp.obj"
   "TP_POO.exe"
   "TP_POO.exe.manifest"
   "TP_POO.pdb"

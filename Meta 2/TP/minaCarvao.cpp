@@ -30,8 +30,13 @@ void MinaCarvao::produz() {
 
         quantArmazenamento += quantProd;
 
-        if (Edificio::MNT()){
+        if(Edificio::MNT()){
             aumentaRecursos("Carvao", quantProd*2);
+            return;
+        }
+
+        if(Edificio::ZNX()){
+            aumentaRecursos("Carvao", quantProd+(0.1*quantProd));
             return;
         }
 

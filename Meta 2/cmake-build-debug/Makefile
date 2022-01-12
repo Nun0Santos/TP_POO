@@ -872,6 +872,30 @@ TP/zona.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zona.cpp.s
 .PHONY : TP/zona.cpp.s
 
+TP/zonax.obj: TP/zonax.cpp.obj
+.PHONY : TP/zonax.obj
+
+# target to build an object file
+TP/zonax.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zonax.cpp.obj
+.PHONY : TP/zonax.cpp.obj
+
+TP/zonax.i: TP/zonax.cpp.i
+.PHONY : TP/zonax.i
+
+# target to preprocess a source file
+TP/zonax.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zonax.cpp.i
+.PHONY : TP/zonax.cpp.i
+
+TP/zonax.s: TP/zonax.cpp.s
+.PHONY : TP/zonax.s
+
+# target to generate assembly for a file
+TP/zonax.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_POO.dir\build.make CMakeFiles/TP_POO.dir/TP/zonax.cpp.s
+.PHONY : TP/zonax.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -974,6 +998,9 @@ help:
 	@echo ... TP/zona.obj
 	@echo ... TP/zona.i
 	@echo ... TP/zona.s
+	@echo ... TP/zonax.obj
+	@echo ... TP/zonax.i
+	@echo ... TP/zonax.s
 .PHONY : help
 
 

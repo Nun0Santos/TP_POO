@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/trabalhadores.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/trabalhadores.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/vigasMadeira.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/vigasMadeira.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zona.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/zona.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/zonax.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/zonax.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

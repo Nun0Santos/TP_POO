@@ -98,3 +98,7 @@ int Edificio::desaba() {
 int Edificio::obtemQuantTrab() {
     return i->obtemQuantTrab(x, y);
 }
+
+bool Edificio::ZNX() {
+    return i->ZNX(x, y);
+}

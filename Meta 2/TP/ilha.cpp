@@ -5,12 +5,11 @@
 #include "geral.h"
 
 #include "montanha.h"
-
 #include "pastagem.h"
 #include "pantano.h"
 #include "floresta.h"
 #include "deserto.h"
-
+#include "zonax.h"
 
 
 #include <sstream>
@@ -69,13 +68,16 @@ void ilha::mudaValorTrab(const string& t) {
 
     if(t == "oper"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("O", dias, this);
+
             return;
         }
         cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("L", dias, this);
             return;
         }
@@ -83,6 +85,7 @@ void ilha::mudaValorTrab(const string& t) {
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
+            if (!verificaLinCol(auxl, auxc)) return;
             tabuleiro[auxl][auxc]->defineTrab("M", dias, this);
             return;
         }
@@ -149,41 +152,41 @@ void ilha::criaIlha() {
         tabuleiro[i] = new Zona*[col];
     }
 
-    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano"};
-    //unsigned num = chrono::system_clock::now().time_since_epoch().count();
+    vector<string> tipos = {"pastagem", "floresta", "deserto", "montanha", "pantano", "zona-x"};
+    unsigned num = chrono::system_clock::now().time_since_epoch().count();
 
 
     for (int i = 0; i < lin; ++i) {
         for (int j = 0; j < col; ++j) {
-            //shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
+            shuffle (tipos.begin(), tipos.end(), default_random_engine(num));
 
-            random_device dev;
+            /*random_device dev;
             mt19937 rng(dev());
             uniform_int_distribution<mt19937::result_type> dist6(0,4);
-            t = dist6(rng);
+            t = dist6(rng);*/
 
-            if(tipos[t] == "pastagem"){
+            if(tipos[j] == "pastagem"){
                 tabuleiro[i][j] = new Pastagem("pas", i, j);
                 continue;
             }
-            if(tipos[t] == "floresta"){
+            if(tipos[j] == "floresta"){
                 tabuleiro[i][j] = new Floresta("flr", i, j);
                 continue;
             }
-            if(tipos[t] == "deserto"){
+            if(tipos[j] == "deserto"){
                 tabuleiro[i][j] = new Deserto("dsr", i, j);
                 continue;
             }
-            if(tipos[t] == "montanha"){
+            if(tipos[j] == "montanha"){
                 tabuleiro[i][j] = new Montanha("mnt", i, j);
                 continue;
             }
-            if(tipos[t] == "pantano"){
+            if(tipos[j] == "pantano"){
                 tabuleiro[i][j] = new Pantano("pnt", i, j);
                 continue;
             }
-            if(tipos[t] == "zona-x"){
-                tabuleiro[i][j] = new Pastagem("pas", i, j);
+            if(tipos[j] == "zona-x"){
+                tabuleiro[i][j] = new ZonaX("znx", i, j);
                 continue;
             }
         }
@@ -931,6 +934,7 @@ ilha &ilha::operator=(const ilha &outro) {
     lin = outro.lin;
     col = outro.col;
     dias = outro.dias;
+    contratou = outro.contratou;
 
     tabuleiro = new Zona**[outro.lin];
     for (int i = 0; i < outro.lin; ++i) {
@@ -952,7 +956,7 @@ ilha &ilha::operator=(const ilha &outro) {
     return *this;
 }
 
-ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr){
+ilha::ilha(const ilha &outro) : dias(1), lin(0), col(0), tabuleiro(nullptr), contratou(0){
     *this = outro;
 }
 
@@ -971,15 +975,19 @@ bool ilha::game() {
         ++it;
     }
 
-    if(qr == 0){
-        int qt = 0;
-        for (int i = 0; i < lin; ++i) {
-            for (int j = 0; j < col; ++j) {
-                qt += tabuleiro[i][j]->obtemQuant_Trab();
+    if(qr != 0){
+        if(contratou == 1){//só verifica os trabalhadores apos ter feito alguma contratação
+            int qt = 0;
+            for (int i = 0; i < lin; ++i) {
+                for (int j = 0; j < col; ++j) {
+                    qt += tabuleiro[i][j]->obtemQuant_Trab();
+                }
             }
-        }
 
-        if(qt == 0){
+            if(qt != 0){
+                return false;
+            }
+        }else{
             return false;
         }
     }
@@ -991,3 +999,19 @@ int ilha::obtemQuantTrab(int x, int y) {
     return tabuleiro[x][y]->obtemQuant_Trab();
 }
 
+bool ilha::ZNX(int x, int y) {
+    if(tabuleiro[x][y]->obtemTipo() == "znx") return true;
+
+    return false;
+}
+
+
+int ilha::getContratou() const {
+    return contratou;
+}
+
+void ilha::setContratou() {
+    if(contratou == 0){
+        contratou = 1 ;
+    }
+}

@@ -11,7 +11,7 @@
 #include "fundicao.h"
 #include "centralEletrica.h"
 #include "serracao.h"
-
+#include "edificiox.h"
 #include "operario.h"
 #include "lenhador.h"
 #include "mineiro.h"
@@ -129,6 +129,14 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
                 return;
             }
         }
+        if(s == "edX"){
+            auto* m = new Edificiox(i, 0, 0);
+            if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
+                ed = m;
+                ++quant_edificio;
+                return;
+            }
+        }
     }else{
         if(s == "mnF"){
             ed = new MinaFerro(i, posL, posC);
@@ -157,6 +165,11 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
         }
         if(s == "ser"){
             ed = new Serracao(i);
+            ++quant_edificio;
+            return;
+        }
+        if(s == "edX"){
+            ed = new Edificiox(i, posL, posC);
             ++quant_edificio;
             return;
         }

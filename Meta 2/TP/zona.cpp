@@ -116,6 +116,7 @@ void Zona::defineEdificio(const string& s, ilha* i, int dev) {
             auto* m = new Bateria(i);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
+                cout << ed->obtemTipo();
                 ++quant_edificio;
                 return;
             }
@@ -200,7 +201,7 @@ int Zona::obtemOnOFF() const {
     return ed->getonoff();
 }
 
-Edificio *Zona::getEd() {
+Edificio *Zona::getEd() const{
     return ed;
 }
 
@@ -289,8 +290,9 @@ bool Zona::apagaTrabID(string id) {
             if(quant_trab <= 5){
                 for(i = trab.rbegin(); i < trab.rend(); ++i){
                     if((*i) == (*it)->obtemTipo()){
-                        trab.erase((i+1).base());
+                        trab.erase((i+1).base()); 
                         trab.emplace_back("-");
+                        break;
                     }
                 }
             }
@@ -588,7 +590,7 @@ void Zona::recebeTrab(Trabalhador* auxt) {
 
 }
 
-Zona &Zona::operator=(const Zona &outro) {
+Zona &Zona::atribui(const Zona &outro) {
     if(this == &outro) return *this;
 
     auto it1 = workers.begin();
@@ -599,7 +601,6 @@ Zona &Zona::operator=(const Zona &outro) {
     workers.clear();
 
     trab.clear();
-    ed = nullptr;
 
     auto it2 = outro.workers.begin();
     while(it2 != outro.workers.end()){
@@ -613,10 +614,10 @@ Zona &Zona::operator=(const Zona &outro) {
         ++it3;
     }
 
-    auto aux = const_cast<Zona&>(outro);
-    if(aux.getEd() == nullptr){
-        ed = nullptr;
-    }else{
+    delete ed;
+    ed = nullptr;
+
+    if (outro.getEd() != nullptr){
         ed = outro.ed->duplica();
     }
 

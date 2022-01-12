@@ -25,21 +25,18 @@ void UI::start() {
                 cout << "Nome da instancia: ";
                 cin >> s2;
                 j.save(s2);
-                break;
             }
             if(str == "load"){
                 string s2;
                 cout << "Nome da instancia: ";
                 cin >> s2;
                 j.load(s2);
-                break;
+                cout << j.mostraIsland();
             }
             if(str == "apaga"){
                 string s2;
                 cout << "Nome da instancia: ";
                 cin >> s2;
-                j.apaga(s2);
-                break;
             }
 
             if(str  == "fim")

@@ -15,7 +15,7 @@ public:
     void duplicaPrecoConstrucao();
     void aumentaProbDemissao();
     void trata(ilha& i) override;
-    Montanha& operator=(const Zona& outro);
+    Montanha& atribui(const Zona& outro);
     Zona * duplica() const override;
 private:
     float probDemissao, aumentoProd, quantFerro;

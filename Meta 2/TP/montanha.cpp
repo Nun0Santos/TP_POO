@@ -20,12 +20,12 @@ void Montanha::trata(ilha& i){
     }
 }
 
-Montanha &Montanha::operator=(const Zona &outro) {
+Montanha &Montanha::atribui(const Zona &outro) {
     if(this == &outro) return *this;
 
-    Zona::operator=(outro);
-
     if(typeid(this) == typeid(outro)){
+        Zona::atribui(outro);
+
         const auto* aux = dynamic_cast<const Montanha*>(&outro);
         probDemissao = aux->probDemissao;
         aumentoProd = aux->aumentoProd;
@@ -39,5 +39,5 @@ Zona *Montanha::duplica() const {
 }
 
 Montanha::Montanha(const Montanha &outro) : Zona(outro),probDemissao(0), aumentoProd(0), quantFerro(0){
-    *this = outro;
+    this->atribui(outro);
 }

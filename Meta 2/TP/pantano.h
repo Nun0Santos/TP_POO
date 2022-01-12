@@ -13,7 +13,7 @@ public:
     Pantano(const Pantano& outro);
 
     void trata(ilha& i) override;
-    Pantano& operator=(const Zona& outro);
+    Pantano& atribui(const Zona& outro);
     Zona * duplica() const override;
 private:
     int dias;

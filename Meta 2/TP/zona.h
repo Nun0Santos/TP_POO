@@ -45,7 +45,7 @@ public:
     string obtemEdificio() const;
     int obtemQuant_Edificios() const;
     int obtemOnOFF() const;
-    Edificio* getEd();
+    Edificio* getEd() const;
     void vendeEdificio();
     void ligaDesligaED();
     void verificaDespedimento();
@@ -72,7 +72,8 @@ public:
     int obtemMovTrab(string t);
     Trabalhador* moveTrab(string t);
     void recebeTrab(Trabalhador* auxt);
-    Zona& operator=(const Zona& outro);
+
+    Zona& atribui(const Zona& outro);
     virtual Zona* duplica() const;
     void upgradeED();
 

@@ -466,6 +466,24 @@ string ilha::executa(string s1) {
                 return oss.str();
             }
         }
+
+        if(v[0] == "save"){
+
+
+            return oss.str();
+        }
+
+        if(v[0] == "load"){
+
+
+            return oss.str();
+        }
+
+        if(v[0] == "apaga"){
+
+
+            return oss.str();
+        }
     }
     return "Comando invalido\n";
 }

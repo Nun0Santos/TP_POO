@@ -13,7 +13,7 @@ public:
     Deserto(const Deserto& outro);
 
     double obtemRedProd() override;
-    Deserto& operator=(const Zona& outro);
+    Deserto& atribui(const Zona& outro);
 
     Zona * duplica() const override;
 private:

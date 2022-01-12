@@ -15,7 +15,7 @@ public:
     int defineArvores();
     int getNArvores() const override;
     void trata(ilha& i) override;
-    Floresta& operator=(const Zona& outro);
+    Floresta& atribui(const Zona& outro);
     Zona * duplica() const override;
 private:
     int nArvores, nArvores_max , prod_kg, dias;

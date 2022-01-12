@@ -12,6 +12,7 @@ public:
     ZonaX(string t, int x, int l);
 
     Zona * duplica() const override;
+    ZonaX& atribui(const Zona& outro);
 
 };
 

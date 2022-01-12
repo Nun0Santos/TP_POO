@@ -47,7 +47,8 @@ string Jogo::mostraIsland() {
 }
 
 void Jogo::save(string t) {
-    island.push_back(new ilha(*island[0]));
+    ilha* a = new ilha(*island[0]);
+    island.push_back(a);
     nomes.push_back(t);
 }
 

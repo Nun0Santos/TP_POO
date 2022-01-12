@@ -12,6 +12,7 @@ public:
     Pastagem(string t, int x, int y) : Zona(t, x , y){}
 
     Zona * duplica() const override;
+    Pastagem& atribui(const Zona& outro);
 };
 
 

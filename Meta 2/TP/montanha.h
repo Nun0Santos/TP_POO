@@ -12,8 +12,6 @@ public:
     Montanha(string t, int x, int y);
     Montanha(const Montanha& outro);
 
-    void duplicaPrecoConstrucao();
-    void aumentaProbDemissao();
     void trata(ilha& i) override;
     Montanha& atribui(const Zona& outro);
     Zona * duplica() const override;

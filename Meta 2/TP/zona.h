@@ -31,13 +31,9 @@ public:
         }
     }
 
-    void definePosL(int l);
-    void definePosC(int c);
+
     void defineTrab(string s, int dia, ilha* il);
-    void definetrab(string t, int a, int b, int c, double d, int e, int f, int g);
     void defineEdificio(const string& s, ilha* i, int dev);
-    int obtemL() const;
-    int obtemC() const;
     string obtemTrab() const;
     string obtemWorkers() const;
     string obtemTipo();

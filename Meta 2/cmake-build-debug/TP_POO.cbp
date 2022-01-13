@@ -138,6 +138,12 @@
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.h">
 			<Option target="TP_POO"/>
 		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.cpp">
+			<Option target="TP_POO"/>
+		</Unit>
+		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.h">
+			<Option target="TP_POO"/>
+		</Unit>
 		<Unit filename="C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.cpp">
 			<Option target="TP_POO"/>
 		</Unit>

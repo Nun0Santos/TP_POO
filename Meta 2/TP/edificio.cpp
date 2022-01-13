@@ -102,3 +102,7 @@ int Edificio::obtemQuantTrab() {
 bool Edificio::ZNX() {
     return i->ZNX(x, y);
 }
+
+bool Edificio::DSR() {
+    return i->DSR(x, y);
+}

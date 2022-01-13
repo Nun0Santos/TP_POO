@@ -47,13 +47,13 @@ int ilha::obtemLin() const {
     return lin;
 }
 
-void ilha::mudaValorEdificio(int& l, int& c, const string& t, int dev) {
+string ilha::mudaValorEdificio(int& l, int& c, const string& t, int dev) {
     if(tabuleiro[l][c]->obtemQuant_Edificios() > 0)
-        return;
-    tabuleiro[l][c]->defineEdificio(t, this, dev);
+        return "ja tem um edificio nesta zona";
+    return tabuleiro[l][c]->defineEdificio(t, this, dev);
 }
 
-void ilha::mudaValorTrab(const string& t) {
+string ilha::mudaValorTrab(const string& t) {
     int auxl, auxc , flag = 0;
 
     for (auxl = 0; auxl < lin; auxl++) {
@@ -68,29 +68,24 @@ void ilha::mudaValorTrab(const string& t) {
 
     if(t == "oper"){
         if(verificaTrabalhador(t)){
-            if (!verificaLinCol(auxl, auxc)) return;
-            tabuleiro[auxl][auxc]->defineTrab("O", dias, this);
-
-            return;
+            if (!verificaLinCol(auxl, auxc)) return " ";
+            return tabuleiro[auxl][auxc]->defineTrab("O", dias, this);
         }
-        cout << "Este trabalhador não existe" << endl;
     }
     if(t == "len"){
         if(verificaTrabalhador(t)){
-            if (!verificaLinCol(auxl, auxc)) return;
-            tabuleiro[auxl][auxc]->defineTrab("L", dias, this);
-            return;
+            if (!verificaLinCol(auxl, auxc)) return " ";
+            return tabuleiro[auxl][auxc]->defineTrab("L", dias, this);
         }
-        cout << "Este trabalhador não existe" << endl;
     }
     if(t == "min"){
         if(verificaTrabalhador(t)){
-            if (!verificaLinCol(auxl, auxc)) return;
-            tabuleiro[auxl][auxc]->defineTrab("M", dias, this);
-            return;
+            if (!verificaLinCol(auxl, auxc)) return " ";
+            return tabuleiro[auxl][auxc]->defineTrab("M", dias, this);
         }
-        cout << "Este trabalhador não existe" << endl;
     }
+
+    return " ";
 }
 
 bool ilha::verificaLinCol(int x, int y) const {
@@ -287,8 +282,7 @@ string ilha::executa(string s1) {
                 o>>aux;
 
                 if(verificaTipo(aux)){
-                    ilha::mudaValorEdificio(x, y, aux, 0);
-                    return oss.str();
+                    return ilha::mudaValorEdificio(x, y, aux, 0);
                 }
                 return "tipo invalido";
             }else{
@@ -303,8 +297,7 @@ string ilha::executa(string s1) {
             o>>aux;
 
             if(verificaTrabalhador(v[1])){
-                ilha::mudaValorTrab(aux);
-                return oss.str();
+                return ilha::mudaValorTrab(aux);
             }
             return "trabalhador invalido";
         }
@@ -465,6 +458,24 @@ string ilha::executa(string s1) {
                 tabuleiro[x][y]->upgradeED();
                 return oss.str();
             }
+        }
+
+        if(v[0] == "save"){
+
+
+            return oss.str();
+        }
+
+        if(v[0] == "load"){
+
+
+            return oss.str();
+        }
+
+        if(v[0] == "apaga"){
+
+
+            return oss.str();
         }
     }
     return "Comando invalido\n";
@@ -1014,4 +1025,10 @@ void ilha::setContratou() {
     if(contratou == 0){
         contratou = 1 ;
     }
+}
+
+bool ilha::DSR(int x, int y) {
+    if(tabuleiro[x][y]->obtemTipo() == "dsr") return true;
+
+    return false;
 }

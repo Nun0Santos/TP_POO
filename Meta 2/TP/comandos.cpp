@@ -23,7 +23,7 @@ bool verificaComandos(const string& com){
 }
 
 bool verificaTipo(const string& t){
-    vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edx", "ser"};
+    vector<string> tipos = {"mnF", "mnC", "elec", "bat", "fun", "edX", "ser"};
 
     if(find(tipos.begin(), tipos.end(), t) != tipos.end())
     {

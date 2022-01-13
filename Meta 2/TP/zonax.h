@@ -7,11 +7,12 @@
 
 #include "zona.h"
 
-class ZonaX : public Zona{//aumenta a produção dos edificios em 10%
+class ZonaX : public Zona{
 public:
     ZonaX(string t, int x, int l);
 
     Zona * duplica() const override;
+    ZonaX& atribui(const Zona& outro);
 
 };
 

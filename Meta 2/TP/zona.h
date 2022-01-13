@@ -31,13 +31,9 @@ public:
         }
     }
 
-    void definePosL(int l);
-    void definePosC(int c);
-    void defineTrab(string s, int dia, ilha* il);
-    void definetrab(string t, int a, int b, int c, double d, int e, int f, int g);
-    void defineEdificio(const string& s, ilha* i, int dev);
-    int obtemL() const;
-    int obtemC() const;
+
+    string defineTrab(string s, int dia, ilha* il);
+    string defineEdificio(const string& s, ilha* i, int dev);
     string obtemTrab() const;
     string obtemWorkers() const;
     string obtemTipo();
@@ -45,7 +41,7 @@ public:
     string obtemEdificio() const;
     int obtemQuant_Edificios() const;
     int obtemOnOFF() const;
-    Edificio* getEd();
+    Edificio* getEd() const;
     void vendeEdificio();
     void ligaDesligaED();
     void verificaDespedimento();
@@ -72,7 +68,9 @@ public:
     int obtemMovTrab(string t);
     Trabalhador* moveTrab(string t);
     void recebeTrab(Trabalhador* auxt);
-    Zona& operator=(const Zona& outro);
+    virtual double getAumentoProbDem() const;
+
+    Zona& atribui(const Zona& outro);
     virtual Zona* duplica() const;
     void upgradeED();
 

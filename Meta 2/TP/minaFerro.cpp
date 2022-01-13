@@ -1,4 +1,4 @@
-//
+ //
 // Created by Rafael on 21/12/2021.
 //
 
@@ -53,6 +53,11 @@ void MinaFerro::produz() {
 
         if(Edificio::ZNX()){
             aumentaRecursos("Ferro", quantProd+(0.1*quantProd));
+            return;
+        }
+
+        if(Edificio::DSR()){
+            aumentaRecursos("Ferro", quantProd/2);
             return;
         }
         aumentaRecursos("Ferro", quantProd);

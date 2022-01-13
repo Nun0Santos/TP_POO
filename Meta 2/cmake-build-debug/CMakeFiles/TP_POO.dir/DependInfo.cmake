@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/deserto.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/deserto.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/dinheiro.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/dinheiro.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificio.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/edificio.cpp.obj"
+  "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/edificiox.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/edificiox.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/eletricidade.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/eletricidade.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/ferro.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/ferro.cpp.obj"
   "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/TP/floresta.cpp" "C:/Users/Rafael/Desktop/GitHub/TP_POO/Meta 2/cmake-build-debug/CMakeFiles/TP_POO.dir/TP/floresta.cpp.obj"

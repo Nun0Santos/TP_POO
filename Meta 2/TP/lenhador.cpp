@@ -37,8 +37,14 @@ int Lenhador::pedeDemissao() {
 
     double val = (double)rand() / RAND_MAX;
 
-    if(val < Trabalhador::obtemProb()){
-        return 1;
+    if(isMNT()){
+        if(val < Trabalhador::obtemProb()+Trabalhador::aumentoProbDem()){
+            return 1;
+        }
+    }else{
+        if(val < Trabalhador::obtemProb()){
+            return 1;
+        }
     }
 
     return 0;

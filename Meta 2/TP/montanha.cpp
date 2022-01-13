@@ -7,10 +7,6 @@
 
 Montanha::Montanha(string t, int x, int y) : Zona(t, x , y),probDemissao(0.05), aumentoProd(1), quantFerro(0){}
 
-void Montanha::aumentaProbDemissao() {
-    //
-}
-
 
 void Montanha::trata(ilha& i){
     if(Zona::obtemQuant_Trab() == 0){
@@ -20,12 +16,12 @@ void Montanha::trata(ilha& i){
     }
 }
 
-Montanha &Montanha::operator=(const Zona &outro) {
+Montanha &Montanha::atribui(const Zona &outro) {
     if(this == &outro) return *this;
 
-    Zona::operator=(outro);
-
     if(typeid(this) == typeid(outro)){
+        Zona::atribui(outro);
+
         const auto* aux = dynamic_cast<const Montanha*>(&outro);
         probDemissao = aux->probDemissao;
         aumentoProd = aux->aumentoProd;
@@ -39,5 +35,9 @@ Zona *Montanha::duplica() const {
 }
 
 Montanha::Montanha(const Montanha &outro) : Zona(outro),probDemissao(0), aumentoProd(0), quantFerro(0){
-    *this = outro;
+    this->atribui(outro);
+}
+
+double Montanha::getAumentoProbDem() const {
+    return probDemissao;
 }

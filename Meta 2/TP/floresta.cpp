@@ -34,23 +34,22 @@ void Floresta::trata(ilha& i){
     }
 }
 
-Floresta &Floresta::operator=(const Zona &outro) {
+Floresta &Floresta::atribui(const Zona &outro) {
     if(this == & outro) return *this;
 
-    Zona::operator=(outro);
-
     if(typeid(this) == typeid(outro)){
+        Zona::atribui(outro);
+
         const auto* aux = dynamic_cast<const Floresta*>(&outro);
         nArvores = aux->nArvores;
         nArvores_max = aux->nArvores_max;
-        prod_kg = aux->prod_kg;
         dias = aux->dias;
     }
     return *this;
 }
 
-Floresta::Floresta(const Floresta &outro) : Zona(outro), nArvores(0),  nArvores_max(0), prod_kg(0), dias(0){
-    *this = outro;
+Floresta::Floresta(const Floresta &outro) : Zona(outro), nArvores(0),  nArvores_max(0), dias(0){
+    this->atribui(outro);
 }
 
 Zona *Floresta::duplica() const {

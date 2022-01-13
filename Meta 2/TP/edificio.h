@@ -30,7 +30,7 @@ public:
     int getNivel() const;
     void incrementaNivel();
     virtual void melhora();
-    virtual Edificio* duplica() const;
+    virtual Edificio* duplica() const = 0;
     bool MNT();
     virtual int desaba();
     int obtemQuantTrab();

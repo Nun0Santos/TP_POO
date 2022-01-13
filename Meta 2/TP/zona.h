@@ -71,7 +71,7 @@ public:
     virtual double getAumentoProbDem() const;
 
     Zona& atribui(const Zona& outro);
-    virtual Zona* duplica() const;
+    virtual Zona* duplica() const = 0;
     void upgradeED();
 
 private:

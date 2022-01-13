@@ -22,7 +22,7 @@ public:
     bool gasta(int quant);
     string obtemTipo();
     double obtemQuantidade() const;
-    virtual Recursos* duplica();
+    virtual Recursos* duplica() = 0;
 
 private:
     string tipo;

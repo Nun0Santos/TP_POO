@@ -36,7 +36,7 @@ public:
     void movimenta();
     int obtemMovim() const;
     void redefineZona(Zona* z_a);
-    virtual Trabalhador* duplica() const;
+    virtual Trabalhador* duplica() const = 0;
     double aumentoProbDem();
     bool isMNT();
 

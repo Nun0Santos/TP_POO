@@ -124,7 +124,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
             }
         }
         if(s == "edX"){
-            auto* m = new Edificiox(i, posC, posL);
+            Edificio* m = new Edificiox(i, posC, posL);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
                 ed = m;
                 ++quant_edificio;

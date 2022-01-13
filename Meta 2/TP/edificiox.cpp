@@ -17,4 +17,8 @@ void Edificiox::produz() {
     }
 }
 
+Edificio *Edificiox::duplica() const {
+    return new Edificiox(*this);
+}
+
 

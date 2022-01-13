@@ -13,8 +13,7 @@ public:
      Edificiox(ilha *i, int i1, int i2);
      void produz()override;
 
-
-private:
+    Edificio * duplica() const override;
 
 };
 

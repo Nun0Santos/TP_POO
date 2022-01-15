@@ -11,7 +11,7 @@ MinaFerro::MinaFerro(ilha* i, int x, int y) : Edificio(i, "mnF", 10, x, y), cust
 void MinaFerro::melhora() {
     if(Edificio::getNivel() <= 5){
         if(gastaRecursos("Dinheiro", upgradeDinheiro)){
-            if(gastaRecursos("VigaMadeira", upgradeRecurso)){
+            if(gastaRecursos("VigasMadeira", upgradeRecurso)){
                 Edificio::incrementaNivel();
                 ++quantProd;
                 quantArmazenamento += 10;

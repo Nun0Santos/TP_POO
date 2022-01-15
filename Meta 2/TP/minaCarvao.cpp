@@ -9,7 +9,7 @@ MinaCarvao::MinaCarvao(ilha* i, int x, int y) : Edificio(i,"mnC", 10, x, y), cus
 void MinaCarvao::melhora() {
     if(Edificio::getNivel() <= 5){
         if(gastaRecursos("Dinheiro", upgradeDinheiro)){
-            if(gastaRecursos("VigaMadeira", upgradeRecurso)){
+            if(gastaRecursos("VigasMadeira", upgradeRecurso)){
                 Edificio::incrementaNivel();
                 ++quantProd;
                 quantArmazenamento += 10;

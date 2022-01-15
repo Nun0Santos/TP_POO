@@ -26,7 +26,7 @@ string Zona::defineTrab(string s, int dia, ilha* il) {
         if(il->getContratou() == 0){
             il->setContratou();
         }
-        workers.push_back(o);
+        workers.push_back(o->duplica());
         ++quant_trab;
     }
     if(s == "L"){
@@ -37,7 +37,7 @@ string Zona::defineTrab(string s, int dia, ilha* il) {
         if(il->getContratou() == 0){
             il->setContratou();
         }
-        workers.push_back(o);
+        workers.push_back(o->duplica());
         ++quant_trab;
     }
     if(s == "M"){
@@ -48,7 +48,7 @@ string Zona::defineTrab(string s, int dia, ilha* il) {
         if(il->getContratou() == 0){
             il->setContratou();
         }
-        workers.push_back(o);
+        workers.push_back(o->duplica());
         ++quant_trab;
     }
 
@@ -77,7 +77,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "mnF"){
             Edificio* m = new MinaFerro(i, posL, posC);
             if(i->gastaRecursos("VigasMadeira", m->obtemCustoDinheiro()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma mina de ferro";
             }
@@ -85,7 +85,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "mnC"){
             auto* m = new MinaCarvao(i, posL, posC);
             if(i->gastaRecursos("VigasMadeira", m->obtemCustoDinheiro()) || i->gastaRecursos("Dinheiro", m->obtemCustoSubs())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma mina de carvao";
             }
@@ -93,7 +93,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "fun"){
             auto* m = new Fundicao(i, posL, posC);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma fundicao";
             }
@@ -101,7 +101,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "elec"){
             auto* m = new CentralEletrica(i, posL, posC);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma central eletrica";
             }
@@ -109,8 +109,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "bat"){
             auto* m = new Bateria(i);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
-                ed = m;
-                cout << ed->obtemTipo();
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma bateria";
             }
@@ -118,7 +117,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "ser"){
             auto* m = new Serracao(i);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi uma serracao";
             }
@@ -126,7 +125,7 @@ string Zona::defineEdificio(const string& s, ilha* i, int dev) {
         if(s == "edX"){
             Edificio* m = new Edificiox(i, posC, posL);
             if(i->gastaRecursos("Dinheiro", m->obtemCustoDinheiro())){
-                ed = m;
+                ed = m->duplica();
                 ++quant_edificio;
                 return "construi um edificio-x";
             }
@@ -270,6 +269,7 @@ void Zona::trataEdificios() {
     if(ed->desaba() == 1){
         delete ed;
         ed = nullptr;
+        --quant_edificio;
     }
 }
 
@@ -573,4 +573,8 @@ void Zona::upgradeED() {
 
 double Zona::getAumentoProbDem() const {
     return 0;
+}
+
+int Zona::getNivel() const {
+    return ed->getNivel();
 }

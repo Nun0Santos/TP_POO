@@ -110,7 +110,7 @@ string ilha::mostraZona(int x, int y) {
                         oss << "" << endl;
                         break;
                     }
-                    oss << tabuleiro[x][y]->obtemEdificio() << endl;
+                    oss << tabuleiro[x][y]->obtemEdificio() << " | " << tabuleiro[x][y]->getNivel() << endl;
                     break;
                     case 2:
                         oss << tabuleiro[x][y]->obtemWorkers() << endl;
@@ -449,9 +449,9 @@ string ilha::executa(string s1) {
             return oss.str();
         }
         if(v[0] == "upgrade"){
-            istringstream ossX(v[2]);//transforma string em int
+            istringstream ossX(v[1]);//transforma string em int
             ossX >> x;//atribui valor transformado à variavel x
-            istringstream ossY(v[3]);//transforma string em int
+            istringstream ossY(v[2]);//transforma string em int
             ossY >> y;//atribui valor transformado à variavel y
 
             if(verificaLinCol(x,y)){
